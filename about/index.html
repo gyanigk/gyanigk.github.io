@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>About - Gyanig Kumar</title>
+  <meta name="description" content="About Gyanig Kumar - Master's Student in Computer Science">
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="/about/">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="shortcut icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <link rel="preconnect" href="https://player.vimeo.com">
+  <link rel="preconnect" href="https://i.vimeocdn.com">
+  <link rel="preconnect" href="https://f.vimeocdn.com">
+
+  <style>
+    :root {
+        /* Light theme (default) */
+        --bg-color: #ffffff;
+        --text-color: #2d3436;
+        --navbar-bg: #ffffff;
+        --card-bg: #ffffff;
+        --card-border: #f1f2f6;
+        --card-shadow: rgba(0,0,0,0.05);
+        --link-color: #0984e3;
+        --link-hover: #74b9ff;
+        --footer-bg: #f8f9fa;
+        --badge-bg: #f1f2f6;
+        --badge-text: #2d3436;
+        --badge-border: #dfe6e9;
+        --heading-color: #2d3436;
+        --muted-color: #636e72;
+    }
+
+    [data-theme="dark"] {
+        --bg-color: #1a1a1a;
+        --text-color: #dfe6e9;
+        --navbar-bg: #2d3436;
+        --card-bg: #2d3436;
+        --card-border: #353b48;
+        --card-shadow: rgba(0,0,0,0.2);
+        --link-color: #74b9ff;
+        --link-hover: #0984e3;
+        --footer-bg: #2d3436;
+        --badge-bg: #353b48;
+        --badge-text: #dfe6e9;
+        --badge-border: #2d3436;
+        --heading-color: #dfe6e9;
+        --muted-color: #b2bec3;
+    }
+
+    body { 
+        font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+        line-height: 1.7;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+        transition: background-color 0.3s, color 0.3s;
+        font-size: 1.1rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--heading-color);
+        font-weight: 600;
+        line-height: 1.4;
+        margin-bottom: 1.5rem;
+    }
+
+    .navbar {
+        box-shadow: 0 2px 8px var(--card-shadow);
+        background-color: var(--navbar-bg) !important;
+        padding: 1rem 0;
+    }
+
+    .navbar-brand {
+        font-weight: 600;
+        font-size: 1.4rem;
+    }
+
+    .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem !important;
+        transition: color 0.2s;
+    }
+
+    .about-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 6px var(--card-shadow);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .about-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px var(--card-shadow);
+    }
+
+    .profile-img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-bottom: 1.5rem;
+        object-fit: cover;
+        border: 4px solid var(--card-border);
+        transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .profile-img:hover {
+        transform: scale(1.02);
+        border-color: var(--link-color);
+    }
+
+    .social-icons {
+        margin-top: 1.5rem;
+    }
+
+    .social-icons a {
+        color: var(--text-color);
+        margin: 0 12px;
+        font-size: 1.4rem;
+        transition: all 0.2s;
+    }
+
+    .social-icons a:hover {
+        color: var(--link-color);
+        transform: translateY(-2px);
+    }
+
+    .section-header {
+        margin-bottom: 3rem;
+        color: var(--heading-color);
+        font-weight: 600;
+        position: relative;
+        padding-bottom: 1rem;
+    }
+
+    .section-header:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background-color: var(--link-color);
+        border-radius: 3px;
+    }
+
+    .footer {
+        background-color: var(--footer-bg);
+        padding: 3rem 0;
+        margin-top: 4rem;
+        border-top: 1px solid var(--card-border);
+    }
+
+    .theme-toggle {
+        background: none;
+        border: none;
+        color: var(--text-color);
+        cursor: pointer;
+        padding: 0.5rem;
+        margin-left: 1rem;
+        font-size: 1.3rem;
+        transition: color 0.2s, transform 0.2s;
+    }
+
+    .theme-toggle:hover {
+        color: var(--link-color);
+        transform: rotate(15deg);
+    }
+
+    a {
+        color: var(--link-color);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    a:hover {
+        color: var(--link-hover);
+        text-decoration: none;
+    }
+
+    .lead {
+        color: var(--muted-color);
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+    }
+
+    ul {
+        padding-left: 1.5rem;
+    }
+
+    ul li {
+        margin-bottom: 0.8rem;
+        color: var(--text-color);
+    }
+  </style>
+
+<!-- Google Analytics (original) -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','');</script>
+<!-- End Google Tag Manager -->
+
+</head>
+
+
+  <body>
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id="
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav class="navbar sticky-top navbar-expand-md navbar-light bg-white">
+    <div class="container">
+        <a class="navbar-brand" href="/">Gyanig Kumar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/publications">Publications</a></li>
+                <li class="nav-item"><a class="nav-link" href="/research">Research</a></li>
+                <li class="nav-item"><a class="nav-link" href="/projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="/teaching">Teaching</a></li>
+                <li class="nav-item"><a class="nav-link" href="/experiences">Experiences</a></li>
+                <li class="nav-item">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="fa fa-moon-o"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+    <div class="container mt-5">
+      <h1 class="section-header">About Me</h1>
+
+      <div class="about-card">
+        <div class="row">
+          <div class="col-sm-4 text-center">
+            <img src="/images/headshot.jpg" class="profile-img" alt="Gyanig Kumar">
+          </div>
+          <div class="col-sm-8">
+            <h3>Gyanig Kumar</h3>
+            <p class="lead">Master's Student in Computer Science at University of Colorado Boulder</p>
+            
+            <div class="social-icons">
+              <a href="mailto:gyanig.kumar@gmail.com" aria-label="Email"><i class="fa fa-envelope"></i></a>
+              <a href="/cv/gyanigk_resume.pdf" aria-label="CV"><i class="ai ai-cv"></i></a>
+              <a href="https://scholar.google.com/citations?user=g1kxkMUAAAAJ&hl=en" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+              <a href="https://github.com/gyanigk" aria-label="GitHub"><i class="fa fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/gyanig-k-b36666146" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+            <ul class="mt-4">
+              <li>M.S. in Computer Science, University of Colorado Boulder (Expected 2026)</li>
+              <li>B.Tech. in Computer Science and Systems Engineering, KIIT (2023)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="section-header">Biography</h2>
+      <div class="about-card">
+        <p>I am a Master's student in Computer Science at the University of Colorado Boulder, focusing on Human-Computer Interaction and Computer Vision. My research interests include human-robot interaction, gaze tracking, and deep learning applications in HCI.</p>
+        
+        <p>Currently, I am conducting research at the CAIRO HCI Lab under Prof. Bradley Hayes, working on enhancing human intent recognition using POMDP-based algorithms and integrating vision-based learning techniques with the Sawyer Robotic Manipulator.</p>
+        
+        <p>Previously, I worked as a Research Assistant at the Indian Institute of Science (IISc) Bangalore under <a href="https://cambum.net/PB/">Prof. Pradipta Biswas</a>, where I developed gaze tracking systems for automotive applications and implemented deep learning models for human-robot collaboration.</p>
+        
+        <p>My work has been published in top-tier conferences including ACM IUI, IEEE ICRA, and AutomotiveUI. I am passionate about developing intelligent systems that enhance human-computer interaction and make technology more accessible and intuitive.</p>
+      </div>
+
+      <h2 class="section-header">Awards & Recognition</h2>
+      <div class="about-card">
+        <ul>
+          <li>Demo/Poster Paper accepted at ACM Conference on Intelligent User Interfaces (IUI) 2024</li>
+          <li>Full Paper accepted at IEEE International Conference on Robotics and Automation (ICRA) 2024</li>
+          <li>Journal paper published in Springer's Journal of Multimedia Tools and Applications</li>
+          <li>Work-in-Progress paper accepted at AutomotiveUI 2022 Conference</li>
+          <li>Summer School Fellowship at CVIT, IIIT Hyderabad (2021)</li>
+          <li>2nd Position in AI Track at HackCU11 (2025)</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="footer mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Location</h5>
+            <p>University of Colorado Boulder<br>Boulder, CO 80309</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Contact</h5>
+            <p><a href="mailto:gyanig.kumar@gmail.com">gyanig.kumar@gmail.com</a></p>
+          </div>
+          <div class="col-md-4">
+            <h5>Education</h5>
+            <p>M.S. Computer Science (2024)<br>B.Tech. Computer Science (2023)</p>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <p class="text-muted">&copy; 2024 Gyanig Kumar</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        // Function to set theme
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            
+            if (theme === 'dark') {
+                themeIcon.classList.remove('fa-moon-o');
+                themeIcon.classList.add('fa-sun-o');
+            } else {
+                themeIcon.classList.remove('fa-sun-o');
+                themeIcon.classList.add('fa-moon-o');
+            }
+        }
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        setTheme(savedTheme);
+        
+        // Toggle theme
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+
+        // Listen for theme changes from other pages
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'theme') {
+                setTheme(e.newValue);
+            }
+        });
+    </script>
+
+  </body>
+
+</html>

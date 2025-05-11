@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Research - Gyanig Kumar</title>
+  <meta name="description" content="Research interests and projects of Gyanig Kumar">
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="/research/">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="shortcut icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <link rel="preconnect" href="https://player.vimeo.com">
+  <link rel="preconnect" href="https://i.vimeocdn.com">
+  <link rel="preconnect" href="https://f.vimeocdn.com">
+
+
+
+<!-- Google Analytics (original) -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','');</script>
+<!-- End Google Tag Manager -->
+
+<style>
+    :root {
+        /* Light theme (default) */
+        --bg-color: #ffffff;
+        --text-color: #2d3436;
+        --navbar-bg: #ffffff;
+        --card-bg: #ffffff;
+        --card-border: #f1f2f6;
+        --card-shadow: rgba(0,0,0,0.05);
+        --link-color: #0984e3;
+        --link-hover: #74b9ff;
+        --footer-bg: #f8f9fa;
+        --badge-bg: #f1f2f6;
+        --badge-text: #2d3436;
+        --badge-border: #dfe6e9;
+        --heading-color: #2d3436;
+        --muted-color: #636e72;
+    }
+
+    [data-theme="dark"] {
+        --bg-color: #1a1a1a;
+        --text-color: #dfe6e9;
+        --navbar-bg: #2d3436;
+        --card-bg: #2d3436;
+        --card-border: #353b48;
+        --card-shadow: rgba(0,0,0,0.2);
+        --link-color: #74b9ff;
+        --link-hover: #0984e3;
+        --footer-bg: #2d3436;
+        --badge-bg: #353b48;
+        --badge-text: #dfe6e9;
+        --badge-border: #2d3436;
+        --heading-color: #dfe6e9;
+        --muted-color: #b2bec3;
+    }
+
+    body { 
+        font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+        line-height: 1.7;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+        transition: background-color 0.3s, color 0.3s;
+        font-size: 1.1rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--heading-color);
+        font-weight: 600;
+        line-height: 1.4;
+        margin-bottom: 1.5rem;
+    }
+
+    .navbar {
+        box-shadow: 0 2px 8px var(--card-shadow);
+        background-color: var(--navbar-bg) !important;
+        padding: 1rem 0;
+    }
+
+    .navbar-brand {
+        font-weight: 600;
+        font-size: 1.4rem;
+    }
+
+    .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem !important;
+        transition: color 0.2s;
+    }
+
+    .research-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 6px var(--card-shadow);
+        transition: transform 0.2s, box-shadow 0.2s;
+        height: 100%;
+    }
+
+    .research-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px var(--card-shadow);
+    }
+
+    .section-header {
+        margin-bottom: 3rem;
+        color: var(--heading-color);
+        font-weight: 600;
+        position: relative;
+        padding-bottom: 1rem;
+    }
+
+    .section-header:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background-color: var(--link-color);
+        border-radius: 3px;
+    }
+
+    .tech-badges {
+        margin-top: 1.5rem;
+    }
+
+    .tech-badges .badge {
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        padding: 0.5rem 1rem;
+        font-weight: 500;
+        background-color: var(--badge-bg);
+        color: var(--badge-text);
+        border: 1px solid var(--badge-border);
+        border-radius: 6px;
+        transition: all 0.2s;
+    }
+
+    .tech-badges .badge:hover {
+        background-color: var(--link-color);
+        color: white;
+        transform: translateY(-1px);
+    }
+
+    .footer {
+        background-color: var(--footer-bg);
+        padding: 3rem 0;
+        margin-top: 4rem;
+        border-top: 1px solid var(--card-border);
+    }
+
+    .theme-toggle {
+        background: none;
+        border: none;
+        color: var(--text-color);
+        cursor: pointer;
+        padding: 0.5rem;
+        margin-left: 1rem;
+        font-size: 1.3rem;
+        transition: color 0.2s, transform 0.2s;
+    }
+
+    .theme-toggle:hover {
+        color: var(--link-color);
+        transform: rotate(15deg);
+    }
+
+    a {
+        color: var(--link-color);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    a:hover {
+        color: var(--link-hover);
+        text-decoration: none;
+    }
+
+    .lead {
+        color: var(--muted-color);
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+    }
+</style>
+
+</head>
+
+
+  <body>
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id="
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav class="navbar sticky-top navbar-expand-md navbar-light bg-white">
+    <div class="container">
+        <a class="navbar-brand" href="/">Gyanig Kumar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/publications">Publications</a></li>
+                <li class="nav-item"><a class="nav-link" href="/research">Research</a></li>
+                <li class="nav-item"><a class="nav-link" href="/projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="/teaching">Teaching</a></li>
+                <li class="nav-item"><a class="nav-link" href="/experiences">Experiences</a></li>
+                <li class="nav-item">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="fa fa-moon-o"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+    <div class="container mt-5">
+      <h1 class="section-header">Research Interests</h1>
+
+      <div class="row">
+          <div class="col-md-4 mb-4">
+              <div class="research-card">
+                  <h2 class="h5">Generative AI & Multi-modal Learning</h2>
+                  <p>Exploring applications of generative AI and multi-modal learning in human-robot interaction, with a focus on intent prediction and decision-making systems.</p>
+                  <div class="tech-badges">
+                      <span class="badge">Deep Learning</span>
+                      <span class="badge">Generative AI</span>
+                      <span class="badge">Multi-modal</span>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+              <div class="research-card">
+                  <h2 class="h5">3D Gaze Estimation</h2>
+                  <p>Developing efficient and accurate 3D gaze tracking systems for automotive applications and human-computer interaction, with a focus on appearance-based methods.</p>
+                  <div class="tech-badges">
+                      <span class="badge">Computer Vision</span>
+                      <span class="badge">Deep Learning</span>
+                      <span class="badge">HCI</span>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+              <div class="research-card">
+                  <h2 class="h5">Object Registration & Pose Estimation</h2>
+                  <p>Researching advanced techniques for object registration and pose estimation in mixed reality and robotic applications, with expertise in real-time systems.</p>
+                  <div class="tech-badges">
+                      <span class="badge">Computer Vision</span>
+                      <span class="badge">Deep Learning</span>
+                      <span class="badge">Robotics</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <h2 class="section-header mt-5">Current Research Projects</h2>
+      
+      <div class="research-card">
+          <h3 class="h5">Human Intent Recognition with POMDP</h3>
+          <p>Conducting research at CAIRO HCI Lab under Prof. Bradley Hayes on enhancing human intent recognition using Partially Observable Markov Decision Processes (POMDP)-based algorithms and integrating vision-based learning techniques with the Sawyer Robotic Manipulator.</p>
+          <div class="tech-badges">
+              <span class="badge">Deep Learning</span>
+              <span class="badge">Computer Vision</span>
+              <span class="badge">POMDP</span>
+          </div>
+      </div>
+
+      <div class="research-card">
+          <h3 class="h5">Gaze Estimation for Automotive HUD</h3>
+          <p>Optimized the I2D-Net Eye Gaze Estimation model, reducing parameters by 0.5x and achieving 2x inference speed, enabling faster gaze tracking for interactive automotive HUDs. Collaborated with Faurecia to extend interactive automotive heads-up display features with gaze-based vs gesture-based on-road distraction detection.</p>
+          <div class="tech-badges">
+              <span class="badge">Computer Vision</span>
+              <span class="badge">HCI</span>
+              <span class="badge">Deep Learning</span>
+          </div>
+      </div>
+
+      <div class="research-card">
+          <h3 class="h5">Mixed Reality Assembly System</h3>
+          <p>Partnered with Collins Aerospace to develop a mixed reality-based assembly system using custom-trained object detection models with tailored eye gaze and hand tracking for efficient, real-time assembly guidance. Developed a robust motion tracking framework with a markerless ByteTrack model, achieving 97.8% mAP detection accuracy.</p>
+          <div class="tech-badges">
+              <span class="badge">Mixed Reality</span>
+              <span class="badge">Deep Learning</span>
+              <span class="badge">Computer Vision</span>
+          </div>
+      </div>
+  </div>
+
+  <footer class="footer mt-5">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-4">
+                  <h5>Location</h5>
+                  <p>University of Colorado Boulder<br>Boulder, CO 80309</p>
+              </div>
+              <div class="col-md-4">
+                  <h5>Contact</h5>
+                  <p><a href="mailto:gyanig.kumar@gmail.com">gyanig.kumar@gmail.com</a></p>
+              </div>
+              <div class="col-md-4">
+                  <h5>Education</h5>
+                  <p>M.S. Computer Science (2024)<br>B.Tech. Computer Science (2023)</p>
+              </div>
+          </div>
+          <div class="text-center mt-4">
+              <p class="text-muted">&copy; 2024 Gyanig Kumar</p>
+          </div>
+      </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = themeToggle.querySelector('i');
+    
+    // Function to set theme
+    function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        
+        if (theme === 'dark') {
+            themeIcon.classList.remove('fa-moon-o');
+            themeIcon.classList.add('fa-sun-o');
+        } else {
+            themeIcon.classList.remove('fa-sun-o');
+            themeIcon.classList.add('fa-moon-o');
+        }
+    }
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+    
+    // Toggle theme
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme);
+    });
+
+    // Listen for theme changes from other pages
+    window.addEventListener('storage', (e) => {
+        if (e.key === 'theme') {
+            setTheme(e.newValue);
+        }
+    });
+  </script>
+
+  </body>
+
+</html>

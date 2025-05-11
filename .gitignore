@@ -1,12 +1,47 @@
-# project
-_site
-.sass-cache
-.vagrant
+# Jekyll build output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
 
-# general
-.DS_Store
-Thumbs.db
-ehthumbs.db
-
+# Bundler configuration and dependencies
+.bundle/
 vendor/
-qurantine
+
+# System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Log files
+*.log
+
+# Local environment files
+.env
+.env.*
+
+# Node modules (if using any Node.js tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ruby environment
+.ruby-version
+.ruby-gemset
+
+# Temporary files
+*.tmp
+*.temp
+*.bak 

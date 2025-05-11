@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hobbies - Gyanig Kumar</title>
+    <meta name="description" content="Musical compositions and photography by Gyanig Kumar">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="canonical" href="/hobbies">
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+
+    <style>
+        .hobby-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--link-color);
+        }
+
+        .music-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 350px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .music-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .music-thumbnail {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 0.75rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .music-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--heading-color);
+        }
+
+        .music-description {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .music-player {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 0.5rem;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .photo-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            aspect-ratio: 3/2;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .photo-item:hover .photo-caption {
+            opacity: 1;
+        }
+
+        .category-filter {
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            background: none;
+            border: 2px solid var(--link-color);
+            color: var(--link-color);
+            padding: 0.5rem 1rem;
+            margin: 0.25rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background: var(--link-color);
+            color: white;
+        }
+
+        .filter-btn:hover {
+            background: var(--link-color);
+            color: white;
+        }
+
+        /* Enhanced Music Card Styles */
+        .music-metadata {
+            display: flex;
+            gap: 0.5rem;
+            margin: 0.5rem 0;
+            font-size: 0.8rem;
+            color: var(--muted-color);
+        }
+
+        .metadata-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .music-download {
+            margin-top: 1rem;
+            text-align: right;
+        }
+
+        .download-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background-color: var(--link-color);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .download-link:hover {
+            background-color: var(--link-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Enhanced Photo Styles */
+        .photo-caption {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .photo-caption h4 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .photo-caption p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .photo-metadata {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .photo-metadata span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* Category Filter Enhancement */
+        .category-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: left 0.5s ease;
+        }
+
+        .filter-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Loading Animation */
+        .loading-animation {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+        }
+
+        .loading-animation.active {
+            display: block;
+        }
+
+        /* Responsive Enhancements */
+        @media (max-width: 768px) {
+            .photo-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+
+            .music-metadata {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .photo-metadata {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar sticky-top navbar-expand-md navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="/">Gyanig Kumar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/publications">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/research">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/teaching">Teaching</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/experiences">Experiences</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/hobbies">Hobbies</a></li>
+                    <li class="nav-item">
+                        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                            <i class="fa fa-moon-o"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Creative Pursuits</h1>
+        
+        <!-- Music Section -->
+        <section class="hobby-section">
+            <h2 class="section-title">Musical Compositions</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="music-card">
+                        <img src="/music/compositions/urban nest.jpeg" alt="Urban Nest Thumbnail" class="music-thumbnail">
+                        <h3 class="music-title">Urban Nest</h3>
+                        <p class="music-description">A contemporary composition exploring urban soundscapes and natural harmonies.</p>
+                        <video class="music-player" controls>
+                            <source src="/music/compositions/urban nest.mp4" type="video/mp4">
+                            Your browser does not support the video element.
+                        </video>
+                        <div class="music-metadata">
+                            <div class="metadata-item">
+                                <i class="fa fa-calendar"></i>
+                                <span>2024</span>
+                            </div>
+                            <div class="metadata-item">
+                                <i class="fa fa-music"></i>
+                                <span>Original Composition</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more music cards as needed -->
+            </div>
+        </section>
+
+        <!-- Photography Section -->
+        <section class="hobby-section">
+            <h2 class="section-title">Photography</h2>
+            
+            <!-- Category Filters -->
+            <div class="category-filter">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="landscape">Landscapes</button>
+                <button class="filter-btn" data-category="mountain">Mountains</button>
+                <button class="filter-btn" data-category="monument">Monuments</button>
+                <button class="filter-btn" data-category="hiking">Hiking</button>
+            </div>
+
+            <!-- Photo Grid -->
+            <div class="photo-grid">
+                <!-- Landscape Photos -->
+                <a href="/images/photos/landscape0.jpg" 
+                   class="photo-item" 
+                   data-lightbox="gallery" 
+                   data-category="landscape"
+                   data-title="Serene Landscape">
+                    <img src="/images/photos/landscape0.jpg" 
+                         alt="Serene Landscape"
+                         loading="lazy">
+                    <div class="photo-caption">
+                        <h4>Serene Landscape</h4>
+                        <p>A peaceful view capturing nature's tranquility</p>
+                        <div class="photo-metadata">
+                            <span><i class="fa fa-map-marker"></i> Colorado</span>
+                            <span><i class="fa fa-calendar"></i> 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Genesis Photo -->
+                <a href="/images/photos/genesis.jpg" 
+                   class="photo-item" 
+                   data-lightbox="gallery" 
+                   data-category="landscape"
+                   data-title="Genesis">
+                    <img src="/images/photos/genesis.jpg" 
+                         alt="Genesis"
+                         loading="lazy">
+                    <div class="photo-caption">
+                        <h4>Genesis</h4>
+                        <p>The beginning of a new day</p>
+                        <div class="photo-metadata">
+                            <span><i class="fa fa-map-marker"></i> Boulder</span>
+                            <span><i class="fa fa-calendar"></i> 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Mountain Photos -->
+                <a href="/images/photos/mountain0.jpg" 
+                   class="photo-item" 
+                   data-lightbox="gallery" 
+                   data-category="mountain"
+                   data-title="Mountain Vista">
+                    <img src="/images/photos/mountain0.jpg" 
+                         alt="Mountain Vista"
+                         loading="lazy">
+                    <div class="photo-caption">
+                        <h4>Mountain Vista</h4>
+                        <p>Majestic mountain peaks reaching for the sky</p>
+                        <div class="photo-metadata">
+                            <span><i class="fa fa-map-marker"></i> Rocky Mountains</span>
+                            <span><i class="fa fa-calendar"></i> 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/images/photos/mountain2.jpg" 
+                   class="photo-item" 
+                   data-lightbox="gallery" 
+                   data-category="mountain"
+                   data-title="Mountain Majesty">
+                    <img src="/images/photos/mountain2.jpg" 
+                         alt="Mountain Majesty"
+                         loading="lazy">
+                    <div class="photo-caption">
+                        <h4>Mountain Majesty</h4>
+                        <p>Snow-capped peaks against a clear sky</p>
+                        <div class="photo-metadata">
+                            <span><i class="fa fa-map-marker"></i> Colorado Rockies</span>
+                            <span><i class="fa fa-calendar"></i> 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Twin Lake Photo -->
+                <a href="/images/photos/twinlake.jpg" 
+                   class="photo-item" 
+                   data-lightbox="gallery" 
+                   data-category="landscape"
+                   data-title="Twin Lake Reflection">
+                    <img src="/images/photos/twinlake.jpg" 
+                         alt="Twin Lake Reflection"
+                         loading="lazy">
+                    <div class="photo-caption">
+                        <h4>Twin Lake Reflection</h4>
+                        <p>Perfect mirror reflection in the still waters</p>
+                        <div class="photo-metadata">
+                            <span><i class="fa fa-map-marker"></i> Twin Lakes</span>
+                            <span><i class="fa fa-calendar"></i> 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Mount Rushmore Photos -->
+                <a href="/images/photos/rushmore-12.jpg" 
+                   class="photo-item" 
+                   data-lightbox="gallery" 
+                   data-category="monument"
+                   data-title="Mount Rushmore Majesty">
+                    <img src="/images/photos/rushmore-12.jpg" 
+                         alt="Mount Rushmore Majesty"
+                         loading="lazy">
+                    <div class="photo-caption">
+                        <h4>Mount Rushmore Majesty</h4>
+                        <p>The iconic presidential monument</p>
+                        <div class="photo-metadata">
+                            <span><i class="fa fa-map-marker"></i> South Dakota</span>
+                            <span><i class="fa fa-calendar"></i> 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/images/photos/rushmore-6.jpg" 
+                   class="photo-item" 
+                   data-lightbox="gallery" 
+                   data-category="monument"
+                   data-title="Rushmore Detail">
+                    <img src="/images/photos/rushmore-6.jpg" 
+                         alt="Rushmore Detail"
+                         loading="lazy">
+                    <div class="photo-caption">
+                        <h4>Rushmore Detail</h4>
+                        <p>Close-up view of the monumental carving</p>
+                        <div class="photo-metadata">
+                            <span><i class="fa fa-map-marker"></i> Mount Rushmore</span>
+                            <span><i class="fa fa-calendar"></i> 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Anemone Hike Photos -->
+                <a href="/images/photos/animone_hike-131.jpg" 
+                   class="photo-item" 
+                   data-lightbox="gallery" 
+                   data-category="hiking"
+                   data-title="Anemone Trail Vista">
+                    <img src="/images/photos/animone_hike-131.jpg" 
+                         alt="Anemone Trail Vista"
+                         loading="lazy">
+                    <div class="photo-caption">
+                        <h4>Anemone Trail Vista</h4>
+                        <p>Breathtaking view from the Anemone Trail</p>
+                        <div class="photo-metadata">
+                            <span><i class="fa fa-map-marker"></i> Boulder</span>
+                            <span><i class="fa fa-calendar"></i> 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/images/photos/animone_hike-30.jpg" 
+                   class="photo-item" 
+                   data-lightbox="gallery" 
+                   data-category="hiking"
+                   data-title="Trail Adventure">
+                    <img src="/images/photos/animone_hike-30.jpg" 
+                         alt="Trail Adventure"
+                         loading="lazy">
+                    <div class="photo-caption">
+                        <h4>Trail Adventure</h4>
+                        <p>Exploring the beautiful Anemone Trail</p>
+                        <div class="photo-metadata">
+                            <span><i class="fa fa-map-marker"></i> Anemone Trail</span>
+                            <span><i class="fa fa-calendar"></i> 2024</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script src="/assets/javascript/bootstrap/jquery.min.js"></script>
+    <script src="/assets/javascript/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            
+            if (theme === 'dark') {
+                themeIcon.classList.remove('fa-moon-o');
+                themeIcon.classList.add('fa-sun-o');
+            } else {
+                themeIcon.classList.remove('fa-sun-o');
+                themeIcon.classList.add('fa-moon-o');
+            }
+        }
+        
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        setTheme(savedTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+
+        // Category filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const photoItems = document.querySelectorAll('.photo-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const category = button.getAttribute('data-category');
+                
+                photoItems.forEach(item => {
+                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Initialize Lightbox
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'albumLabel': 'Photo %1 of %2'
+        });
+
+        // Enhanced loading animation
+        function showLoading() {
+            const loading = document.createElement('div');
+            loading.className = 'loading-animation';
+            loading.innerHTML = '<i class="fa fa-spinner fa-spin fa-3x"></i>';
+            document.body.appendChild(loading);
+            setTimeout(() => loading.classList.add('active'), 0);
+        }
+
+        function hideLoading() {
+            const loading = document.querySelector('.loading-animation');
+            if (loading) {
+                loading.classList.remove('active');
+                setTimeout(() => loading.remove(), 300);
+            }
+        }
+
+        // Lazy loading for images
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.photo-item img');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => {
+                img.dataset.src = img.src;
+                img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+                imageObserver.observe(img);
+            });
+        });
+
+        // Smooth filter transitions
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                showLoading();
+                setTimeout(() => {
+                    // ... existing filter code ...
+                    hideLoading();
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html> 

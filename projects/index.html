@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projects - Gyanig Kumar</title>
+    <meta name="description" content="Projects and research work of Gyanig Kumar">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="canonical" href="/projects/">
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+        :root {
+            /* Light theme (default) */
+            --bg-color: #ffffff;
+            --text-color: #2d3436;
+            --navbar-bg: #ffffff;
+            --card-bg: #ffffff;
+            --card-border: #f1f2f6;
+            --card-shadow: rgba(0,0,0,0.05);
+            --link-color: #0984e3;
+            --link-hover: #74b9ff;
+            --footer-bg: #f8f9fa;
+            --badge-bg: #f1f2f6;
+            --badge-text: #2d3436;
+            --badge-border: #dfe6e9;
+            --heading-color: #2d3436;
+            --muted-color: #636e72;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #dfe6e9;
+            --navbar-bg: #2d3436;
+            --card-bg: #2d3436;
+            --card-border: #353b48;
+            --card-shadow: rgba(0,0,0,0.2);
+            --link-color: #74b9ff;
+            --link-hover: #0984e3;
+            --footer-bg: #2d3436;
+            --badge-bg: #353b48;
+            --badge-text: #dfe6e9;
+            --badge-border: #2d3436;
+            --heading-color: #dfe6e9;
+            --muted-color: #b2bec3;
+        }
+
+        body { 
+            font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: background-color 0.3s, color 0.3s;
+            font-size: 1.1rem;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        .navbar {
+            box-shadow: 0 2px 8px var(--card-shadow);
+            background-color: var(--navbar-bg) !important;
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.4rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            transition: color 0.2s;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px var(--card-shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px var(--card-shadow);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--card-border);
+            transition: transform 0.3s;
+        }
+
+        .project-image:hover {
+            transform: scale(1.02);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .project-header h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--heading-color);
+        }
+
+        .project-date {
+            color: var(--muted-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .project-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .project-type {
+            color: var(--muted-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .project-link {
+            color: var(--link-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .project-link:hover {
+            color: var(--link-hover);
+        }
+
+        .project-achievement {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            background-color: var(--badge-bg);
+            border-radius: 6px;
+            color: var(--badge-text);
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-achievement i {
+            color: #f1c40f;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--heading-color);
+        }
+
+        .project-description {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .tech-badges .badge {
+            background-color: var(--badge-bg);
+            color: var(--badge-text);
+            border: 1px solid var(--badge-border);
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .tech-badges .badge:hover {
+            background-color: var(--link-color);
+            color: var(--bg-color);
+            border-color: var(--link-color);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline-primary, .btn-outline-secondary {
+            color: var(--link-color);
+            border-color: var(--link-color);
+            margin-right: 0.8rem;
+            padding: 0.6rem 1.2rem;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .btn-outline-primary:hover, .btn-outline-secondary:hover {
+            background-color: var(--link-color);
+            color: var(--bg-color);
+            transform: translateY(-1px);
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+            color: var(--heading-color);
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-header:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--link-color);
+            border-radius: 3px;
+        }
+
+        .footer {
+            background-color: var(--footer-bg);
+            padding: 3rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 0.5rem;
+            margin-left: 1rem;
+            font-size: 1.3rem;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .theme-toggle:hover {
+            color: var(--link-color);
+            transform: rotate(15deg);
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--link-hover);
+            text-decoration: none;
+        }
+    </style>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '');
+    </script>
+</head>
+
+<body>
+    <nav class="navbar sticky-top navbar-expand-md navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="/">Gyanig Kumar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/publications">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/research">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/teaching">Teaching</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/experiences">Experiences</a></li>
+                    <li class="nav-item">
+                        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                            <i class="fa fa-moon-o"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="section-header">Projects</h1>
+
+        <div class="project-card">
+            <img src="/images/ansh-ai.jpg" alt="Ansh.AI Project Demo" class="project-image">
+            <div class="project-header">
+                <h3>Ansh.AI: Conversational Diary Companion</h3>
+                <span class="project-date">March 2025</span>
+            </div>
+            <div class="project-meta">
+                <span class="project-type">HackCU11</span>
+                <a href="https://github.com/sakshamk6999/HackCU11" class="project-link"><i class="fa fa-github"></i> GitHub</a>
+                <a href="https://youtu.be/1wwqeeN3aRM" class="project-link"><i class="fa fa-youtube"></i> Demo</a>
+            </div>
+            <p class="project-description">
+                Built an empathetic AI for self-reflection using LangChain and HeyGen for natural conversations. Enabled real-time memory with ChromaDB for personalized insights and pattern recognition. Developed with Python, Flask, React, and AMD Minisforum AI 370 for NPU+GPU compute.
+            </p>
+            <div class="tech-badges">
+                <span class="badge">LangChain</span>
+                <span class="badge">HeyGen</span>
+                <span class="badge">ChromaDB</span>
+                <span class="badge">Python</span>
+                <span class="badge">Flask</span>
+                <span class="badge">React</span>
+            </div>
+            <div class="project-achievement">
+                <i class="fa fa-trophy"></i> Secured 2nd Position in the AI Track of the Hackathon
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="/images/deepracer.jpg" alt="AWS DeepRacer Project" class="project-image">
+            <div class="project-header">
+                <h3>Autonomous Driving Challenge with AWS DeepRacer</h3>
+                <span class="project-date">August 2024 - December 2024</span>
+            </div>
+            <div class="project-meta">
+                <span class="project-type">University of Colorado, Boulder</span>
+                <a href="https://github.com/gyanigk/Advanced-Robotics/tree/Final-Project/FINAL_PROJECT" class="project-link"><i class="fa fa-github"></i> GitHub</a>
+            </div>
+            <p class="project-description">
+                Built a 1/18-scale autonomous vehicle using ROS 2 Humble on Raspberry Pi 4, navigating via RGB camera-based blue line following and LiDAR odometry. Applied HSV thresholding and contour detection with OpenCV for traffic sign detection, achieving ~80% stop sign accuracy, and implemented EKF SLAM for robust localization. Designed a modular ROS 2 system with nodes for camera processing, line detection, PID control, and slam_toolbox for real-time mapping and Tkinter-based telemetry visualization.
+            </p>
+            <div class="tech-badges">
+                <span class="badge">ROS 2</span>
+                <span class="badge">OpenCV</span>
+                <span class="badge">SLAM</span>
+                <span class="badge">Python</span>
+                <span class="badge">Raspberry Pi</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="/images/audio-visual.jpg" alt="Audio-Visual Correspondence Project" class="project-image">
+            <div class="project-header">
+                <h3>Audio-Visual Correspondence Task using Few Shot Learning</h3>
+                <span class="project-date">December 2021 - June 2022</span>
+            </div>
+            <div class="project-meta">
+                <span class="project-type">Supervisor: Dr. Rajdeep Chatterjee</span>
+            </div>
+            <p class="project-description">
+                Successfully reproduced the results from the "Look Listen & Learn" paper, implementing the L3Net model for audio-visual correspondence tasks using few-shot learning techniques.
+            </p>
+            <div class="tech-badges">
+                <span class="badge">Deep Learning</span>
+                <span class="badge">Few Shot Learning</span>
+                <span class="badge">Audio-Visual</span>
+                <span class="badge">Python</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="/images/lox.jpg" alt="Lox Interpreter Project" class="project-image">
+            <div class="project-header">
+                <h3>Lox: Interpreter for Python-like Language</h3>
+                <span class="project-date">2023</span>
+            </div>
+            <div class="project-meta">
+                <span class="project-type">Personal Project</span>
+                <a href="https://github.com/gyanigk/Lox" class="project-link"><i class="fa fa-github"></i> GitHub</a>
+            </div>
+            <p class="project-description">
+                Built an end-to-end interpreter that takes Python-like syntax, implementing features such as parsing, control flow, hashes, garbage collection, and superclasses.
+            </p>
+            <div class="tech-badges">
+                <span class="badge">Compiler Design</span>
+                <span class="badge">OOP</span>
+                <span class="badge">Python</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="/images/v-bikes.jpg" alt="V-BIKES Project" class="project-image">
+            <div class="project-header">
+                <h3>V-BIKES: Enhanced Safety Measures for Two-Wheeler Vehicles</h3>
+                <span class="project-date">2022</span>
+            </div>
+            <div class="project-meta">
+                <span class="project-type">IoT Project</span>
+                <a href="https://drive.google.com/file/d/1JOfyKVWSockjHTPi5B7Y7iNZmLMB-D6l/view?usp=share_link" class="project-link"><i class="fa fa-award"></i> Award</a>
+            </div>
+            <p class="project-description">
+                Developed an array of non-evasive sensors for collision detection in a helmet with end-to-end support for immediate ambulance alert and injury profile using ESP32 Kit.
+            </p>
+            <div class="tech-badges">
+                <span class="badge">IoT</span>
+                <span class="badge">ESP32</span>
+                <span class="badge">Sensors</span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Location</h5>
+                    <p>University of Colorado Boulder<br>Boulder, CO 80309</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <p><a href="mailto:gyanig.kumar@gmail.com">gyanig.kumar@gmail.com</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Education</h5>
+                    <p>M.S. Computer Science (2024)<br>B.Tech. Computer Science (2023)</p>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="text-muted">&copy; 2024 Gyanig Kumar</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        // Function to set theme
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            
+            if (theme === 'dark') {
+                themeIcon.classList.remove('fa-moon-o');
+                themeIcon.classList.add('fa-sun-o');
+            } else {
+                themeIcon.classList.remove('fa-sun-o');
+                themeIcon.classList.add('fa-moon-o');
+            }
+        }
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        setTheme(savedTheme);
+        
+        // Toggle theme
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+
+        // Listen for theme changes from other pages
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'theme') {
+                setTheme(e.newValue);
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,150 @@
+%% This BibTeX bibliography file was created using BibDesk.
+%% https://bibdesk.sourceforge.io/
+
+%% Created for ali taghibakhshi at 2023-05-04 10:53:36 -0500 
+
+
+%% Saved with string encoding Unicode (UTF-8) 
+
+
+
+@unpublished{tareqpaper,
+	abstract = {Algebraic Multigrid (AMG) methods are often robust and effective solvers for solving the large and sparse linear systems that arise from discretized PDEs and other problems, relying on heuristic graph algorithms to achieve their performance. Reduction-based AMG (AMGr) algorithms attempt to formalize these heuristics by providing two-level convergence bounds that depend concretely on properties of the partitioning of the given matrix into its fine- and coarse-grid degrees of freedom. MacLachlan and Saad (SISC 2007) proved that the AMGr method yields provably robust two-level convergence for symmetric and positive-definite matrices that are diagonally dominant, with a convergence factor bounded as a function of a coarsening parameter. However, when applying AMGr algorithms to matrices that are not diagonally dominant, not only do the convergence factor bounds not hold, but measured performance is notably degraded. Here, we present modifications to the classical AMGr algorithm that improve its performance on matrices that are not diagonally dominant, making use of strength of connection, sparse approximate inverse (SPAI) techniques, and interpolation truncation and rescaling, to improve robustness while maintaining control of the algorithmic costs. We present numerical results demonstrating the robustness of this approach for both classical isotropic diffusion problems and for non-diagonally dominant systems coming from anisotropic diffusion.
+},
+	author = {Zaman, Tareq and Nytko, Nicolas and Taghibakhshi, Ali and MacLachlan, Scott and Olson, Luke and West, Matthew},
+	date-added = {2023-04-10 17:58:29 -0500},
+	date-modified = {2023-04-10 17:58:29 -0500},
+	file = {zaman2022generalizing.pdf},
+	title = {Zaman, Tareq and Nytko, Nicolas and Taghibakhshi, Ali and MacLachlan, Scott and Olson, Luke and West, Matthew},
+	year = {2022},
+	Bdsk-Url-1 = {https://doi.org/10.1103/PhysRev.56.340}}
+
+@unpublished{hgnn_crossatt_paper,
+	abstract = {Cross-device user matching is a critical problem in numerous domains, including advertising, recommender systems, and cybersecurity. It involves identifying and linking different devices belonging to the same person, utilizing sequence logs. Previous data mining techniques have struggled to address the long-range dependencies and higherorder connections between the logs. Recently, researchers have modeled this problem as a graph problem and proposed a two-tier graph contextual embedding (TGCE) neural network architecture, which outperforms previous methods. In this paper, we propose a novel hierarchical graph neural network architecture (HGNN), which has a more computationally efficient second level design than TGCE. Furthermore, we introduce a cross-attention (Cross-Att) mechanism in our model, which improves performance by 5% compared to the state-of-the-art TGCE method.},
+	author = {Taghibakhshi, Ali and Ma, Mingyuan and Aithal, Ashwath and Yilmaz, Onur and Maron, Haggai and West, Matthew},
+	date-added = {2023-03-22 11:49:12 -0500},
+	date-modified = {2023-04-10 18:17:52 -0500},
+	file = {hgnn_crossatt_paper.pdf},
+	title = {Hierarchical Graph Neural Network with Cross-Attention for Cross-Device User Matching},
+	year = {2023},
+	Bdsk-Url-1 = {https://doi.org/10.1103/PhysRev.56.340}}
+
+@article{moravej2022study,
+	abstract = {Shape memory alloys are referred to as a group of alloys that can retrieve the permanent deformation and strain applied to them and eventually return to their original form. So far, various studies have been done to determine the behavior of these alloys under cyclic loading. Most of the studies have mainly been conducted by using the foundations of Continuum Mechanics in order to examine the properties of memory alloys. In this study, instead of using the Continuum Mechanics, a Molecular Dynamics simulation method using Lennard-Jones potential is utilized. The changes in the behavior and properties of memory alloy under cyclic loading are being examined. First, the functional form parameters for the Lennard-Jones potential are solved. Subsequently, these parameters are implemented to evaluate the response to thermal cyclic loading. The results of this study provide a better understanding of the behavior of memory alloys under cyclic loading.},
+	author = {Moravej, Seyed Amin and Taghibakhshi, Ali and Nejat Pishkenari, Hossein and Arghavani, Jamal},
+	date-added = {2023-01-28 19:09:16 -0600},
+	date-modified = {2023-01-28 19:12:36 -0600},
+	journal = {Journal of Intelligent Material Systems and Structures},
+	number = {4},
+	pages = {604--616},
+	publisher = {SAGE Publications Sage UK: London, England},
+	title = {Study of microstructural growth under cyclic martensite phase transition in shape memory alloys; A molecular dynamics approach},
+	volume = {33},
+	year = {2021}}
+
+@unpublished{nytko2022optimized,
+	abstract = {Sparse matrix representations are ubiquitous in computational science and machine learning, leading to significant reductions in compute time, in comparison to dense representation, for problems that have local connectivity. The adoption of sparse representation in leading ML frameworks such as PyTorch is incomplete, however, with support for both automatic differentiation and GPU acceleration missing. In this work, we present an implementation of a CSR-based sparse matrix wrapper for PyTorch with CUDA acceleration for basic matrix operations, as well as automatic differentiability. We also present several applications of the resulting sparse kernels to optimization problems, demonstrating ease of implementation and performance measurements versus their dense counterparts.
+},
+	author = {Nytko, Nicolas and Taghibakhshi, Ali and Zaman, Tareq Uz and MacLachlan, Scott and Olson, Luke N and West, Matt},
+	date-added = {2023-01-28 19:07:27 -0600},
+	date-modified = {2023-03-22 12:11:17 -0500},
+	file = {nytko2022optimized.pdf},
+	title = {Optimized Sparse Matrix Operations for Reverse Mode Automatic Differentiation},
+	year = {2022},
+	Bdsk-Url-1 = {https://doi.org/10.1103/PhysRev.56.340}}
+
+@unpublished{Lloyd_paper,
+	abstract = {Clustering is a commonplace problem in many areas of data science, with applications in biology and bioinformatics, understanding chemical structure, image segmentation, building
+recommender systems, and many more fields. While there are many different clustering variants (based on given distance or graph structure, probability distributions, or data density), we consider here the problem of clustering nodes in a graph, motivated by the problem of aggregating discrete degrees of freedom in multigrid and domain decomposition methods for solving sparse linear systems. Specifically, we consider the challenge of forming balanced clusters in the graph of a sparse matrix for use in algebraic multigrid, although the algorithm has general applicability. Based on an extension of the Bellman-Ford algorithm, we generalize Lloyd's algorithm for partitioning subsets of $\mathcal{R}^{n}$ to balance the number of nodes in each cluster; this is accompanied by a rebalancing algorithm that reduces the overall energy in the system. The algorithm provides control over the number of clusters and leads to ``well centered'' partitions of the graph. Theoretical results are provided to establish linear complexity and numerical results in the context of algebraic multigrid highlight the benefits of improved clustering.},
+	author = {Zaman, Tareq and Nytko, Nicolas and Taghibakhshi, Ali and MacLachlan, Scott and Olson, Luke and West, Matthew},
+	date-added = {2023-01-28 19:04:03 -0600},
+	date-modified = {2023-03-22 12:11:08 -0500},
+	file = {Lloyd_paper.pdf},
+	title = {Generalizing Lloyd's algorithm for graph clustering},
+	year = {2023},
+	Bdsk-Url-1 = {https://doi.org/10.1103/PhysRev.56.340}}
+
+@article{jdpaper,
+	abstract = {We demonstrate a successful navigation and docking control system for the John Deere Tango autonomous mower, using only a single camera as the input. This vision-only system is of interest because it is inexpensive, simple for production, and requires no external sensing. This is in contrast to existing systems that rely on integrated position sensors and global positioning system (GPS) technologies. To produce our system we combined a state-of-the-art object detection architecture, You Look Only Once (YOLO), with a reinforcement learning (RL) architecture, Double Deep Q-Networks (Double DQN). The object detection network identifies features on the mower and passes its output to the RL network, providing it with a low-dimensional representation that enables rapid and robust training. Finally, the RL network learns how to navigate the machine to the desired spot in a custom simulation environment. When tested on mower hardware, the system is able to dock with centimeter-level accuracy from arbitrary initial locations and orientations.},
+	author = {Taghibakhshi, Ali and Ogden, Nathan and West, Matthew},
+	date-added = {2023-01-28 19:00:37 -0600},
+	date-modified = {2023-01-28 19:02:40 -0600},
+	file = {jdpaper.pdf},
+	journal = {IEEE-2021 13th International Conference on Computer and Automation Engineering (ICCAE)},
+	pages = {10--14},
+	title = {Local navigation and docking of an autonomous robot mower using reinforcement learning and computer vision},
+	year = {2021},
+	Bdsk-Url-1 = {https://doi.org/10.1103/PhysRev.56.340}}
+
+@article{nejat2021study,
+	abstract = {Three independent elastic constants C11, C12, and C44 were calculated and compared using available potentials of eight different metals with FCC crystal structure; Gold, Silver, Copper, Nickel, Platinum, Palladium, Aluminum and Lead. In order to calculate the elastic constants, the second derivative of the energy density of each system was calculated with respect to different directions of strains. Each set of the elastic constants of the metals in bulk scale was compared with experimental results, and the average relative error was for each was calculated and compared with other available potentials. Then, using the Voigt-Reuss-Hill method, approximated values for Young and shear moduli and Poisson's ratio of the FCC metals in the bulk scale were found for each potential. Furthermore, to observe the surface effects on the metals in nanoscale, surface elastic constants of the thin films of the metals have been calculated. In the study of the thin films of materials in nanoscale, the number of surface atoms is considerable compared to all atoms of the object. This leads to an increase in the surface effects, which influence the elastic properties. By considering this fact and employing related definitions and equations, the properties of the thin films of the metals were calculated, and the surface effects for different crystallographic directions were compared. Subsequently, in some cases, comparisons among characteristics of the metals in the thin film and bulk material were made.},
+	author = {Nejat Pishkenari, Hossein and Barzegar, Mohammad Reza and Taghibakhshi, Ali},
+	date-added = {2023-01-28 18:59:38 -0600},
+	date-modified = {2023-01-28 19:11:43 -0600},
+	journal = {Iranian Journal of Science and Technology, Transactions of Mechanical Engineering},
+	pages = {939--960},
+	publisher = {Springer},
+	title = {Study and simulation of nanoparticle translocation through cell membrane},
+	volume = {45},
+	year = {2019}}
+
+@article{pishkenari2018determination,
+	abstract = {Three independent elastic constants C11, C12, and C44 were calculated and compared using available potentials of eight different metals with FCC crystal structure; Gold, Silver, Copper, Nickel, Platinum, Palladium, Aluminum and Lead. In order to calculate the elastic constants, the second derivative of the energy density of each system was calculated with respect to different directions of strains. Each set of the elastic constants of the metals in bulk scale was compared with experimental results, and the average relative error was for each was calculated and compared with other available potentials. Then, using the Voigt-Reuss-Hill method, approximated values for Young and shear moduli and Poisson's ratio of the FCC metals in the bulk scale were found for each potential. Furthermore, to observe the surface effects on the metals in nanoscale, surface elastic constants of the thin films of the metals have been calculated. In the study of the thin films of materials in nanoscale, the number of surface atoms is considerable compared to all atoms of the object. This leads to an increase in the surface effects, which influence the elastic properties. By considering this fact and employing related definitions and equations, the properties of the thin films of the metals were calculated, and the surface effects for different crystallographic directions were compared. Subsequently, in some cases, comparisons among characteristics of the metals in the thin film and bulk material were made.},
+	author = {Pishkenari, Hossein Nejat and Yousefi, Fartash Samie and Taghibakhshi, Ali},
+	date-added = {2023-01-28 18:50:27 -0600},
+	date-modified = {2023-01-28 18:54:26 -0600},
+	journal = {Materials Research Express},
+	number = {1},
+	pages = {015020},
+	publisher = {IOP Publishing},
+	title = {Determination of surface properties and elastic constants of FCC metals: a comparison among different EAM potentials in thin film and bulk scale},
+	volume = {6},
+	year = {2018}}
+
+@article{taghibakhshi2022learning,
+	abstract = {Formulas have been developed to calculate the forces in a molecular system directly, rather than indirectly through the agency of energy. This permits an independent calculation of the slope of the curves of energy vs. position of the nuclei, and may thus increase the accuracy, or decrease the labor involved in the calculation of these curves. The force on a nucleus in an atomic system is shown to be just the classical electrostatic force that would be exerted on this nucleus by other nuclei and by the electrons' charge distribution. Qualitative implications of this are discussed.},
+	author = {Taghibakhshi, Ali and Nytko, Nicolas and Zaman, Tareq and MacLachlan, Scott and Olson, Luke and West, Matthew},
+	date-added = {2023-01-28 18:46:43 -0600},
+	date-modified = {2023-01-28 18:46:43 -0600},
+	file = {neurips2022.pdf},
+	journal = {Advances in neural information processing systems (NeurIPS 2022)},
+	title = {Learning interface conditions in domain decomposition solvers},
+	year = {2022},
+	Bdsk-Url-1 = {https://doi.org/10.1103/PhysRev.56.340}}
+
+@article{taghibakhshi2021optimization,
+	abstract = {Large sparse linear systems of equations are ubiquitous in science and engineering, such as those arising from discretizations of partial differential equations. Algebraic multigrid (AMG) methods are one of the most common methods of solving such linear systems, with an extensive body of underlying mathematical theory. A system of linear equations defines a graph on the set of unknowns and each level of a multigrid solver requires the selection of an appropriate coarse graph along with restriction and interpolation operators that map to and from the coarse representation. The efficiency of the multigrid solver depends critically on this selection and many selection methods have been developed over the years. Recently, it has been demonstrated that it is possible to directly learn the AMG interpolation and restriction operators, given a coarse graph selection. In this paper, we consider the complementary problem of learning to coarsen graphs for a multigrid solver, a necessary step in developing fully learnable AMG methods. We propose a method using a reinforcement learning (RL) agent based on graph neural networks (GNNs), which can learn to perform graph coarsening on small planar training graphs and then be applied to unstructured large planar graphs, assuming bounded node degree. We demonstrate that this method can produce better coarse graphs than existing algorithms, even as the graph size increases and other properties of the graph are varied. We also propose an efficient inference procedure for performing graph coarsening that results in linear time complexity in graph size.
+},
+	author = {Taghibakhshi, Ali and MacLachlan, Scott and Olson, Luke and West, Matthew},
+	date-added = {2023-01-28 18:38:09 -0600},
+	date-modified = {2023-01-28 18:47:15 -0600},
+	file = {neurips2021.pdf},
+	journal = {Advances in neural information processing systems (NeurIPS 2021)},
+	title = {Optimization-based algebraic multigrid coarsening using reinforcement learning},
+	year = {2021},
+	Bdsk-Url-1 = {https://doi.org/10.1103/PhysRev.56.340}}
+
+@article{mggnn,
+	abstract = {Domain decomposition methods (DDMs) are pop- ular solvers for discretized systems of partial dif- ferential equations (PDEs), with one-level and multilevel variants. These solvers rely on several algorithmic and mathematical parameters, pre- scribing overlap, subdomain boundary conditions, and other properties of the DDM. While some work has been done on optimizing these param- eters, it has mostly focused on the one-level set- ting or special cases such as structured-grid dis- cretizations with regular subdomain construction. In this paper, we propose multigrid graph neural networks (MG-GNN), a novel GNN architecture for learning optimized parameters in two-level DDMs. We train MG-GNN using a new unsuper- vised loss function, enabling effective training on small problems that yields robust performance on unstructured grids that are orders of magnitude larger than those in the training set. We show that MG-GNN outperforms popular hierarchical graph network architectures for this optimization and that our proposed loss function is critical to achieving this improved performance.
+},
+	author = {Taghibakhshi, Ali and Nytko, Nicolas and Zaman, Tareq and MacLachlan, Scott and Olson, Luke and West, Matthew},
+	date-modified = {2023-05-04 10:53:10 -0500},
+	file = {mggnn.pdf},
+	journal = {International Conference on Machine Learning (ICML 2023).},
+	read = {0},
+	title = {MG-GNN: Multigrid Graph Neural Networks for Learning Multilevel Domain Decomposition Methods},
+	year = {2023},
+	Bdsk-Url-1 = {https://doi.org/2006.08594}}
+
+@article{taghibakhshi2019three,
+	abstract = {Microfluidic cell culture platforms are ideal candidates for modeling the native tumor microenvironment because they can precisely reconstruct in vivo cellular behavior. Moreover, mathematical modeling of tumor growth can pave the way toward description and prediction of growth pattern as well as improving cancer treatment. In this study, a modified mathematical model based on concentration distribution is applied to tumor growth in both conventional static culture and dynamic microfluidic cell culture systems. Apoptosis and necrosis mechanisms are considered as the main inhibitory factors in the model, while tumor growth rate and nutrient consumption rate are modified in both quiescent and proliferative zones. We show that such modification can better predict the experimental results of tumor growth reported in the literature. Using numerical simulations, the effects of the concentrations of the nutrients as well as the initial tumor radius on the tumor growth are investigated and discussed. Furthermore, tumor growth is simulated by taking into account the dynamic perfusion into the proposed model. Subsequently, tumor growth kinetics in a three-dimensional (3D) microfluidic device containing a U-shaped barrier is numerically studied. For this case, the effect of the flow rate of culture medium on tumor growth is investigated as well. Finally, to evaluate the impact of the trap geometry on the tumor growth, a comparison is made between the tumor growth kinetics in two frequently used traps in microfluidic cell culture systems, i.e., the U-shaped barrier and microwell structures. The proposed model can provide insight into better predicting the growth and development of avascular tumor in both static and dynamic cell culture platforms.},
+	author = {Taghibakhshi, Ali and Barisam, Maryam and Saidi, Mohammad Said and Kashaninejad, Navid and Nguyen, Nam-Trung},
+	date-modified = {2023-01-28 19:02:58 -0600},
+	file = {micromachines.pdf},
+	journal = {Micromachines},
+	number = {9},
+	pages = {580},
+	title = {Three-dimensional modeling of avascular tumor growth in both static and dynamic culture platforms},
+	volume = {10},
+	year = {2019},
+	Bdsk-Url-1 = {https://doi.org/10.1103/PhysRev.56.340}}
