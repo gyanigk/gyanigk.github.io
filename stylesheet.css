@@ -140,3 +140,71 @@ span.highlight {
     display: inline-block;
     border-radius: 10px;
 }
+
+/* Photography carousel */
+.photo-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 8px auto 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.photo-slides {
+  position: relative;
+  width: 100%;
+}
+
+.photo-slide {
+  display: none;
+}
+
+.photo-slide.active {
+  display: block;
+}
+
+.photo-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.photo-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+.photo-prev { left: 10px; }
+.photo-next { right: 10px; }
+
+.photo-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.photo-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.6);
+  cursor: pointer;
+}
+
+.photo-dot.active {
+  background: rgba(255,255,255,0.95);
+}

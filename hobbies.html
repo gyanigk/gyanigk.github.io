@@ -50,7 +50,23 @@
         <td style="padding:8px;width:80%;vertical-align:middle">
           <strong>Music Composition</strong> - Original compositions including "Urban Nest" (2024), exploring contemporary soundscapes. *Courtesey of Google Gemini Nano Bana for thumbnail image.
           <br>
-          <a href="https://youtu.be/WH5Owrevtzg">Performance video</a>
+          <a href="music/compositions/urban nest.mp4">Download/Play MP4</a>
+          <br>
+          <video width="480" controls poster="images/urban-nest.png" style="max-width:100%;margin-top:8px">
+            <source src="music/compositions/urban nest.mp4" type="video/mp4">
+          </video>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+          <div class="colored-box" style="background-color: #a9c9b8;">
+            <h2>Band Performances</h2>
+          </div>
+        </td>
+        <td style="padding:8px;width:80%;vertical-align:middle">
+          Live and recorded body performance videos. I will add new videos below as they are produced.
+          <a href="https://youtu.be/WH5Owrevtzg">Performance video (YouTube)</a> ·
         </td>
       </tr>
 
@@ -60,6 +76,28 @@
         </td>
         <td style="padding:8px;width:80%;vertical-align:middle">
           <strong>Photography</strong> - Landscape and nature photography, capturing moments from hiking trails and mountain vistas
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="padding:8px;width:100%;vertical-align:middle">
+          <div class="photo-carousel" aria-label="Photography carousel">
+            <button class="photo-nav photo-prev" aria-label="Previous slide">&#10094;</button>
+            <button class="photo-nav photo-next" aria-label="Next slide">&#10095;</button>
+            <div class="photo-slides">
+              <div class="photo-slide active"><img src="images/photos/landscape0.jpg" alt="Mountain landscape by the lake"></div>
+              <div class="photo-slide"><img src="images/photos/mountain0.jpg" alt="Snowy mountain peak"></div>
+              <div class="photo-slide"><img src="images/photos/mountain2.jpg" alt="Mountain range at dusk"></div>
+              <div class="photo-slide"><img src="images/photos/twinlake.jpg" alt="Twin lakes at sunrise"></div>
+              <div class="photo-slide"><img src="images/photos/rushmore-2.jpg" alt="Mount Rushmore view"></div>
+            </div>
+            <div class="photo-dots" role="tablist" aria-label="Slide dots">
+              <button class="photo-dot active" aria-label="Go to slide 1" role="tab"></button>
+              <button class="photo-dot" aria-label="Go to slide 2" role="tab"></button>
+              <button class="photo-dot" aria-label="Go to slide 3" role="tab"></button>
+              <button class="photo-dot" aria-label="Go to slide 4" role="tab"></button>
+              <button class="photo-dot" aria-label="Go to slide 5" role="tab"></button>
+            </div>
+          </div>
         </td>
       </tr>
 
@@ -84,5 +122,52 @@
 
   </body>
 </html>
+
+<script>
+// Minimal, dependency-free carousel
+(function() {
+  var container = document.querySelector('.photo-carousel');
+  if (!container) return;
+  var slides = Array.prototype.slice.call(container.querySelectorAll('.photo-slide'));
+  var dots = Array.prototype.slice.call(container.querySelectorAll('.photo-dot'));
+  var prevBtn = container.querySelector('.photo-prev');
+  var nextBtn = container.querySelector('.photo-next');
+  var current = 0;
+  var timer = null;
+  var INTERVAL_MS = 4000;
+
+  function show(index) {
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = index;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function next() { show(current + 1); }
+  function prev() { show(current - 1); }
+
+  function start() {
+    stop();
+    timer = setInterval(next, INTERVAL_MS);
+  }
+  function stop() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+
+  nextBtn.addEventListener('click', function() { next(); start(); });
+  prevBtn.addEventListener('click', function() { prev(); start(); });
+  dots.forEach(function(dot, i) {
+    dot.addEventListener('click', function() { show(i); start(); });
+  });
+
+  container.addEventListener('mouseenter', stop);
+  container.addEventListener('mouseleave', start);
+
+  start();
+})();
+</script>
 
 
