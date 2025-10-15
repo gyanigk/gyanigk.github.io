@@ -1,714 +1,421 @@
-<!DOCTYPE html>
-<html>
-
+<!DOCTYPE HTML>
+<html lang="en">
   <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <title>Gyanig Kumar</title>
-  <meta name="description" content="Personal Webpage of Gyanig Kumar">
-  <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/">
-  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-  <link rel="shortcut icon" type="image/svg+xml" href="/images/favicon.svg">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Gyanig Kumar</title>
 
-  <style>
-    :root {
-        /* Light theme (default) */
-        --bg-color: #ffffff;
-        --text-color: #2d3436;
-        --navbar-bg: #ffffff;
-        --card-bg: #ffffff;
-        --card-border: #f1f2f6;
-        --card-shadow: rgba(0,0,0,0.05);
-        --link-color: #0984e3;
-        --link-hover: #74b9ff;
-        --footer-bg: #f8f9fa;
-        --badge-bg: #f1f2f6;
-        --badge-text: #2d3436;
-        --badge-border: #dfe6e9;
-        --heading-color: #2d3436;
-        --muted-color: #636e72;
-    }
-
-    [data-theme="dark"] {
-        --bg-color: #1a1a1a;
-        --text-color: #dfe6e9;
-        --navbar-bg: #2d3436;
-        --card-bg: #2d3436;
-        --card-border: #353b48;
-        --card-shadow: rgba(0,0,0,0.2);
-        --link-color: #74b9ff;
-        --link-hover: #0984e3;
-        --footer-bg: #2d3436;
-        --badge-bg: #353b48;
-        --badge-text: #dfe6e9;
-        --badge-border: #2d3436;
-        --heading-color: #dfe6e9;
-        --muted-color: #b2bec3;
-    }
-
-    body { 
-        font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-        line-height: 1.7;
-        color: var(--text-color);
-        background-color: var(--bg-color);
-        transition: background-color 0.3s, color 0.3s;
-        font-size: 1.1rem;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-        color: var(--heading-color);
-        font-weight: 600;
-        line-height: 1.4;
-        margin-bottom: 1.5rem;
-    }
-
-    .navbar {
-        box-shadow: 0 2px 8px var(--card-shadow);
-        background-color: var(--navbar-bg) !important;
-        padding: 1rem 0;
-    }
-
-    .navbar-brand {
-        font-weight: 600;
-        font-size: 1.4rem;
-    }
-
-    .nav-link {
-        font-weight: 500;
-        padding: 0.5rem 1rem !important;
-        transition: color 0.2s;
-    }
-
-    .jumbotron {
-        background-color: var(--card-bg);
-        border: 1px solid var(--card-border);
-        border-radius: 12px;
-        padding: 2.5rem;
-        margin-bottom: 2.5rem;
-        box-shadow: 0 4px 6px var(--card-shadow);
-    }
-
-    .social-icons a {
-        color: var(--text-color);
-        margin: 0 12px;
-        font-size: 1.3rem;
-        transition: color 0.2s, transform 0.2s;
-    }
-
-    .social-icons a:hover {
-        color: var(--link-color);
-        transform: translateY(-2px);
-    }
-
-    .profile-img {
-        width: 220px;
-        height: 220px;
-        border-radius: 50%;
-        margin-bottom: 1.5rem;
-        object-fit: cover;
-        border: 4px solid var(--card-border);
-        box-shadow: 0 4px 8px var(--card-shadow);
-    }
-
-    .bio {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 1.5rem;
-        font-size: 1.15rem;
-    }
-
-    .text-muted {
-        color: var(--muted-color) !important;
-    }
-
-    .footer {
-        background-color: var(--footer-bg);
-        padding: 3rem 0;
-        margin-top: 4rem;
-        border-top: 1px solid var(--card-border);
-    }
-
-    .theme-toggle {
-        background: none;
-        border: none;
-        color: var(--text-color);
-        cursor: pointer;
-        padding: 0.5rem;
-        margin-left: 1rem;
-        font-size: 1.3rem;
-        transition: color 0.2s, transform 0.2s;
-    }
-
-    .theme-toggle:hover {
-        color: var(--link-color);
-        transform: rotate(15deg);
-    }
-
-    .list-unstyled li {
-        margin-bottom: 1.5rem;
-        padding-left: 1.5rem;
-        position: relative;
-    }
-
-    .list-unstyled li:before {
-        content: "•";
-        position: absolute;
-        left: 0;
-        color: var(--link-color);
-    }
-
-    a {
-        color: var(--link-color);
-        text-decoration: none;
-        transition: color 0.2s;
-    }
-
-    a:hover {
-        color: var(--link-hover);
-        text-decoration: none;
-    }
-
-    .news-year {
-        cursor: pointer;
-        padding: 0.5rem 1rem;
-        margin-bottom: 0.5rem;
-        border-radius: 8px;
-        background-color: var(--card-bg);
-        border: 1px solid var(--card-border);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: all 0.2s ease;
-    }
-
-    .news-year:hover {
-        background-color: var(--badge-bg);
-    }
-
-    .news-year h4 {
-        margin: 0;
-        font-size: 1.2rem;
-        color: var(--heading-color);
-    }
-
-    .news-year i {
-        transition: transform 0.3s ease;
-    }
-
-    .news-year.active i {
-        transform: rotate(180deg);
-    }
-
-    .news-items {
-        padding: 0.5rem 1rem;
-        margin-bottom: 1rem;
-        display: none;
-    }
-
-    .news-item {
-        padding: 0.75rem 0;
-        border-bottom: 1px solid var(--card-border);
-    }
-
-    .news-item:last-child {
-        border-bottom: none;
-    }
-
-    .news-date {
-        color: var(--muted-color);
-        font-size: 0.9rem;
-        margin-bottom: 0.25rem;
-    }
-
-    .news-content {
-        color: var(--text-color);
-        font-size: 1rem;
-        line-height: 1.5;
-    }
-
-    .news-link {
-        color: var(--link-color);
-        text-decoration: none;
-        margin-left: 0.5rem;
-    }
-
-    .news-link:hover {
-        color: var(--link-hover);
-    }
-
-    /* Parallax styles */
-    .parallax-header {
-        position: relative;
-        height: 100vh;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('/images/mountains-landscape-sunset-background-with-lake-sunlit-dark-peaks-flat-vector-illustration.jpg');
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: -76px; /* Offset for navbar height */
-        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .parallax-content {
-        text-align: center;
-        color: white;
-        padding: 2.5rem;
-        background-color: rgba(0, 0, 0, 0.25);
-        border-radius: 20px;
-        backdrop-filter: blur(8px);
-        max-width: 800px;
-        margin: 0 auto;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
-    }
-
-    .parallax-content h1 {
-        font-size: 4rem;
-        margin-bottom: 1rem;
-        color: white;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        font-weight: 600;
-    }
-
-    .parallax-content p {
-        font-size: 1.6rem;
-        margin-bottom: 2rem;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-        opacity: 0.9;
-    }
-
-    .parallax-social-icons {
-        margin-top: 2.5rem;
-    }
-
-    .parallax-social-icons a {
-        color: white;
-        margin: 0 18px;
-        font-size: 2rem;
-        transition: transform 0.3s ease, color 0.3s ease;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    }
-
-    .parallax-social-icons a:hover {
-        color: var(--link-color);
-        transform: translateY(-5px) scale(1.1);
-    }
-
-    @media (max-width: 768px) {
-        .parallax-header {
-            background-attachment: scroll;
-            height: 90vh;
-        }
-        .parallax-content h1 {
-            font-size: 2.8rem;
-        }
-        .parallax-content p {
-            font-size: 1.3rem;
-        }
-        .parallax-social-icons a {
-            font-size: 1.8rem;
-            margin: 0 15px;
-        }
-    }
-
-    /* Smooth scroll behavior */
-    html {
-        scroll-behavior: smooth;
-    }
-
-    /* Page transition effects */
-    .page-transition {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: var(--bg-color);
-        transform: translateX(100%);
-        z-index: 1000;
-        pointer-events: none;
-        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .page-transition.active {
-        transform: translateX(0);
-    }
-
-    .page-transition.exit {
-        transform: translateX(-100%);
-    }
-
-    /* Navigation link effects */
-    .nav-link {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .nav-link::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: var(--link-color);
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-    }
-
-    .nav-link:hover::after {
-        transform: translateX(0);
-    }
-  </style>
-
-  <link rel="preconnect" href="https://player.vimeo.com">
-  <link rel="preconnect" href="https://i.vimeocdn.com">
-  <link rel="preconnect" href="https://f.vimeocdn.com">
-
-<!-- Google Analytics (original) -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', '', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-<!-- Global site tag (gtag.js) - Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', '');
-</script>
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','');</script>
-<!-- End Google Tag Manager -->
-
-</head>
-
-<body class="parallax-wrapper">
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id="
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-<nav class="navbar sticky-top navbar-expand-md navbar-light bg-white">
-    <div class="container">
-        <a class="navbar-brand" href="/">Gyanig Kumar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="/publications">Publications</a></li>
-                <li class="nav-item"><a class="nav-link" href="/research">Research</a></li>
-                <li class="nav-item"><a class="nav-link" href="/projects">Projects</a></li>
-                <li class="nav-item"><a class="nav-link" href="/teaching">Teaching</a></li>
-                <li class="nav-item"><a class="nav-link" href="/experiences">Experiences</a></li>
-                <li class="nav-item"><a class="nav-link" href="/hobbies">Hobbies</a></li>
-                <li class="nav-item">
-                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                        <i class="fa fa-moon-o"></i>
-                    </button>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<div class="parallax-header">
-    <div class="parallax-content">
-        <h1>Gyanig Kumar</h1>
-        <p>Master's Student in Computer Science<br>University of Colorado, Boulder</p>
-        <div class="parallax-social-icons">
-            <a href="mailto:gyanig.kumar@gmail.com"><i class="fa fa-envelope"></i></a>
-            <a href="/cv/gyanigk_Resume.pdf"><i class="ai ai-cv"></i></a>
-            <a href="https://scholar.google.com/citations?user=g1kxkMUAAAAJ&hl=en"><i class="ai ai-google-scholar"></i></a>
-            <a href="https://github.com/gyanigk"><i class="fa fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/gyanig-k-b36666146"><i class="fa fa-linkedin"></i></a>
-        </div>
-    </div>
-</div>
-
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-lg-4">
-            <div class="profile-section">
-                <img src="/images/headshot.jpg" alt="Gyanig Kumar" class="profile-img">
-                <h2>Gyanig Kumar</h2>
-                <p class="text-muted">Master's Student in Computer Science<br>University of Colorado, Boulder</p>
-                <div class="social-icons">
-                    <a href="mailto:gyanig.kumar@gmail.com"><i class="fa fa-envelope fa-lg"></i></a>
-                    <a href="/cv/gyanigk_resume.pdf"><i class="ai ai-cv ai-lg"></i></a>
-                    <a href="https://scholar.google.com/citations?user=g1kxkMUAAAAJ&hl=en"><i class="ai ai-google-scholar ai-lg"></i></a>
-                    <a href="https://github.com/gyanigk"><i class="fa fa-github fa-lg"></i></a>
-                    <a href="https://www.linkedin.com/in/gyanig-k-b36666146"><i class="fa fa-linkedin fa-lg"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-8">
-            <div class="bio">
-                <p>I am a computer science enthusiast focused on deep learning and research in academia. Currently pursuing my master's studies at the University of Colorado, Boulder, I'm passionate about computer vision and human-computer interactions.</p>
-
-                <p>My research journey began at IISc Bangalore under <a href="https://cambum.net/PB/">Prof. Pradipta Biswas</a>, where I spent two enriching years as a research assistant. My interests lie in Object Detection, Collaborative Robotics, and advanced deep learning methodologies.</p>
-
-                <p>I actively explore and implement cutting-edge technologies including Domain Adaptation, Self-Supervised Learning, Graph Neural Networks, and Inverse-Reinforcement-Learning. Beyond research, I serve as a part-time graduate studies teacher for mathematics at PTC, Suriname.</p>
-            </div>
-            <div class="mt-5">
-                <h4>Recent Updates</h4>
-                
-                <div class="news-year" onclick="toggleYear('2025')">
-                    <h4>2025</h4>
-                    <i class="fa fa-chevron-down"></i>
-                </div>
-                <div class="news-items" id="2025">
-                    <div class="news-item">
-                        <div class="news-date">March 2025</div>
-                        <div class="news-content">
-                            Secured 2nd position in the AI Track at HackCU11 for developing Ansh.AI, a conversational diary companion using LangChain and HeyGen.
-                            <a href="https://github.com/sakshamk6999/HackCU11" class="news-link">
-                                <i class="fa fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="news-item">
-                        <div class="news-date">January 2025</div>
-                        <div class="news-content">
-                            Started as Course Manager for CSCI 3302 (Introduction to Robotics) at University of Colorado Boulder, managing course logistics for 120 students.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="news-year" onclick="toggleYear('2024')">
-                    <h4>2024</h4>
-                    <i class="fa fa-chevron-down"></i>
-                </div>
-                <div class="news-items" id="2024">
-                    <div class="news-item">
-                        <div class="news-date">October 2024</div>
-                        <div class="news-content">
-                            Presented research on End-to-end Frame-to-gaze estimation at ACM IUI 2024.
-                            <a href="https://drive.google.com/file/d/1CCspKUBVGH6mj887ZQ8j9TIP6-brjbum/view?usp=sharing" class="news-link">
-                                <i class="fa fa-file-pdf-o"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="news-item">
-                        <div class="news-date">October 2024</div>
-                        <div class="news-content">
-                            Full Paper under review at ACM IUI 2025: "Comparing Computer Vision Models for Low Resource Dataset to Develop a Mixed Reality based Manual Assembly Assistant"
-                        </div>
-                    </div>
-                    <div class="news-item">
-                        <div class="news-date">October 2024</div>
-                        <div class="news-content">
-                            Full Paper accepted at ICTTVS 2024: "A Comparative Study on Image Translation GAN Models to improve Object Detection Accuracy on Low-Resource Domains"
-                        </div>
-                    </div>
-                    <div class="news-item">
-                        <div class="news-date">September 2024</div>
-                        <div class="news-content">
-                            Started research at CAIRO HCI Lab under Prof. Bradley Hayes, working on human intent recognition using POMDP-based algorithms.
-                        </div>
-                    </div>
-                    <div class="news-item">
-                        <div class="news-date">August 2024</div>
-                        <div class="news-content">
-                            Paper accepted at IEEE ICRA 2024: "Enhanced Human-Robot Collaboration with Intent Prediction using Deep-IRL"
-                        </div>
-                    </div>
-                    <div class="news-item">
-                        <div class="news-date">April 2024</div>
-                        <div class="news-content">
-                            Paper accepted at ACM IUI 2024: "Multimodal Target Prediction for Rapid Human-Robot Interaction"
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<footer class="footer mt-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h5>Location</h5>
-                <p>University of Colorado Boulder<br>Boulder, CO 80309</p>
-            </div>
-            <div class="col-md-4">
-                <h5>Contact</h5>
-                <p><a href="mailto:gyanig.kumar@gmail.com">gyanig.kumar@gmail.com</a></p>
-            </div>
-            <div class="col-md-4">
-                <h5>Education</h5>
-                <p>M.S. Computer Science (2024)<br>B.Tech. Computer Science (2023)</p>
-            </div>
-        </div>
-        <div class="text-center mt-4">
-            <p class="text-muted">&copy; 2024 Gyanig Kumar</p>
-        </div>
-    </div>
-</footer>
-
-<script src="/assets/javascript/bootstrap/jquery.min.js"></script>
-<script src="/assets/javascript/bootstrap/bootstrap.bundle.min.js"></script>
-<script>
-    // Theme toggle functionality
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = themeToggle.querySelector('i');
+    <meta name="author" content="Gyanig Kumar">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
     
-    // Function to set theme
-    function setTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-        
-        if (theme === 'dark') {
-            themeIcon.classList.remove('fa-moon-o');
-            themeIcon.classList.add('fa-sun-o');
-        } else {
-            themeIcon.classList.remove('fa-sun-o');
-            themeIcon.classList.add('fa-moon-o');
-        }
-    }
-    
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    setTheme(savedTheme);
-    
-    // Toggle theme
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
-    });
+  </head>
 
-    // Listen for theme changes from other pages
-    window.addEventListener('storage', (e) => {
-        if (e.key === 'theme') {
-            setTheme(e.newValue);
-        }
-    });
+  <body>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr>
+        <td style="padding:16px;text-align:center">
+          <a href="index.html">Home</a> &nbsp;/&nbsp;
+          <a href="projects.html">Projects</a> &nbsp;/&nbsp;
+          <a href="hobbies.html">Hobbies</a>
+        </td>
+      </tr>
+    </tbody></table>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr style="padding:0px">
+              <td style="padding:2.5%;width:63%;vertical-align:middle">
+                <p class="name" style="text-align: center;">
+                  Gyanig Kumar
+                </p>
+                <p>
+		I'm a Master's student in Computer Science at the <a href="https://www.colorado.edu/">University of Colorado Boulder</a>, focusing on Human-Robot Interactions and Computer Vision research. Currently, I am advised by <a href="https://www.colorado.edu/ics/bradley-hayes">Prof. Bradley Hayes</a> and <a href="https://www.colorado.edu/ics/alessandro-roncone">Prof. Alessandro Roncone</a>, working on in-context learning, VLM frameworks and multimodal interaction for human intent recognition.
+		I am developing a Vision-Language Framework that aligns human gaze(explicit cues) to enable adaptive and efficient robotic task planning in shared autonomy settings. In the past year, I worked on Active Preference Learning(APreL) for improving rewards using human-in-the-loop scenarios. I worked with various robotic platforms for these projects which includes 7-DoF manipulator robots(Sawyer) and Quadrupedal Robot(UnitreeGo1).
+    I started my research journey as a Research Assistant at the <a href="https://www.iisc.ac.in/">Indian Institute of Science (IISc) Bangalore</a> under supervision of<a href="https://cambum.net/PB/">Prof. Pradipta Biswas</a>. I developed gaze-tracking systems for automotive heads-up displays and applied Inverse Reinforcement Learning(IRL) to improve user intent prediction in robotic tasks such as pick-and-place and human-robot collaboration.
+		Over the years, I have developed proficiency in Gaze Estimation,Object Detection & Tracking, Collaborative Robotics(cobots) research, Self-Supervised Learning, XR-device development, and Reinforcement-Learning. I've published papers at top-tier conferences including ACM IUI and IEEE ICRA.
+                </p>
+                <p style="text-align:center">
+                  <a href="mailto:gyanig.kumar@gmail.com">Email</a> &nbsp;/&nbsp;
+                  <a href="cv/kumar_gyanig_CV.pdf">CV</a> &nbsp;/&nbsp;
+                  <a href="https://scholar.google.com/citations?user=g1kxkMUAAAAJ&hl=en">Scholar</a> &nbsp;/&nbsp;
+                  <a href="https://github.com/gyanigk">Github</a> &nbsp;/&nbsp;
+                  <a href="https://www.linkedin.com/in/gyanig-k-b36666146">LinkedIn</a>
+                </p>
+              </td>
+              <td style="padding:2.5%;width:37%;max-width:37%">
+                <a href="images/headshot.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/headshot.jpg" class="hoverZoomLink"></a>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+              <td style="padding:16px;width:100%;vertical-align:middle">
+                <h2>Research</h2>
+                <p>
+                  I'm interested in perception problems in robotics, especially in human-robot collaboration. Most of my research focuses on enhancing deep learning models, Modelling human intent recognition, developing multimodal frameworks. My contributions spans from automotive applications to mixed reality systems to robot planning. Some published papers are <span class="highlight">highlighted</span> and the some are currently under review.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-    // Function to toggle year sections
-    function toggleYear(year) {
-        const yearHeader = document.querySelector(`.news-year[onclick*="${year}"]`);
-        const items = document.getElementById(year);
-        const icon = yearHeader.querySelector('i');
-        
-        // Toggle active class on header
-        yearHeader.classList.toggle('active');
-        
-        // Toggle display of items
-        if (items.style.display === "none" || !items.style.display) {
-            items.style.display = "block";
-        } else {
-            items.style.display = "none";
-        }
-    }
+    <!-- 2025 Publications -->
+    <tr>
+      <td colspan="2" style="padding:20px 16px 10px 16px;width:100%;vertical-align:middle">
+        <h3 style="margin:0;color:#1772d0;font-size:18px;font-weight:bold;">2025</h3>
+      </td>
+    </tr>
 
-    // Show the most recent year by default
-    document.addEventListener('DOMContentLoaded', function() {
-        toggleYear('2025');
-    });
+    <tr onmouseout="thri2025_stop()" onmouseover="thri2025_start()" bgcolor="#ffffd0">
+      <td style="padding:16px;width:20%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='thri2025_image'>
+            <img src='images/thri-cobots.jpg' width="160">
+          </div>
+          <img src='images/thri-cobots.jpg' width="160">
+        </div>
+        <script type="text/javascript">
+          function thri2025_start() {
+            document.getElementById('thri2025_image').style.opacity = "1";
+          }
+          function thri2025_stop() {
+            document.getElementById('thri2025_image').style.opacity = "0";
+          }
+          thri2025_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="#">
+          <span class="papertitle">Investigating Inverse Reinforcement Learning during Rapid Aiming Movement in Extended Reality and Human-Robot Interaction</span>
+        </a>
+        <br>
+        Mukund Mitra, <strong>Gyanig Kumar</strong>, P.P. Chakraborty, Pradipta Biswas
+        <br>
+        <em>ACM Transactions on Human-Robot Interaction (THRI)</em>, 2025
+        <br>
+        <a href="#">paper</a>
+        <p></p>
+        <p>
+        Investigation of inverse reinforcement learning techniques for rapid aiming movements in extended reality and human-robot interaction scenarios.
+        </p>
+      </td>
+    </tr>
 
-    // Enhanced parallax effect with horizontal transitions
-    document.addEventListener('DOMContentLoaded', function() {
-        const parallaxHeader = document.querySelector('.parallax-header');
-        const parallaxContent = document.querySelector('.parallax-content');
-        const navLinks = document.querySelectorAll('.nav-link');
-        let lastScrollPosition = 0;
-        let ticking = false;
+    <tr onmouseout="discover2025_stop()" onmouseover="discover2025_start()">
+      <td style="padding:16px;width:20%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='discover2025_image'>
+            <img src='images/mr-assembly.jpg' width="160">
+          </div>
+          <img src='images/mr-assembly.jpg' width="160">
+        </div>
+        <script type="text/javascript">
+          function discover2025_start() {
+            document.getElementById('discover2025_image').style.opacity = "1";
+          }
+          function discover2025_stop() {
+            document.getElementById('discover2025_image').style.opacity = "0";
+          }
+          discover2025_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="#">
+          <span class="papertitle">Comparing computer vision models for low resource dataset to develop a mixed reality based manual assembly assistant</span>
+        </a>
+        <br>
+        Subin Raj, Bikram Karmakar, <strong>Gyanig Kumar</strong>, A. Mukhopadhyay, Rohit Chandrahas, Pradipta Biswas
+        <br>
+        <em>Discover Robotics</em>, 2025
+        <br>
+        <a href="#">paper</a>
+        <p></p>
+        <p>
+        Comparative study of computer vision models for developing mixed reality-based manual assembly assistance systems with low-resource datasets.
+        </p>
+      </td>
+    </tr>
 
-        // Create page transition element
-        const pageTransition = document.createElement('div');
-        pageTransition.className = 'page-transition';
-        document.body.appendChild(pageTransition);
+    <!-- 2024 Publications -->
+    <tr>
+      <td colspan="2" style="padding:20px 16px 10px 16px;width:100%;vertical-align:middle">
+        <h3 style="margin:0;color:#1772d0;font-size:18px;font-weight:bold;">2024</h3>
+      </td>
+    </tr>
 
-        // Vertical parallax on scroll
-        window.addEventListener('scroll', function() {
-            lastScrollPosition = window.pageYOffset;
-            if (!ticking) {
-                window.requestAnimationFrame(function() {
-                    if (window.innerWidth > 768) {
-                        parallaxHeader.style.backgroundPositionY = (lastScrollPosition * 0.5) + 'px';
-                    }
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        });
+    <tr onmouseout="iui2024_stop()" onmouseover="iui2024_start()" bgcolor="#ffffd0">
+      <td style="padding:16px;width:20%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='iui2024_image'>
+            <img src='images/multimodal-cobots.jpg' width="160">
+          </div>
+          <img src='images/multimodal-cobots.jpg' width="160">
+        </div>
+        <script type="text/javascript">
+          function iui2024_start() {
+            document.getElementById('iui2024_image').style.opacity = "1";
+          }
+          function iui2024_stop() {
+            document.getElementById('iui2024_image').style.opacity = "0";
+          }
+          iui2024_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="https://dl.acm.org/doi/abs/10.1145/3640544.3645229">
+          <span class="papertitle">Multimodal Target Prediction for Rapid Human-Robot Interaction</span>
+        </a>
+        <br>
+        Mukund Mitra, A.A. Patil, G. Mothish, <strong>Gyanig Kumar</strong>, A. Mukhopadhyay, L.R.D. Murthy, P.P. Chakraborty, Pradipta Biswas
+        <br>
+        <em>29th ACM Conference on Intelligent User Interfaces (ACM IUI)</em>, 2024
+        <br>
+        <a href="https://dl.acm.org/doi/abs/10.1145/3640544.3645229">paper</a>
+        <p></p>
+        <p>
+        A multimodal approach for predicting human intent in robotic pick-and-place tasks using gaze tracking and deep learning.
+        </p>
+      </td>
+    </tr>
 
-        // Handle navigation clicks
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = this.getAttribute('href');
-                
-                // Don't transition if it's the current page
-                if (target === window.location.pathname) return;
+    <tr onmouseout="icra2024_stop()" onmouseover="icra2024_start()">
+      <td style="padding:16px;width:20%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='icra2024_image'>
+            <img src='images/irl-cobots.jpg' width="160">
+          </div>
+          <img src='images/irl-cobots.jpg' width="160">
+        </div>
+        <script type="text/javascript">
+          function icra2024_start() {
+            document.getElementById('icra2024_image').style.opacity = "1";
+          }
+          function icra2024_stop() {
+            document.getElementById('icra2024_image').style.opacity = "0";
+          }
+          icra2024_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="https://ieeexplore.ieee.org/abstract/document/10610595">
+          <span class="papertitle">Enhanced Human-Robot Collaboration with Intent Prediction using Deep-IRL</span>
+        </a>
+        <br>
+        Mukund Mitra, <strong>Gyanig Kumar</strong>, P.P. Chakraborty, Pradipta Biswas
+        <br>
+        <em>IEEE International Conference on Robotics and Automation (ICRA)</em>, 2024
+        <br>
+        <a href="https://ieeexplore.ieee.org/abstract/document/10610595">paper</a>
+        <p></p>
+        <p>
+        Leveraging Deep Inverse Reinforcement Learning for improved human-robot collaboration through intent prediction.
+        </p>
+      </td>
+    </tr>
 
-                // Start transition
-                pageTransition.classList.add('active');
-                parallaxHeader.style.transform = 'translateX(-100%)';
-                parallaxContent.style.transform = 'translateX(-50%)';
-                parallaxContent.style.opacity = '0';
+    <tr onmouseout="icvtts2024_stop()" onmouseover="icvtts2024_start()" bgcolor="#ffffd0">
+      <td style="padding:16px;width:20%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='icvtts2024_image'>
+            <img src='images/gan-study.jpg' width="160">
+          </div>
+          <img src='images/gan-study.jpg' width="160">
+        </div>
+        <script type="text/javascript">
+          function icvtts2024_start() {
+            document.getElementById('icvtts2024_image').style.opacity = "1";
+          }
+          function icvtts2024_stop() {
+            document.getElementById('icvtts2024_image').style.opacity = "0";
+          }
+          icvtts2024_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="https://ieeexplore.ieee.org/document/10763945">
+          <span class="papertitle">A Comparative Study on Image Translation GAN Models to Improve Object Detection in Low-Resource Domains</span>
+        </a>
+        <br>
+        Yash Kumar Sahu, A. Mukhopadhyay, <strong>Gyanig Kumar</strong>, Ashok Kumar, Pradipta Biswas
+        <br>
+        <em>2024 International Conference on Vehicular Technology and Transportation Systems (ICVTTS)</em>, 2024
+        <br>
+        <a href="https://ieeexplore.ieee.org/document/10763945">paper</a>
+        <p></p>
+        <p>
+        Comprehensive study comparing GAN models for generating realistic synthetic datasets to improve object detection in low-resource domains.
+        </p>
+      </td>
+    </tr>
 
-                // Navigate after transition
-                setTimeout(() => {
-                    window.location.href = target;
-                }, 600);
-            });
-        });
+    <tr onmouseout="jmui2024_stop()" onmouseover="jmui2024_start()">
+      <td style="padding:16px;width:20%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='jmui2024_image'>
+            <img src='images/jmui-assembly.jpg' width="160">
+          </div>
+          <img src='images/jmui-assembly.jpg' width="160">
+        </div>
+        <script type="text/javascript">
+          function jmui2024_start() {
+            document.getElementById('jmui2024_image').style.opacity = "1";
+          }
+          function jmui2024_stop() {
+            document.getElementById('jmui2024_image').style.opacity = "0";
+          }
+          jmui2024_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="https://link.springer.com/article/10.1007/s12193-023-00428-3">
+          <span class="papertitle">Augmented reality and deep learning based system for assisting assembly process</span>
+        </a>
+        <br>
+        Subin Raj, L.R.D. Murthy, T.A. Shanmugam, <strong>Gyanig Kumar</strong>, A. Chakrabarti, Pradipta Biswas
+        <br>
+        <em>Journal on Multimodal User Interfaces (JMUI)</em>, 2024
+        <br>
+        <a href="https://link.springer.com/article/10.1007/s12193-023-00428-3">paper</a>
+        <p></p>
+        <p>
+        Augmented reality-based assembly system using custom-trained object detection models with tailored eye gaze and hand tracking.
+        </p>
+      </td>
+    </tr>
 
-        // Handle page load
-        window.addEventListener('pageshow', function(event) {
-            if (event.persisted) {
-                // Page is loaded from back/forward cache
-                pageTransition.classList.remove('active');
-                parallaxHeader.style.transform = 'translateX(0)';
-                parallaxContent.style.transform = 'translateX(0)';
-                parallaxContent.style.opacity = '1';
-            } else {
-                // Initial page load
-                parallaxHeader.style.transform = 'translateX(0)';
-                parallaxContent.style.transform = 'translateX(0)';
-                parallaxContent.style.opacity = '1';
-                setTimeout(() => {
-                    pageTransition.classList.add('exit');
-                    setTimeout(() => {
-                        pageTransition.classList.remove('exit');
-                        pageTransition.classList.remove('active');
-                    }, 600);
-                }, 100);
-            }
-        });
-    });
-</script>
+    <!-- 2022 Publications -->
+    <tr>
+      <td colspan="2" style="padding:20px 16px 10px 16px;width:100%;vertical-align:middle">
+        <h3 style="margin:0;color:#1772d0;font-size:18px;font-weight:bold;">2022</h3>
+      </td>
+    </tr>
 
-</body>
+    <tr onmouseout="automotiveui2022_stop()" onmouseover="automotiveui2022_start()" bgcolor="#ffffd0">
+      <td style="padding:16px;width:20%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='automotiveui2022_image'>
+            <img src='images/auto-ui.jpg' width="160">
+          </div>
+          <img src='images/auto-ui.jpg' width="160">
+        </div>
+        <script type="text/javascript">
+          function automotiveui2022_start() {
+            document.getElementById('automotiveui2022_image').style.opacity = "1";
+          }
+          function automotiveui2022_stop() {
+            document.getElementById('automotiveui2022_image').style.opacity = "0";
+          }
+          automotiveui2022_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="https://dl.acm.org/doi/pdf/10.1145/3544999.3554818">
+          <span class="papertitle">Efficient Interaction with Automotive Heads-Up Displays using Appearance-based Gaze Tracking</span>
+        </a>
+        <br>
+        L.R.D. Murthy, <strong>Gyanig Kumar</strong>, Pradipta Biswas, M. Madan, S. Deshmukh
+        <br>
+        <em>Work-in-Progress Track of the 14th International Conference on Automotive User Interfaces and Interactive Vehicular Applications (AutomotiveUI)</em>, 2022
+        <br>
+        <a href="https://dl.acm.org/doi/pdf/10.1145/3544999.3554818">paper</a>
+        /
+        <a href="https://www.youtube.com/watch?v=lqWYUUv88_U">video</a>
+        <p></p>
+        <p>
+        Appearance-based gaze tracking system for interactive automotive heads-up displays with gaze-based vs gesture-based on-road distraction detection.
+        </p>
+      </td>
+    </tr>
+
+          </tbody></table>
+
+          
+					<table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
+            <tr>
+              <td>
+                <h2>Miscellanea</h2>
+              </td>
+            </tr>
+          </tbody></table>
+
+
+
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            
+           
+            <tr>
+              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+						     <div class="colored-box" style="background-color: #fcb97d;">
+								 <h2>Projects</h2>
+								 </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <a href="https://github.com/sakshamk6999/HackCU11">Ansh.AI: Conversational Diary Companion</a> - 2nd Position in AI Track at HackCU11
+                <br>
+                <a href="https://github.com/gyanigk/Advanced-Robotics/tree/Final-Project/FINAL_PROJECT">Autonomous Driving Challenge with AWS DeepRacer</a> - ROS 2 based autonomous vehicle
+                <br>
+                <a href="https://github.com/gyanigk/Lox">Lox: Interpreter for Python-like Language</a> - End-to-end interpreter implementation
+                <br>
+                <a href="https://drive.google.com/file/d/1JOfyKVWSockjHTPi5B7Y7iNZmLMB-D6l/view?usp=share_link">V-BIKES: Enhanced Safety Measures for Two-Wheeler Vehicles</a> - IoT collision detection system
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+						     <div class="colored-box" style="background-color: #aaba9e;">
+								 <h2>Teaching</h2>
+								 </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:center">
+                <strong>Course Manager</strong> - CSCI 3302 Introduction to Robotics, University of Colorado Boulder (Spring 2025)
+                <br>
+                <strong>Teaching Assistant</strong> - CS3155 Principles of Programming Languages, University of Colorado Boulder (Summer 2025)
+                <br>
+                <strong>Part-Time CS Teacher</strong> - Polytechnic College Suriname (2022 - 2023)
+                <!-- <br> -->
+                <!-- <strong>Student Member</strong> - Google Developer Student Community, KIIT University (Oct 2021 - Oct 2022) -->
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+						     <div class="colored-box" style="background-color: #d4a5a5;">
+								 <h2>Awards</h2>
+								 </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:center">
+                Student Volunteer at ACC Denver Conference (2025)
+                <br>
+                2nd Position in AI Track at HackCU11, AWS Hackathon (2025)
+                <br>
+                Tata Millennium Scholarship - 800$ (2025)
+                <br>
+                Summer School Fellowship at CVIT, IIIT Hyderabad (2021)
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
+						     <div class="colored-box" style="background-color: #b8a9c9;">
+								 <h2>Hobbies</h2>
+								 </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:center">
+                <strong>Music Composition</strong> - Original compositions including "Urban Nest" (2024), exploring contemporary soundscapes
+                <br>
+                <strong>Photography</strong> - Landscape and nature photography, capturing moments from hiking trails and mountain vistas
+                <br>
+                <strong>Hiking & Outdoor Adventures</strong> - Exploring Colorado's trails including Anemone Trail and Rocky Mountain National Park
+                <br>
+                <strong>Travel Photography</strong> - Documenting visits to iconic locations like Mount Rushmore and various national parks
+              </td>
+            </tr>
+
+          </tbody></table>
+
+  </body>
 </html>
+      
