@@ -1,1 +1,10 @@
- 
+title: Gyanig Kumar
+description: Research portfolio and projects
+url: "https://gyanigk.github.io"
+baseurl: ""
+plugins:
+  - jekyll-sitemap
+exclude:
+  - README.md
+  - scripts/
+  - .github/

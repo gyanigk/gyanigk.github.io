@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepRacer | Study Details</title>
+    <link rel="stylesheet" href="../assets/css/stylesheet.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <header class="nav-header">
+        <nav class="container flex justify-between align-center">
+            <a href="../index.html" class="nav-logo">Gyanig<span>.</span></a>
+            <div class="nav-links">
+                <a href="../index.html">Bio</a>
+                <a href="../projects.html" class="active">Projects</a>
+                <a href="../hobbies.html">Hobbies</a>
+                <a href="../thinking.html">Thinking</a>
+                <a href="../logs.html">Logs</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="project-hero reveal">
+            <div class="category-badge category-deep-dive">Deep Dive</div>
+            <h1 class="heading-xl">Autonomous Racing: ROS 2 Pipeline</h1>
+            <p class="text-secondary">Implementing lane detection and PID control for the AWS DeepRacer platform.</p>
+            
+            <div class="project-meta-grid">
+                <div class="project-meta-item">
+                    <span>Role</span>
+                    <p>Robotics Engineer</p>
+                </div>
+                <div class="project-meta-item">
+                    <span>Framework</span>
+                    <p>ROS 2 (Foxy), Linux</p>
+                </div>
+                <div class="project-meta-item">
+                    <span>Logic</span>
+                    <p>PID Control, OpenCV</p>
+                </div>
+                <div class="project-meta-item">
+                    <span>Context</span>
+                    <p>Advanced Robotics Course</p>
+                </div>
+            </div>
+        </section>
+
+        <article class="project-content-section reveal">
+            <h2>The Challenge</h2>
+            <p>Moving from reinforcement learning (RL) black-boxes to classical control, this project involved building a fully transparent autonomous stack. The goal was to navigate a scaled track using only front-facing camera data, processing everything in real-time on the vehicle's onboard compute.</p>
+
+            <figure class="project-figure">
+                <img src="../assets/images/deepracer.jpg" alt="DeepRacer ROS Node Graph">
+                <figcaption>Visualization of the IPM (Inverse Perspective Mapping) node feeding into the PID velocity controller.</figcaption>
+            </figure>
+
+            <h2>System Design</h2>
+            <div class="technical-details-box" style="background: var(--bg-color-alt); padding: 2rem; border-radius: 12px; margin: 2rem 0;">
+                <h4 style="margin-top: 0;"><i class="ph ph-command" style="margin-right: 0.5rem;"></i> The Software Pipeline</h4>
+                <ul>
+                    <li><strong>Perception Node:</strong> Raw images are pre-processed (Gaussian blur, color filtering) and transformed via an Inverse Perspective Mapping (IPM) to get a top-down view of the lanes.</li>
+                    <li><strong>Path Planning:</strong> Center-line extraction using a sliding-window algorithm to calculate the goal waypoint relative to the vehicle's current pose.</li>
+                    <li><strong>Control Node:</strong> A cascaded PID controller (Proportional-Integral-Derivative) handles steering corrections. I focused on tuning the <em>Kd</em> parameter to suppress oscillations during high-speed exits.</li>
+                </ul>
+            </div>
+
+            <h2>Key Performance Metrics</h2>
+            <p>The system achieved a consistent lap completion rate of 98% in simulation and successfully transitioned to the physical hardware with minimal "sim-to-real" gap. By replacing the default RL inference with a deterministic ROS 2 pipeline, we achieved a 40% reduction in steering latency.</p>
+
+            <div class="flex gap-md" style="margin-top: 4rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+                <a href="https://github.com/gyanigk/Advanced-Robotics" target="_blank" class="btn btn-primary"><i class="ph ph-github-logo"></i> GitHub View</a>
+                <a href="../projects.html" class="btn"><i class="ph ph-arrow-left"></i> All Projects</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="container">
+        <div class="footer-inner">
+            <p>&copy; <span id="year"></span> Gyanig Kumar.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        gsap.fromTo(".reveal", 
+            { y: 30, opacity: 0 },
+            { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power3.out" }
+        );
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-BIKES | Study Details</title>
+    <link rel="stylesheet" href="../assets/css/stylesheet.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <header class="nav-header">
+        <nav class="container flex justify-between align-center">
+            <a href="../index.html" class="nav-logo">Gyanig<span>.</span></a>
+            <div class="nav-links">
+                <a href="../index.html">Bio</a>
+                <a href="../projects.html" class="active">Projects</a>
+                <a href="../hobbies.html">Hobbies</a>
+                <a href="../thinking.html">Thinking</a>
+                <a href="../logs.html">Logs</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="project-hero reveal">
+            <div class="category-badge category-deep-dive">Deep Dive</div>
+            <h1 class="heading-xl">V-BIKES: IoT Collision System</h1>
+            <p class="text-secondary">Enhanced safety measures for two-wheeler vehicles utilizing IoT frameworks.</p>
+            
+            <div class="project-meta-grid">
+                <div class="project-meta-item">
+                    <span>Role</span>
+                    <p>IoT Systems Designer</p>
+                </div>
+                <div class="project-meta-item">
+                    <span>Components</span>
+                    <p>Ultrasonic, GPS, GSM</p>
+                </div>
+                <div class="project-meta-item">
+                    <span>Platform</span>
+                    <p>Arduino / Embedded C</p>
+                </div>
+                <div class="project-meta-item">
+                    <span>Impact</span>
+                    <p>Urban Safety Prototype</p>
+                </div>
+            </div>
+        </section>
+
+        <article class="project-content-section reveal">
+            <h2>The Problem</h2>
+            <p>Two-wheeler accidents are a major urban crisis, often caused by lack of visibility and delayed emergency response. V-BIKES was designed as an integrated safety shield that not only predicts collisions but actively coordinates rescue efforts in the golden hour after an accident.</p>
+
+            <figure class="project-figure">
+                <img src="../assets/images/journey/v-bikes.jpg" alt="V-BIKES Hardware">
+                <figcaption>The integrated sensor array mounted on the prototype frame for real-world stress testing.</figcaption>
+            </figure>
+
+            <h2>Core Safety Features</h2>
+            <div class="technical-details-box" style="background: var(--bg-color-alt); padding: 2rem; border-radius: 12px; margin: 2rem 0;">
+                <h4 style="margin-top: 0;"><i class="ph ph-shield-check" style="margin-right: 0.5rem;"></i> Smart Safety Stack</h4>
+                <ul style="margin-bottom: 0;">
+                    <li><strong>Predictive Proximity:</strong> Ultrasonic sensors maintain a dynamic "safety bubble" around the rider, providing escalating haptic alerts as obstacles enter high-risk zones.</li>
+                    <li><strong>Collision Notification:</strong> Upon detecting an impact or a sudden fall (via accelerometer), the system automatically transmits the precise <strong>GPS coordinates</strong> to emergency contacts via a GSM module.</li>
+                    <li><strong>Intelligent Safeguards:</strong> Integrated helmet detection ensures the system only activates when the rider is properly equipped, promoting better safety habits.</li>
+                </ul>
+            </div>
+
+            <h2>Scalability</h2>
+            <p>The system was built with cost-efficiency in mind, designed to be easily retrofitted to existing affordable commuter bikes. Our prototype demonstrated that high-end safety features like automatic incident reporting can be implemented with low-power, affordable embedded components.</p>
+
+            <div class="flex gap-md" style="margin-top: 4rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+                <a href="https://youtu.be/n_o4x1v03Sc" target="_blank" class="btn btn-primary"><i class="ph ph-video"></i> Watch Demo</a>
+                <a href="../projects.html" class="btn"><i class="ph ph-arrow-left"></i> All Projects</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="container">
+        <div class="footer-inner">
+            <p>&copy; <span id="year"></span> Gyanig Kumar.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        gsap.fromTo(".reveal", 
+            { y: 30, opacity: 0 },
+            { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power3.out" }
+        );
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNESCO AI Report | Study Details</title>
+    <link rel="stylesheet" href="../assets/css/stylesheet.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <header class="nav-header">
+        <nav class="container flex justify-between align-center">
+            <a href="../index.html" class="nav-logo">Gyanig<span>.</span></a>
+            <div class="nav-links">
+                <a href="../index.html">Bio</a>
+                <a href="../projects.html" class="active">Projects</a>
+                <a href="../hobbies.html">Hobbies</a>
+                <a href="../thinking.html">Thinking</a>
+                <a href="../logs.html">Logs</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="project-hero reveal">
+            <div class="category-badge category-research">Research</div>
+            <h1 class="heading-xl">UNESCO Report: AI & Education</h1>
+            <p class="text-secondary">Global guidance for policy-makers on the future of learning systems.</p>
+            
+            <div class="project-meta-grid">
+                <div class="project-meta-item">
+                    <span>Entity</span>
+                    <p>UNESCO Publication</p>
+                </div>
+                <div class="project-meta-item">
+                    <span>Focus</span>
+                    <p>Policy, Equity, AI Ethics</p>
+                </div>
+                <div class="project-meta-item">
+                    <span>Role</span>
+                    <p>Lab Representative</p>
+                </div>
+                <div class="project-meta-item">
+                    <span>Target</span>
+                    <p>Global Policy Makers</p>
+                </div>
+            </div>
+        </section>
+
+        <article class="project-content-section reveal">
+            <h2>Project Background</h2>
+            <p>Artificial Intelligence is no longer a future prospect for education—it is the present. This UNESCO-commissioned report provides a comprehensive framework for governments to navigate the ethical, structural, and pedagogical shifts triggered by AI integration in school systems worldwide.</p>
+
+            <figure class="project-figure">
+                <img src="../assets/images/unesco.jpg" alt="UNESCO AI Report cover">
+                <figcaption>The flagship report examining AI's role in future-proofing global educational standards.</figcaption>
+            </figure>
+
+            <h2>Major Contributions</h2>
+            <div class="technical-details-box" style="background: var(--bg-color-alt); padding: 2rem; border-radius: 12px; margin: 2rem 0;">
+                <h4 style="margin-top: 0;"><i class="ph ph-globe" style="margin-right: 0.5rem;"></i> Policy Frameworks</h4>
+                <ul style="margin-bottom: 0;">
+                    <li><strong>Equitable Access:</strong> Strategies to prevent the "AI divide" from worsening existing educational inequalities.</li>
+                    <li><strong>Algorithmic Accountability:</strong> Establishing standards for data privacy and bias mitigation in learning management systems.</li>
+                    <li><strong>Teacher Empowerment:</strong> Focusing on AI as an augmentative tool for educators rather than a replacement.</li>
+                </ul>
+            </div>
+
+            <h2>Personal Involvement</h2>
+            <p>Representing my former laboratory at IISc, I contributed to the report by highlighting practical research implementations and case studies on how AI-driven assistive technologies can foster inclusivity for students with diverse learning needs. This work emphasizes that the future of AI must be both <strong>intelligent</strong> and <strong>accessible</strong>.</p>
+
+            <div class="flex gap-md" style="margin-top: 4rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+                <a href="../assets/data/382661eng.pdf" target="_blank" class="btn btn-primary"><i class="ph ph-file-pdf"></i> Read Full Report</a>
+                <a href="../projects.html" class="btn"><i class="ph ph-arrow-left"></i> All Projects</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="container">
+        <div class="footer-inner">
+            <p>&copy; <span id="year"></span> Gyanig Kumar.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        gsap.fromTo(".reveal", 
+            { y: 30, opacity: 0 },
+            { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power3.out" }
+        );
+    </script>
+</body>
+</html>

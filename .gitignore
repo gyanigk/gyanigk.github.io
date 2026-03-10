@@ -1,0 +1,25 @@
+# System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary Files
+*.tmp
+*.log
+.gemini/
+.agents/
+.agent/
+_agents/
+_agent/
+brain/
+/tmp/
+
+# OS specific
+$RECYCLE.BIN/
+System Volume Information/

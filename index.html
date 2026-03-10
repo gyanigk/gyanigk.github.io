@@ -1,734 +1,1106 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gyanig Kumar | Mind + Senses for Robotics</title>
 
-    <title>Gyanig Kumar</title>
+    <meta
+      name="description"
+      content="Research portfolio of Gyanig Kumar in Human-Robot Interactions and Computer Vision."
+    />
+    <meta name="author" content="Gyanig Kumar" />
 
-    <meta name="author" content="Gyanig Kumar">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.svg"
+      type="image/svg+xml"
+    />
+    <link rel="stylesheet" href="assets/css/stylesheet.css" />
+
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
   </head>
-
   <body>
-    <table class="main-wrapper" style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr>
-        <td style="padding:16px;text-align:center">
-          <a href="index.html">Home</a> &nbsp;/&nbsp;
-          <a href="projects.html">Projects</a> &nbsp;/&nbsp;
-          <a href="hobbies.html">Hobbies</a>
-        </td>
-      </tr>
-    </tbody></table>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Gyanig Kumar
-                </p>
-                <p style="font-size: 15px; line-height: 1.6; color: #333;">
-		I'm a Master's student in Computer Science at the <a href="https://www.colorado.edu/">University of Colorado Boulder</a>, focusing on <strong>Human-Robot Interactions</strong> and <strong>Computer Vision</strong> research. Currently, I am advised by <a href="https://www.colorado.edu/ics/bradley-hayes">Prof. Bradley Hayes</a> and <a href="https://www.colorado.edu/ics/alessandro-roncone">Prof. Alessandro Roncone</a>, working on <strong>in-context learning</strong>, <strong>VLM frameworks</strong> and <strong>multimodal interaction</strong> for human intent recognition.
-                </p>
-                <p style="font-size: 15px; line-height: 1.6; color: #333;">
-		I am developing a <strong>Vision-Language Framework</strong> that aligns human gaze (explicit cues) to enable adaptive and efficient robotic task planning in shared autonomy settings. In the past year, I worked on <strong>Active Preference Learning (APreL)</strong> for improving rewards using human-in-the-loop scenarios. I worked with various robotic platforms including 7-DoF manipulator robots (Sawyer) and Quadrupedal Robot (UnitreeGo1).
-                </p>
-                <p style="font-size: 15px; line-height: 1.6; color: #333;">
-    I started my research journey as a Research Assistant at the <a href="https://www.iisc.ac.in/">Indian Institute of Science (IISc) Bangalore</a> under supervision of <a href="https://cambum.net/PB/">Prof. Pradipta Biswas</a>. I developed gaze-tracking systems for automotive heads-up displays and applied <strong>Inverse Reinforcement Learning (IRL)</strong> to improve user intent prediction in robotic tasks such as pick-and-place and human-robot collaboration.
-                </p>
-                <p style="font-size: 15px; line-height: 1.6; color: #333;">
-		Over the years, I have developed proficiency in <strong>Gaze Estimation</strong>, <strong>Object Detection & Tracking</strong>, <strong>Collaborative Robotics</strong>, <strong>Self-Supervised Learning</strong>, <strong>XR-device development</strong>, and <strong>Reinforcement Learning</strong>. I've published papers at top-tier conferences including <strong>ACM THRI</strong>, <strong>ACM IUI</strong> and <strong>IEEE ICRA</strong>.
-                </p>
-                <p style="text-align:center; margin-top: 20px;">
-                  <a href="mailto:gyanig.kumar@gmail.com">Email</a> &nbsp;/&nbsp;
-                  <a href="cv/kumar_gyanig_CV.pdf">CV</a> &nbsp;/&nbsp;
-                  <a href="https://scholar.google.com/citations?user=g1kxkMUAAAAJ&hl=en">Scholar</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/gyanigk">Github</a> &nbsp;/&nbsp;
-                  <a href="https://www.linkedin.com/in/gyanig-k-b36666146">LinkedIn</a>
-                </p>
-                <!-- <p style="background: linear-gradient(135deg, rgba(23, 114, 208, 0.1) 0%, rgba(240, 146, 40, 0.05) 100%); padding: 12px 16px; border-radius: 8px; border-left: 4px solid #1772d0; font-weight: 500; text-align: center;">
-                   I am applying for a <strong>full-time PhD position</strong> in the field of Human-Robot Interactions. Please reach out to me if our research interests align. 
-                </p> -->
-              </td>
-              <td style="padding:2.5%;width:37%;max-width:37%">
-                <a href="images/headshot.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" alt="profile photo" src="images/headshot.jpg" class="hoverZoomLink"></a>
-              </td>
-            </tr>
-          </tbody></table>
+    <nav class="nav-header">
+      <div class="container flex justify-between align-center">
+        <a
+          href="index.html"
+          class="no-underline text-sans"
+          style="font-weight: 600; font-size: 1.1rem; letter-spacing: -0.02em"
+          >Gyanig.</a
+        >
+        <ul class="nav-links">
+          <li><a href="thinking.html">Thinking</a></li>
+          <li><a href="logs.html">Logs</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="hobbies.html">Hobbies</a></li>
+        </ul>
+      </div>
+    </nav>
 
-          <!-- Journey Section -->
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2 style="margin-bottom: 16px;">Research Journey</h2>
-                <p style="color: #666; margin-bottom: 16px;">A visual timeline of my academic and research experiences</p>
-                <!-- Collage Container with 3-3-4 layout -->
-                <div id="collage-container" style="width: 100%; aspect-ratio: 21/11; background: #f5f5f5; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: grid; grid-template-columns: repeat(10, 1fr); grid-template-rows: repeat(3, 1fr); gap: 3px; padding: 0; margin-bottom: 0;">
-                </div>
+    <main>
+      <!-- Hero Section -->
+      <!-- Ambient Decorative Background -->
+      <div class="ambient-bg">
+        <img
+          src="assets/images/a1.png"
+          alt=""
+          class="ambient-blob ambient-blob-1"
+        />
+        <img
+          src="assets/images/a2.png"
+          alt=""
+          class="ambient-blob ambient-blob-2"
+        />
+        <img
+          src="assets/images/a3.png"
+          alt=""
+          class="ambient-blob ambient-blob-3"
+        />
+      </div>
 
-                <script>
-                  // Randomize collage images on page load with 3-3-4 layout
-                  document.addEventListener('DOMContentLoaded', function() {
-                    const images = [
-                      'images/journey/1695374187821%20(1).jpg',
-                      'images/journey/1695374188303.jpg',
-                      'images/journey/1695374189001.jpg',
-                      'images/journey/1696130072535.jpg',
-                      'images/journey/1696130073617.jpg',
-                      'images/journey/hike.jpeg',
-                      'images/journey/Middle-school-visit.jpeg',
-                      'images/journey/Playing%20guitar.jpeg',
-                      'images/journey/sawyer%20setup.jpeg',
-                      'images/journey/working%20on%20the%20Go1.jpeg'
-                    ];
+      <section
+        class="padded-section-xl container flex align-center justify-between gap-lg hero-section"
+        style="min-height: 80vh"
+      >
+        <div style="flex: 1; z-index: 10">
+          <div>
+            <p
+              class="text-sans text-muted reveal"
+              style="margin-bottom: 1rem; font-weight: 500"
+            >
+              Bridging the gap between
+            </p>
+            <h1 class="reveal" style="margin-bottom: 1.5rem">
+              Mind <span class="text-light">&</span> Senses<br />for Robotics.
+            </h1>
 
-                    // Fisher-Yates shuffle algorithm
-                    function shuffleArray(array) {
-                      const shuffled = [...array];
-                      for (let i = shuffled.length - 1; i > 0; i--) {
-                        const j = Math.floor(Math.random() * (i + 1));
-                        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-                      }
-                      return shuffled;
-                    }
+            <p
+              class="text-lead reveal"
+              style="max-width: 600px; line-height: 1.7"
+            >
+              I'm a <strong>Master's student in CS at CU Boulder</strong>,
+              advised by <strong>Prof. Bradley Hayes</strong> and
+              <strong>Prof. Alessandro Roncone</strong>. I build Vision-Language
+              frameworks that align human gaze to enable adaptive robotic task
+              planning in shared autonomy settings.
+            </p>
+            <p
+              class="text-secondary reveal"
+              style="
+                max-width: 600px;
+                font-size: 0.93rem;
+                margin-top: 1rem;
+                line-height: 1.7;
+              "
+            >
+              Previously a Research Assistant at
+              <strong>IISc Bangalore</strong> (Prof. Pradipta Biswas), where I
+              developed gaze-tracking systems for automotive HUDs and applied
+              Inverse RL for human intent prediction. Published at
+              <strong>ACM THRI · ACM IUI · IEEE ICRA</strong>.
+            </p>
 
-                    const shuffledImages = shuffleArray(images);
+            <div class="flex gap-sm reveal" style="margin-top: 2rem">
+              <a href="thinking.html" class="btn btn-primary"
+                ><i class="ph ph-brain"></i> My Thinking</a
+              >
+              <a
+                href="assets/cv/kumar_gyanig_CV.pdf"
+                target="_blank"
+                class="btn"
+                ><i class="ph ph-file-pdf"></i> Curriculum Vitae</a
+              >
+            </div>
 
-                    // Grid layout positions: 3-3-4 (row 1: 3 images, row 2: 3 images, row 3: 4 images)
-                    const gridPositions = [
-                      { column: '1 / 4', row: '1' },   // Row 1: Image 1 (spans 3 cols)
-                      { column: '4 / 7', row: '1' },   // Row 1: Image 2 (spans 3 cols)
-                      { column: '7 / 11', row: '1' },  // Row 1: Image 3 (spans 4 cols)
-                      { column: '1 / 4', row: '2' },   // Row 2: Image 4 (spans 3 cols)
-                      { column: '4 / 7', row: '2' },   // Row 2: Image 5 (spans 3 cols)
-                      { column: '7 / 11', row: '2' },  // Row 2: Image 6 (spans 4 cols)
-                      { column: '1 / 4', row: '3' },   // Row 3: Image 7 (spans 3 cols)
-                      { column: '4 / 7', row: '3' },   // Row 3: Image 8 (spans 3 cols)
-                      { column: '7 / 9', row: '3' },   // Row 3: Image 9 (spans 2 cols)
-                      { column: '9 / 11', row: '3' }   // Row 3: Image 10 (spans 2 cols)
-                    ];
-
-                    const container = document.getElementById('collage-container');
-                    container.innerHTML = '';
-
-                    shuffledImages.forEach((imgSrc, index) => {
-                      const pos = gridPositions[index];
-                      const div = document.createElement('div');
-                      div.style.gridColumn = pos.column;
-                      div.style.gridRow = pos.row;
-                      div.style.position = 'relative';
-                      div.style.overflow = 'hidden';
-                      div.style.backgroundColor = '#e8e8e8';
-                      div.style.display = 'flex';
-                      div.style.alignItems = 'center';
-                      div.style.justifyContent = 'center';
-
-                      const img = document.createElement('img');
-                      img.src = imgSrc;
-                      img.alt = `journey moment ${index + 1}`;
-                      img.style.width = '100%';
-                      img.style.height = '100%';
-                      img.style.objectFit = 'cover';
-                      img.style.display = 'block';
-
-                      div.appendChild(img);
-                      container.appendChild(div);
-                    });
-                  });
-                </script>
-              </td>
-            </tr>
-          </tbody></table>
-
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Research</h2>
-                <p>
-                  I'm interested in perception problems in robotics, especially in human-robot collaboration. Most of my research focuses on enhancing deep learning models, Modelling human intent recognition, developing multimodal frameworks. My contributions spans from automotive applications to mixed reality systems to robot planning. Some published papers are <span class="highlight">highlighted</span> and the some are currently under review.
-                </p>
-                <p>
-                  <strong>Last Updated: 5th December.</strong>
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
-          <table class="publications pubs-compact" style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-    <!-- 2025 Publications -->
-    <tr>
-      <td colspan="2" style="padding:20px 16px 10px 16px;width:100%;vertical-align:middle">
-        <h3 style="margin:0;color:#1772d0;font-size:18px;font-weight:bold;">2025</h3>
-      </td>
-    </tr>
-
-    <tr onmouseout="thri2025_stop()" onmouseover="thri2025_start()" bgcolor="#ffffd0">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='thri2025_image'>
-            <img src='images/thri-cobots.jpg' width="160">
-          </div>
-          <img src='images/thri-cobots.jpg' width="160">
-        </div>
-        <script type="text/javascript">
-          function thri2025_start() {
-            document.getElementById('thri2025_image').style.opacity = "1";
-          }
-          function thri2025_stop() {
-            document.getElementById('thri2025_image').style.opacity = "0";
-          }
-          thri2025_stop()
-        </script>
-      </td>
-      <td style="padding:12px;width:80%;vertical-align:middle" class="paper-card" data-paper="thri2025">
-        <div style="display: flex; gap: 12px; align-items: flex-start;">
-          <div class="paper-header" style="flex: 1;">
-            <div style="display: flex; align-items: flex-start; gap: 8px;">
-              <span class="paper-toggle" style="flex-shrink: 0; margin-top: 2px;">▼</span>
-              <div style="flex: 1;">
-                <div class="papertitle">Investigating Inverse Reinforcement Learning during Rapid Aiming Movement in Extended Reality and Human-Robot Interaction</div>
-                <div style="font-size: 11px; color: #888; margin-top: 3px; font-weight: 500;">
-                  <em>ACM Transactions on Human-Robot Interaction (THRI)</em>, 2025
-                </div>
-                <div style="font-size: 11px; color: #666; margin-top: 3px;">
-                  Mukund Mitra, <strong>Gyanig Kumar</strong>, P.P. Chakraborty, Pradipta Biswas
-                </div>
-              </div>
+            <div class="social-links reveal" style="margin-top: 2rem">
+              <a href="mailto:gyanig.kumar@gmail.com"
+                ><i class="ph ph-envelope-simple"></i
+              ></a>
+              <a
+                href="https://scholar.google.com/citations?user=g1kxkMUAAAAJ&hl=en"
+                target="_blank"
+                ><i class="ph ph-graduation-cap"></i
+              ></a>
+              <a href="https://github.com/gyanigk" target="_blank"
+                ><i class="ph ph-github-logo"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/gyanig-k-b36666146"
+                target="_blank"
+                ><i class="ph ph-linkedin-logo"></i
+              ></a>
             </div>
           </div>
         </div>
-        <div class="paper-details" style="margin-left: 20px;">
-          <div><a href="https://dl.acm.org/doi/full/10.1145/3736423">Link</a></div>
-          <div class="paper-abstract">Investigation of inverse reinforcement learning techniques for rapid aiming movements in extended reality and human-robot interaction scenarios. This work explores how IRL can improve system understanding of human intent during rapid task execution in both virtual and collaborative robotic settings.</div>
-        </div>
-      </td>
-    </tr>
 
-    <tr onmouseout="discover2025_stop()" onmouseover="discover2025_start()">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='discover2025_image'>
-            <img src='images/mr-assembly.jpg' width="160">
+        <div
+          class="hero-image reveal flex justify-between"
+          style="justify-content: flex-end; flex: 1; z-index: 10"
+        >
+          <div class="profile-image-container">
+            <img src="assets/images/headshot.jpg" alt="Gyanig Kumar" />
           </div>
-          <img src='images/mr-assembly.jpg' width="160">
         </div>
-        <script type="text/javascript">
-          function discover2025_start() {
-            document.getElementById('discover2025_image').style.opacity = "1";
-          }
-          function discover2025_stop() {
-            document.getElementById('discover2025_image').style.opacity = "0";
-          }
-          discover2025_stop()
-        </script>
-      </td>
-      <td style="padding:12px;width:80%;vertical-align:middle" class="paper-card" data-paper="discover2025">
-        <div style="display: flex; gap: 12px; align-items: flex-start;">
-          <div class="paper-header" style="flex: 1;">
-            <div style="display: flex; align-items: flex-start; gap: 8px;">
-              <span class="paper-toggle" style="flex-shrink: 0; margin-top: 2px;">▼</span>
-              <div style="flex: 1;">
-                <div class="papertitle">Comparing computer vision models for low resource dataset to develop a mixed reality based manual assembly assistant</div>
-                <div style="font-size: 11px; color: #888; margin-top: 3px; font-weight: 500;">
-                  <em>Discover Robotics</em>, 2025
+      </section>
+
+      <!-- Journey Film Strip Carousel -->
+      <section class="filmstrip-section" aria-label="Journey photo album">
+        <div class="filmstrip-wrapper">
+          <!-- Track A (original) -->
+          <div class="filmstrip-track" id="filmstrip-track-a">
+            <!-- populated by JS -->
+          </div>
+          <!-- Track B (duplicate for seamless loop) -->
+          <div
+            class="filmstrip-track"
+            id="filmstrip-track-b"
+            aria-hidden="true"
+          >
+            <!-- populated by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Latest Logs Section -->
+
+      <section class="padded-section container reveal">
+        <div
+          class="flex justify-between align-center"
+          style="margin-bottom: 1.5rem"
+        >
+          <h2 style="margin: 0">From the Lab.</h2>
+          <a href="logs.html" class="btn" style="font-size: 0.85rem"
+            >All Logs <i class="ph ph-arrow-right"></i
+          ></a>
+        </div>
+        <ul class="latest-logs-list">
+          <li class="latest-log-item">
+            <a href="logs/log-003.html" class="latest-log-title"
+              >Log 003: Gaze Desynchronization</a
+            >
+            <span class="latest-log-date">Feb 28, 2026</span>
+          </li>
+          <li class="latest-log-item">
+            <a href="logs/log-002.html" class="latest-log-title"
+              >Log 002: UnitreeGo1 Telemetry Drop</a
+            >
+            <span class="latest-log-date">Feb 15, 2026</span>
+          </li>
+          <li class="latest-log-item">
+            <a href="logs/log-001.html" class="latest-log-title"
+              >Log 001: Initializing the New Architecture</a
+            >
+            <span class="latest-log-date">Jan 10, 2026</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- News & Publications Section -->
+      <section id="news" class="padded-section container">
+        <div
+          class="flex justify-between align-center reveal"
+          style="margin-bottom: 2rem"
+        >
+          <h2>News & Publications</h2>
+
+          <!-- View Toggle -->
+          <div class="view-toggle">
+            <button class="toggle-btn active" data-view="simple">
+              <i class="ph ph-list-dashes"></i> Simple
+            </button>
+            <button class="toggle-btn" data-view="detailed">
+              <i class="ph ph-squares-four"></i> Detailed
+            </button>
+          </div>
+        </div>
+
+        <div class="flex justify-end reveal" style="margin-bottom: 2rem">
+          <a
+            href="projects.html"
+            class="text-sans text-muted"
+            style="font-size: 0.9rem; font-weight: 500"
+            >View all works <i class="ph ph-arrow-right"></i
+          ></a>
+        </div>
+
+        <!-- Simple List View (Active by default) -->
+        <div id="view-simple" class="pubs-view active reveal">
+          <div class="year-group" style="margin-bottom: 3rem">
+            <h3
+              class="year-header"
+              style="
+                font-family: &quot;Playfair Display&quot;, serif;
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+                border-bottom: 1px solid var(--border-color);
+                padding-bottom: 0.5rem;
+                color: var(--text-primary);
+              "
+            >
+              2025
+            </h3>
+            <ul class="simple-list">
+              <li class="simple-list-item" style="gap: 0">
+                <div class="simple-content">
+                  <a
+                    href="https://dl.acm.org/doi/full/10.1145/3736423"
+                    target="_blank"
+                    class="simple-title"
+                    >Investigating Inverse Reinforcement Learning during Rapid
+                    Aiming Movement in Extended Reality and Human-Robot
+                    Interaction</a
+                  >
+                  <div class="simple-authors">
+                    Mukund Mitra, Gyanig Kumar, P.P. Chakraborty, Pradipta
+                    Biswas
+                  </div>
+                  <div class="simple-venue">
+                    ACM Transactions on Human-Robot Interaction (THRI)
+                  </div>
                 </div>
-                <div style="font-size: 11px; color: #666; margin-top: 3px;">
-                  Subin Raj, Bikram Karmakar, <strong>Gyanig Kumar</strong>, A. Mukhopadhyay, Rohit Chandrahas, Pradipta Biswas
+              </li>
+              <li class="simple-list-item" style="gap: 0">
+                <div class="simple-content">
+                  <a
+                    href="https://link.springer.com/article/10.1007/s44430-025-00005-1"
+                    target="_blank"
+                    class="simple-title"
+                    >Comparing computer vision models for low resource dataset
+                    to develop a mixed reality based manual assembly
+                    assistant</a
+                  >
+                  <div class="simple-authors">
+                    Subin Raj, Bikram Karmakar, Gyanig Kumar, A. Mukhopadhyay,
+                    Rohit Chandrahas, Pradipta Biswas
+                  </div>
+                  <div class="simple-venue">Discover Robotics</div>
                 </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="year-group" style="margin-bottom: 3rem">
+            <h3
+              class="year-header"
+              style="
+                font-family: &quot;Playfair Display&quot;, serif;
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+                border-bottom: 1px solid var(--border-color);
+                padding-bottom: 0.5rem;
+                color: var(--text-primary);
+              "
+            >
+              2024
+            </h3>
+            <ul class="simple-list">
+              <li class="simple-list-item" style="gap: 0">
+                <div class="simple-content">
+                  <a
+                    href="https://dl.acm.org/doi/abs/10.1145/3640544.3645229"
+                    target="_blank"
+                    class="simple-title"
+                    >Multimodal Target Prediction for Rapid Human-Robot
+                    Interaction</a
+                  >
+                  <div class="simple-authors">
+                    Mukund Mitra, A.A. Patil, G. Mothish, Gyanig Kumar, A.
+                    Mukhopadhyay, L.R.D. Murthy, P.P. Chakraborty, Pradipta
+                    Biswas
+                  </div>
+                  <div class="simple-venue">
+                    29th ACM Conference on Intelligent User Interfaces (ACM IUI)
+                  </div>
+                </div>
+              </li>
+              <li class="simple-list-item" style="gap: 0">
+                <div class="simple-content">
+                  <a
+                    href="https://ieeexplore.ieee.org/abstract/document/10610595"
+                    target="_blank"
+                    class="simple-title"
+                    >Enhanced Human-Robot Collaboration with Intent Prediction
+                    using Deep-IRL</a
+                  >
+                  <div class="simple-authors">
+                    Mukund Mitra, Gyanig Kumar, P.P. Chakraborty, Pradipta
+                    Biswas
+                  </div>
+                  <div class="simple-venue">
+                    IEEE International Conference on Robotics and Automation
+                    (ICRA)
+                  </div>
+                </div>
+              </li>
+              <li class="simple-list-item" style="gap: 0">
+                <div class="simple-content">
+                  <a
+                    href="https://ieeexplore.ieee.org/document/10763945"
+                    target="_blank"
+                    class="simple-title"
+                    >A Comparative Study on Image Translation GAN Models to
+                    Improve Object Detection in Low-Resource Domains</a
+                  >
+                  <div class="simple-authors">
+                    Yash Kumar Sahu, A. Mukhopadhyay, Gyanig Kumar, Ashok Kumar,
+                    Pradipta Biswas
+                  </div>
+                  <div class="simple-venue">
+                    2024 International Conference on Vehicular Technology and
+                    Transportation Systems (ICVTTS)
+                  </div>
+                </div>
+              </li>
+              <li class="simple-list-item" style="gap: 0">
+                <div class="simple-content">
+                  <a
+                    href="https://link.springer.com/article/10.1007/s12193-023-00428-3"
+                    target="_blank"
+                    class="simple-title"
+                    >Augmented reality and deep learning based system for
+                    assisting assembly process</a
+                  >
+                  <div class="simple-authors">
+                    Subin Raj, L.R.D. Murthy, T.A. Shanmugam, Gyanig Kumar, A.
+                    Chakrabarti, Pradipta Biswas
+                  </div>
+                  <div class="simple-venue">
+                    Journal on Multimodal User Interfaces (JMUI)
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="year-group">
+            <h3
+              class="year-header"
+              style="
+                font-family: &quot;Playfair Display&quot;, serif;
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+                border-bottom: 1px solid var(--border-color);
+                padding-bottom: 0.5rem;
+                color: var(--text-primary);
+              "
+            >
+              2022
+            </h3>
+            <ul class="simple-list">
+              <li class="simple-list-item" style="gap: 0">
+                <div class="simple-content">
+                  <a
+                    href="https://dl.acm.org/doi/pdf/10.1145/3544999.3554818"
+                    target="_blank"
+                    class="simple-title"
+                    >Efficient Interaction with Automotive Heads-Up Displays
+                    using Appearance-based Gaze Tracking</a
+                  >
+                  <div class="simple-authors">
+                    L.R.D. Murthy, Gyanig Kumar, Pradipta Biswas, M. Madan, S.
+                    Deshmukh
+                  </div>
+                  <div class="simple-venue">
+                    14th International Conference on Automotive User Interfaces
+                    and Interactive Vehicular Applications (AutomotiveUI)
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Detailed Accordion View (Hidden by default) -->
+        <div id="view-detailed" class="pubs-view">
+          <div class="accordion-list">
+            <!-- Research Item 1 -->
+            <article class="accordion-item">
+              <div
+                class="accordion-header"
+                onclick="this.parentElement.classList.toggle('active')"
+              >
+                <div class="acc-header-main">
+                  <h3 class="acc-title">
+                    Investigating IRL during Rapid Aiming Movement in XR and HRI
+                  </h3>
+                  <div class="acc-meta">ACM THRI, 2025</div>
+                </div>
+                <div class="acc-icon"><i class="ph ph-caret-down"></i></div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="paper-details" style="margin-left: 20px;">
-          <div><a href="https://link.springer.com/article/10.1007/s44430-025-00005-1">Link</a></div>
-          <div class="paper-abstract">Comparative study of computer vision models for generating realistic synthetic datasets to improve object detection in low-resource domains. This research evaluates different approaches for developing mixed reality-based manual assembly assistance systems using limited training data.</div>
-        </div>
-      </td>
-    </tr>
-
-    <!-- 2024 Publications -->
-    <tr>
-      <td colspan="2" style="padding:20px 16px 10px 16px;width:100%;vertical-align:middle">
-        <h3 style="margin:0;color:#1772d0;font-size:18px;font-weight:bold;">2024</h3>
-      </td>
-    </tr>
-
-    <tr onmouseout="iui2024_stop()" onmouseover="iui2024_start()" bgcolor="#ffffd0">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='iui2024_image'>
-            <img src='images/multimodal-cobots.jpg' width="160">
-          </div>
-          <img src='images/multimodal-cobots.jpg' width="160">
-        </div>
-        <script type="text/javascript">
-          function iui2024_start() {
-            document.getElementById('iui2024_image').style.opacity = "1";
-          }
-          function iui2024_stop() {
-            document.getElementById('iui2024_image').style.opacity = "0";
-          }
-          iui2024_stop()
-        </script>
-      </td>
-      <td style="padding:12px;width:80%;vertical-align:middle" class="paper-card" data-paper="iui2024">
-        <div style="display: flex; gap: 12px; align-items: flex-start;">
-          <div class="paper-header" style="flex: 1;">
-            <div style="display: flex; align-items: flex-start; gap: 8px;">
-              <span class="paper-toggle" style="flex-shrink: 0; margin-top: 2px;">▼</span>
-              <div style="flex: 1;">
-                <div class="papertitle">Multimodal Target Prediction for Rapid Human-Robot Interaction</div>
-                <div style="font-size: 11px; color: #888; margin-top: 3px; font-weight: 500;">
-                  <em>29th ACM Conference on Intelligent User Interfaces (ACM IUI)</em>, 2024
-                </div>
-                <div style="font-size: 11px; color: #666; margin-top: 3px;">
-                  Mukund Mitra, A.A. Patil, G. Mothish, <strong>Gyanig Kumar</strong>, A. Mukhopadhyay, L.R.D. Murthy, P.P. Chakraborty, Pradipta Biswas
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="paper-details" style="margin-left: 20px;">
-          <div><a href="https://dl.acm.org/doi/abs/10.1145/3640544.3645229">Link</a></div>
-          <div class="paper-abstract">A multimodal approach for predicting human intent in robotic pick-and-place tasks using gaze tracking and deep learning. This work combines explicit gaze cues with implicit behavioral signals to improve prediction accuracy and enable more intuitive human-robot collaboration in rapid execution scenarios.</div>
-        </div>
-      </td>
-    </tr>
-
-    <tr onmouseout="icra2024_stop()" onmouseover="icra2024_start()">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='icra2024_image'>
-            <img src='images/irl-cobots.jpg' width="160">
-          </div>
-          <img src='images/irl-cobots.jpg' width="160">
-        </div>
-        <script type="text/javascript">
-          function icra2024_start() {
-            document.getElementById('icra2024_image').style.opacity = "1";
-          }
-          function icra2024_stop() {
-            document.getElementById('icra2024_image').style.opacity = "0";
-          }
-          icra2024_stop()
-        </script>
-      </td>
-      <td style="padding:12px;width:80%;vertical-align:middle" class="paper-card" data-paper="icra2024">
-        <div style="display: flex; gap: 12px; align-items: flex-start;">
-          <div class="paper-header" style="flex: 1;">
-            <div style="display: flex; align-items: flex-start; gap: 8px;">
-              <span class="paper-toggle" style="flex-shrink: 0; margin-top: 2px;">▼</span>
-              <div style="flex: 1;">
-                <div class="papertitle">Enhanced Human-Robot Collaboration with Intent Prediction using Deep-IRL</div>
-                <div style="font-size: 11px; color: #888; margin-top: 3px; font-weight: 500;">
-                  <em>IEEE International Conference on Robotics and Automation (ICRA)</em>, 2024
-                </div>
-                <div style="font-size: 11px; color: #666; margin-top: 3px;">
-                  Mukund Mitra, <strong>Gyanig Kumar</strong>, P.P. Chakraborty, Pradipta Biswas
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="paper-details" style="margin-left: 20px;">
-          <div><a href="https://ieeexplore.ieee.org/abstract/document/10610595">Link</a></div>
-          <div class="paper-abstract">Leveraging Deep Inverse Reinforcement Learning for improved human-robot collaboration through intent prediction. This work demonstrates how learning from human demonstrations using Deep-IRL can enhance robot understanding of human preferences and enable more effective shared autonomy in collaborative manipulation tasks.</div>
-        </div>
-      </td>
-    </tr>
-
-    <tr onmouseout="icvtts2024_stop()" onmouseover="icvtts2024_start()" bgcolor="#ffffd0">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='icvtts2024_image'>
-            <img src='images/gan-study.jpg' width="160">
-          </div>
-          <img src='images/gan-study.jpg' width="160">
-        </div>
-        <script type="text/javascript">
-          function icvtts2024_start() {
-            document.getElementById('icvtts2024_image').style.opacity = "1";
-          }
-          function icvtts2024_stop() {
-            document.getElementById('icvtts2024_image').style.opacity = "0";
-          }
-          icvtts2024_stop()
-        </script>
-      </td>
-      <td style="padding:12px;width:80%;vertical-align:middle" class="paper-card" data-paper="icvtts2024">
-        <div style="display: flex; gap: 12px; align-items: flex-start;">
-          <div class="paper-header" style="flex: 1;">
-            <div style="display: flex; align-items: flex-start; gap: 8px;">
-              <span class="paper-toggle" style="flex-shrink: 0; margin-top: 2px;">▼</span>
-              <div style="flex: 1;">
-                <div class="papertitle">A Comparative Study on Image Translation GAN Models to Improve Object Detection in Low-Resource Domains</div>
-                <div style="font-size: 11px; color: #888; margin-top: 3px; font-weight: 500;">
-                  <em>2024 International Conference on Vehicular Technology and Transportation Systems (ICVTTS)</em>, 2024
-                </div>
-                <div style="font-size: 11px; color: #666; margin-top: 3px;">
-                  Yash Kumar Sahu, A. Mukhopadhyay, <strong>Gyanig Kumar</strong>, Ashok Kumar, Pradipta Biswas
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="paper-details" style="margin-left: 20px;">
-          <div><a href="https://ieeexplore.ieee.org/document/10763945">Link</a></div>
-          <div class="paper-abstract">Comprehensive study comparing GAN models for generating realistic synthetic datasets to improve object detection in low-resource domains. This research evaluates different image translation approaches for domain adaptation in scenarios where training data is limited or expensive to acquire.</div>
-        </div>
-      </td>
-    </tr>
-
-    <tr onmouseout="jmui2024_stop()" onmouseover="jmui2024_start()">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='jmui2024_image'>
-            <img src='images/jmui-assembly.jpg' width="160">
-          </div>
-          <img src='images/jmui-assembly.jpg' width="160">
-        </div>
-        <script type="text/javascript">
-          function jmui2024_start() {
-            document.getElementById('jmui2024_image').style.opacity = "1";
-          }
-          function jmui2024_stop() {
-            document.getElementById('jmui2024_image').style.opacity = "0";
-          }
-          jmui2024_stop()
-        </script>
-      </td>
-      <td style="padding:12px;width:80%;vertical-align:middle" class="paper-card" data-paper="jmui2024">
-        <div style="display: flex; gap: 12px; align-items: flex-start;">
-          <div class="paper-header" style="flex: 1;">
-            <div style="display: flex; align-items: flex-start; gap: 8px;">
-              <span class="paper-toggle" style="flex-shrink: 0; margin-top: 2px;">▼</span>
-              <div style="flex: 1;">
-                <div class="papertitle">Augmented reality and deep learning based system for assisting assembly process</div>
-                <div style="font-size: 11px; color: #888; margin-top: 3px; font-weight: 500;">
-                  <em>Journal on Multimodal User Interfaces (JMUI)</em>, 2024
-                </div>
-                <div style="font-size: 11px; color: #666; margin-top: 3px;">
-                  Subin Raj, L.R.D. Murthy, T.A. Shanmugam, <strong>Gyanig Kumar</strong>, A. Chakrabarti, Pradipta Biswas
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="paper-details" style="margin-left: 20px;">
-          <div><a href="https://link.springer.com/article/10.1007/s12193-023-00428-3">Link</a></div>
-          <div class="paper-abstract">Augmented reality-based assembly system using custom-trained object detection models with tailored eye gaze and hand tracking. This work demonstrates how combining AR visualization, deep learning for part recognition, and multimodal interaction can improve assembly process efficiency and reduce errors.</div>
-        </div>
-      </td>
-    </tr>
-
-    <!-- 2022 Publications -->
-    <tr>
-      <td colspan="2" style="padding:20px 16px 10px 16px;width:100%;vertical-align:middle">
-        <h3 style="margin:0;color:#1772d0;font-size:18px;font-weight:bold;">2022</h3>
-      </td>
-    </tr>
-
-    <tr onmouseout="automotiveui2022_stop()" onmouseover="automotiveui2022_start()" bgcolor="#ffffd0">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='automotiveui2022_image'>
-            <img src='images/auto-ui.jpg' width="160">
-          </div>
-          <img src='images/auto-ui.jpg' width="160">
-        </div>
-        <script type="text/javascript">
-          function automotiveui2022_start() {
-            document.getElementById('automotiveui2022_image').style.opacity = "1";
-          }
-          function automotiveui2022_stop() {
-            document.getElementById('automotiveui2022_image').style.opacity = "0";
-          }
-          automotiveui2022_stop()
-        </script>
-      </td>
-      <td style="padding:12px;width:80%;vertical-align:middle" class="paper-card" data-paper="automotiveui2022">
-        <div style="display: flex; gap: 12px; align-items: flex-start;">
-          <div class="paper-header" style="flex: 1;">
-            <div style="display: flex; align-items: flex-start; gap: 8px;">
-              <span class="paper-toggle" style="flex-shrink: 0; margin-top: 2px;">▼</span>
-              <div style="flex: 1;">
-                <div class="papertitle">Efficient Interaction with Automotive Heads-Up Displays using Appearance-based Gaze Tracking</div>
-                <div style="font-size: 11px; color: #888; margin-top: 3px; font-weight: 500;">
-                  <em>Work-in-Progress Track of the 14th International Conference on Automotive User Interfaces and Interactive Vehicular Applications (AutomotiveUI)</em>, 2022
-                </div>
-                <div style="font-size: 11px; color: #666; margin-top: 3px;">
-                  L.R.D. Murthy, <strong>Gyanig Kumar</strong>, Pradipta Biswas, M. Madan, S. Deshmukh
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="paper-details" style="margin-left: 20px;">
-          <div><a href="https://dl.acm.org/doi/pdf/10.1145/3544999.3554818">Link</a><a href="https://www.youtube.com/watch?v=lqWYUUv88_U">Supplementary</a></div>
-          <div class="paper-abstract">Appearance-based gaze tracking system for interactive automotive heads-up displays with gaze-based vs gesture-based on-road distraction detection. This work evaluates how gaze-based interaction can enable safer and more intuitive control of HUD elements while minimizing driver distraction during in-vehicle tasks.</div>
-        </div>
-      </td>
-    </tr>
-
-          </tbody></table>
-
-          <!-- Presentations Section -->
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Presentations</h2>
-              </td>
-            </tr>
-          </tbody></table>
-          <table class="publications pubs-compact" style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-              <td style="padding:16px;width:20%;vertical-align:middle">
-                <img src='images/cv7000_demo.jpg' width="160" alt="Gaze Estimation Presentation">
-              </td>
-              <td style="padding:12px;width:80%;vertical-align:middle" class="paper-card" data-paper="gaze_cv7000">
-                <div style="display: flex; gap: 12px; align-items: flex-start;">
-                  <div class="paper-header" style="flex: 1;">
-                    <div style="display: flex; align-items: flex-start; gap: 8px;">
-                      <span class="paper-toggle" style="flex-shrink: 0; margin-top: 2px;">▼</span>
-                      <div style="flex: 1;">
-                        <div class="papertitle">End-to-end Frame to Gaze Estimation</div>
-                        <div style="font-size: 11px; color: #888; margin-top: 3px; font-weight: 500;">
-                          Research Paper presentation Comprehensive Literature review and "End-to-end Frame-to-gaze" CVPR , 7000-level Recent Advancements in Computer Vision 
-                        </div>
-                      </div>
+              <div class="accordion-content">
+                <div class="acc-inner">
+                  <div class="acc-image">
+                    <img
+                      src="assets/images/thri-cobots.jpg"
+                      alt="THRI 2025 Paper"
+                    />
+                  </div>
+                  <div class="acc-details">
+                    <div class="tags-list compact-tags">
+                      <span class="tag proprio">Proprio</span>
+                      <span class="tag multi">Multimodal</span>
+                      <span class="tag haptics">HRI</span>
+                    </div>
+                    <p class="compact-desc">
+                      Explores how Inverse Reinforcement Learning can improve
+                      system understanding of human intent during rapid task
+                      execution in both virtual and collaborative robotic
+                      settings.
+                    </p>
+                    <div class="item-links compact-links">
+                      <a
+                        href="https://dl.acm.org/doi/full/10.1145/3736423"
+                        target="_blank"
+                        class="btn btn-compact"
+                      >
+                        <i class="ph ph-article"></i> Read
+                      </a>
                     </div>
                   </div>
                 </div>
-                <div class="paper-details" style="margin-left: 20px;">
-                  <div><a href="data/gaze estimation_cv7000.pdf" target="_blank">Slides</a></div>
-                  <div class="paper-abstract">Paper presentation.</div>
+              </div>
+            </article>
+
+            <!-- Research Item 2 -->
+            <article class="accordion-item">
+              <div
+                class="accordion-header"
+                onclick="this.parentElement.classList.toggle('active')"
+              >
+                <div class="acc-header-main">
+                  <h3 class="acc-title">
+                    Comparing CV models for low resource dataset to develop MR
+                    assembly assistant
+                  </h3>
+                  <div class="acc-meta">Discover Robotics, 2025</div>
                 </div>
-              </td>
-            </tr>
-            
-            <tr>
-              <td style="padding:16px;width:20%;vertical-align:middle">
-                <img src='images/pomdp.jpg' width="160" alt="POMDP Presentation">
-              </td>
-              <td style="padding:12px;width:80%;vertical-align:middle" class="paper-card" data-paper="pomdp">
-                <div style="display: flex; gap: 12px; align-items: flex-start;">
-                  <div class="paper-header" style="flex: 1;">
-                    <div style="display: flex; align-items: flex-start; gap: 8px;">
-                      <span class="paper-toggle" style="flex-shrink: 0; margin-top: 2px;">▼</span>
-                      <div style="flex: 1;">
-                        <div class="papertitle">Partially Observed Markov Decision Processes for Robotics</div>
-                        <div style="font-size: 11px; color: #888; margin-top: 3px; font-weight: 500;">
-                          Research Paper project for "Probability for Computer Science" class, led by Prof. Osita Onyejekwe | Dept. of Computer Science, University of Colorado Boulder
-                        </div>
-                      </div>
+                <div class="acc-icon"><i class="ph ph-caret-down"></i></div>
+              </div>
+              <div class="accordion-content">
+                <div class="acc-inner">
+                  <div class="acc-image">
+                    <img
+                      src="assets/images/mr-assembly.jpg"
+                      alt="Discover Robotics 2025 Paper"
+                    />
+                  </div>
+                  <div class="acc-details">
+                    <div class="tags-list compact-tags">
+                      <span class="tag vision">Vision</span>
+                      <span class="tag multi">Learning</span>
+                    </div>
+                    <p class="compact-desc">
+                      Evaluates efficiency of object detection computer vision
+                      pipelines on limited datasets for deploying mixed-reality
+                      manual assembly assistants on head-mounted displays.
+                    </p>
+                    <div class="item-links compact-links">
+                      <a
+                        href="https://link.springer.com/article/10.1007/s44430-025-00005-1"
+                        target="_blank"
+                        class="btn btn-compact"
+                      >
+                        <i class="ph ph-article"></i> Read
+                      </a>
                     </div>
                   </div>
                 </div>
-                <div class="paper-details" style="margin-left: 20px;">
-                  <div><a href="data/POMDP.pdf" target="_blank">Slides</a></div>
-                  <div class="paper-abstract">Presentation on POMDP frameworks and their applications in robotic decision-making.</div>
+              </div>
+            </article>
+
+            <!-- Research Item 3 -->
+            <article class="accordion-item">
+              <div
+                class="accordion-header"
+                onclick="this.parentElement.classList.toggle('active')"
+              >
+                <div class="acc-header-main">
+                  <h3 class="acc-title">
+                    Multimodal Target Prediction for Rapid Human-Robot
+                    Interaction
+                  </h3>
+                  <div class="acc-meta">29th ACM IUI, 2024</div>
                 </div>
-              </td>
-            </tr>
-            
-            <tr>
-              <td style="padding:16px;width:20%;vertical-align:middle">
-                <img src='images/dmu.jpg' width="160" alt="DMU Paper">
-              </td>
-              <td style="padding:12px;width:80%;vertical-align:middle" class="paper-card" data-paper="dmu">
-                <div style="display: flex; gap: 12px; align-items: flex-start;">
-                  <div class="paper-header" style="flex: 1;">
-                    <div style="display: flex; align-items: flex-start; gap: 8px;">
-                      <span class="paper-toggle" style="flex-shrink: 0; margin-top: 2px;">▼</span>
-                      <div style="flex: 1;">
-                        <div class="papertitle">Reinforcement Learning for Mini Tetris</div>
-                        <div style="font-size: 11px; color: #888; margin-top: 3px; font-weight: 500;">
-                          Research Paper project for "Decision Making Under uncertainty" class, led by Prof. Zachery Sunberg | Dept. of Aerospace, University of Colorado Boulder
-                        </div>
-                      </div>
+                <div class="acc-icon"><i class="ph ph-caret-down"></i></div>
+              </div>
+              <div class="accordion-content">
+                <div class="acc-inner">
+                  <div class="acc-image">
+                    <img
+                      src="assets/images/multimodal-cobots.jpg"
+                      alt="IUI 2024 Paper"
+                    />
+                  </div>
+                  <div class="acc-details">
+                    <div class="tags-list compact-tags">
+                      <span class="tag gaze">Gaze</span>
+                      <span class="tag multi">Multimodal</span>
+                    </div>
+                    <p class="compact-desc">
+                      Combines explicit gaze cues with implicit behavioral
+                      signals to improve prediction accuracy and enable
+                      intuitive collaboration in rapid pick-and-place tasks.
+                    </p>
+                    <div class="item-links compact-links">
+                      <a
+                        href="https://dl.acm.org/doi/abs/10.1145/3640544.3645229"
+                        target="_blank"
+                        class="btn btn-compact"
+                      >
+                        <i class="ph ph-article"></i> Read
+                      </a>
                     </div>
                   </div>
                 </div>
-                <div class="paper-details" style="margin-left: 20px;">
-                  <div><a href="data/DMU_Final_Paper.pdf" target="_blank">Link</a></div>
-                  <div class="paper-abstract">Research paper on decision-making strategies and algorithms for handling uncertainty in autonomous systems.</div>
+              </div>
+            </article>
+
+            <!-- Research Item 4 -->
+            <article class="accordion-item">
+              <div
+                class="accordion-header"
+                onclick="this.parentElement.classList.toggle('active')"
+              >
+                <div class="acc-header-main">
+                  <h3 class="acc-title">
+                    Enhanced HRC with Intent Prediction using Deep-IRL
+                  </h3>
+                  <div class="acc-meta">IEEE ICRA, 2024</div>
                 </div>
-              </td>
-            </tr>
-            
-            <tr>
-              <td style="padding:16px;width:20%;vertical-align:middle">
-                <img src='images/unesco.jpg' width="160" alt="UNESCO Report">
-              </td>
-              <td style="padding:12px;width:80%;vertical-align:middle" class="paper-card" data-paper="unesco">
-                <div style="display: flex; gap: 12px; align-items: flex-start;">
-                  <div class="paper-header" style="flex: 1;">
-                    <div style="display: flex; align-items: flex-start; gap: 8px;">
-                      <span class="paper-toggle" style="flex-shrink: 0; margin-top: 2px;">▼</span>
-                      <div style="flex: 1;">
-                        <div class="papertitle">UNESCO Report on AI and Education</div>
-                        <div style="font-size: 11px; color: #888; margin-top: 3px; font-weight: 500;">
-                          UNESCO Publication
-                        </div>
-                      </div>
+                <div class="acc-icon"><i class="ph ph-caret-down"></i></div>
+              </div>
+              <div class="accordion-content">
+                <div class="acc-inner">
+                  <div class="acc-image">
+                    <img
+                      src="assets/images/irl-cobots.jpg"
+                      alt="ICRA 2024 Paper"
+                    />
+                  </div>
+                  <div class="acc-details">
+                    <div class="tags-list compact-tags">
+                      <span class="tag vision">Vision</span>
+                      <span class="tag multi">Learning</span>
+                    </div>
+                    <p class="compact-desc">
+                      Demonstrates how learning from human demonstrations via
+                      Deep Inverse Reinforcement Learning enhances robot
+                      understanding of human preferences.
+                    </p>
+                    <div class="item-links compact-links">
+                      <a
+                        href="https://ieeexplore.ieee.org/abstract/document/10610595"
+                        target="_blank"
+                        class="btn btn-compact"
+                      >
+                        <i class="ph ph-article"></i> Read
+                      </a>
                     </div>
                   </div>
                 </div>
-                <div class="paper-details" style="margin-left: 20px;">
-                  <div><a href="data/382661eng.pdf" target="_blank">Official Report</a></div>
-                  <div class="paper-abstract">UNESCO report examining the role of artificial intelligence in education and learning systems. Represented my former Lab, demonstrating research projects.</div>
+              </div>
+            </article>
+
+            <!-- Research Item 5 -->
+            <article class="accordion-item">
+              <div
+                class="accordion-header"
+                onclick="this.parentElement.classList.toggle('active')"
+              >
+                <div class="acc-header-main">
+                  <h3 class="acc-title">
+                    Image Translation GAN Models to Improve Object Detection in
+                    Low-Resource Domains
+                  </h3>
+                  <div class="acc-meta">ICVTTS, 2024</div>
                 </div>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding:16px;width:20%;vertical-align:middle">
-                <img src='images/bel-workshop.jpg' width="160" alt="BEL Industry Class Presentation">
-              </td>
-              <td style="padding:12px;width:80%;vertical-align:middle" class="paper-card" data-paper="bel_industry">
-                <div style="display:flex;gap:12px;align-items:flex-start;">
-                  <div class="paper-header" style="flex:1;">
-                    <div style="display:flex;align-items:flex-start;gap:8px;">
-                      <span class="paper-toggle" style="flex-shrink:0;margin-top:2px;">▼</span>
-                      <div style="flex:1;">
-                        <div class="papertitle">BEL Industry Class Presentation</div>
-                        <div style="font-size:11px;color:#888;margin-top:3px;font-weight:500;">Industry outreach / applied robotics & AI</div>
-                      </div>
+                <div class="acc-icon"><i class="ph ph-caret-down"></i></div>
+              </div>
+              <div class="accordion-content">
+                <div class="acc-inner">
+                  <div class="acc-image">
+                    <img
+                      src="assets/images/gan-study.jpg"
+                      alt="ICVTTS 2024 Paper"
+                    />
+                  </div>
+                  <div class="acc-details">
+                    <div class="tags-list compact-tags">
+                      <span class="tag vision">Vision</span>
+                      <span class="tag multi">Learning</span>
+                    </div>
+                    <p class="compact-desc">
+                      Explores generative adversarial networks to synthesize
+                      artificial data bridging the reality gap and addressing
+                      scarcity in domains underrepresenting certain scenarios.
+                    </p>
+                    <div class="item-links compact-links">
+                      <a
+                        href="https://ieeexplore.ieee.org/document/10763945"
+                        target="_blank"
+                        class="btn btn-compact"
+                      >
+                        <i class="ph ph-article"></i> Read
+                      </a>
                     </div>
                   </div>
                 </div>
-                <div class="paper-details" style="margin-left:20px;">
-                  <div><a href="data/GAN_BEL_workshop.pdf" target="_blank">Slides</a></div>
-                  <div class="paper-abstract">Session covering practical adoption of AI-driven perception & planning pipelines in industrial settings; emphasized safety, latency constraints, and integration with legacy systems.</div>
+              </div>
+            </article>
+
+            <!-- Research Item 6 -->
+            <article class="accordion-item">
+              <div
+                class="accordion-header"
+                onclick="this.parentElement.classList.toggle('active')"
+              >
+                <div class="acc-header-main">
+                  <h3 class="acc-title">
+                    Augmented reality and deep learning based system for
+                    assisting assembly
+                  </h3>
+                  <div class="acc-meta">JMUI, 2024</div>
                 </div>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding:16px;width:20%;vertical-align:middle">
-                <img src='images/MRCV.jpg' width="160" alt="MRCV Class Presentation">
-              </td>
-              <td style="padding:12px;width:80%;vertical-align:middle" class="paper-card" data-paper="mrcv">
-                <div style="display:flex;gap:12px;align-items:flex-start;">
-                  <div class="paper-header" style="flex:1;">
-                    <div style="display:flex;align-items:flex-start;gap:8px;">
-                      <span class="paper-toggle" style="flex-shrink:0;margin-top:2px;">▼</span>
-                      <div style="flex:1;">
-                        <div class="papertitle">MRCV Class – Multimodal Recent Advances in Computer Vision</div>
-                        <div style="font-size:11px;color:#888;margin-top:3px;font-weight:500;">Graduate seminar presentation</div>
-                      </div>
+                <div class="acc-icon"><i class="ph ph-caret-down"></i></div>
+              </div>
+              <div class="accordion-content">
+                <div class="acc-inner">
+                  <div class="acc-image">
+                    <img
+                      src="assets/images/jmui-assembly.jpg"
+                      alt="JMUI 2024 Paper"
+                    />
+                  </div>
+                  <div class="acc-details">
+                    <div class="tags-list compact-tags">
+                      <span class="tag vision">Vision</span>
+                      <span class="tag multi">Mixed Reality</span>
+                    </div>
+                    <p class="compact-desc">
+                      Fuses contextual augmentations with computer vision
+                      inferences to provide interactive spatial anchoring guides
+                      during complex industrial manual assembly workflows.
+                    </p>
+                    <div class="item-links compact-links">
+                      <a
+                        href="https://link.springer.com/article/10.1007/s12193-023-00428-3"
+                        target="_blank"
+                        class="btn btn-compact"
+                      >
+                        <i class="ph ph-article"></i> Read
+                      </a>
                     </div>
                   </div>
                 </div>
-                <div class="paper-details" style="margin-left:20px;">
-                  <div><a href="data/MRCV.pdf" target="_blank">Slides</a></div>
-                  <div class="paper-abstract">Explored multimodal fusion (vision-language-gaze), promptable VLM architectures, and evaluation protocols for embodied perception benchmarks.</div>
+              </div>
+            </article>
+
+            <!-- Research Item 7 -->
+            <article class="accordion-item">
+              <div
+                class="accordion-header"
+                onclick="this.parentElement.classList.toggle('active')"
+              >
+                <div class="acc-header-main">
+                  <h3 class="acc-title">
+                    Efficient Interaction with Automotive HUDs using
+                    Appearance-based Gaze
+                  </h3>
+                  <div class="acc-meta">14th AutomotiveUI, 2022</div>
                 </div>
-              </td>
-            </tr>
-          </tbody></table>
+                <div class="acc-icon"><i class="ph ph-caret-down"></i></div>
+              </div>
+              <div class="accordion-content">
+                <div class="acc-inner">
+                  <div class="acc-image">
+                    <img src="assets/images/auto-ui.jpg" alt="Auto UI Paper" />
+                  </div>
+                  <div class="acc-details">
+                    <div class="tags-list compact-tags">
+                      <span class="tag gaze">Gaze</span>
+                      <span class="tag vision">Vision</span>
+                    </div>
+                    <p class="compact-desc">
+                      Evaluates how appearance-based gaze tracking can enable
+                      safer and more intuitive control of HUD elements while
+                      minimizing driver distraction.
+                    </p>
+                    <div class="item-links compact-links">
+                      <a
+                        href="https://dl.acm.org/doi/pdf/10.1145/3544999.3554818"
+                        target="_blank"
+                        class="btn btn-compact"
+                      >
+                        <i class="ph ph-article"></i> Read
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
 
-          
-					<table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
-            <tr>
-              <td>
-                <h2>Miscellanea</h2>
-              </td>
-            </tr>
-          </tbody></table>
+      <!-- Hobbies Preview Section -->
+      <section class="padded-section container" style="margin-bottom: 2rem">
+        <div
+          class="flex justify-between align-center"
+          style="margin-bottom: 3rem"
+        >
+          <h2 class="reveal">Beyond the Lab</h2>
+          <a
+            href="hobbies.html"
+            class="text-sans"
+            style="font-size: 0.9rem; font-weight: 500"
+            >View all hobbies <i class="ph ph-arrow-right"></i
+          ></a>
+        </div>
+        <div class="grid grid-cols-2 align-center gap-lg reveal">
+          <div>
+            <h3 style="margin-bottom: 1rem">Music & Photography</h3>
+            <p class="text-secondary" style="margin-bottom: 1.5rem">
+              When I'm not writing papers or debugging ROS nodes, I spend my
+              time exploring soundscapes, live music, and the Rocky Mountains.
+            </p>
+            <a href="hobbies.html" class="btn btn-primary"
+              ><i class="ph ph-camera"></i> Explore Hobbies</a
+            >
+          </div>
+          <div
+            style="
+              border-radius: var(--border-radius-md);
+              overflow: hidden;
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+                padding: 0.5rem;
+                background: var(--bg-color-alt);
+              "
+            >
+              <img
+                src="assets/images/photos/landscape0.jpg"
+                alt="Landscape"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  aspect-ratio: 4/3;
+                  object-fit: cover;
+                  border-radius: 4px;
+                "
+              />
+              <img
+                src="assets/images/photos/mountain0.jpg"
+                alt="Mountain"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  aspect-ratio: 4/3;
+                  object-fit: cover;
+                  border-radius: 4px;
+                "
+              />
+              <img
+                src="assets/images/photos/animone_hike-30.jpg"
+                alt="Hiking"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  aspect-ratio: 4/3;
+                  object-fit: cover;
+                  border-radius: 4px;
+                  grid-column: span 2;
+                "
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close modal"><i class="ph ph-x"></i></button>
+      <div class="lightbox-content">
+        <img id="lightboxImage" src="" alt="Full size view">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+      </div>
+    </div>
 
+    <footer class="container">
+      <div class="footer-inner">
+        <p>
+          &copy; <span id="year"></span> Gyanig Kumar. Mind + Senses for
+          Robotics.
+        </p>
+        <div class="social-links flex align-center">
+          <a
+            href="hobbies.html"
+            style="
+              font-size: 0.9rem;
+              margin-right: 1rem;
+              text-transform: uppercase;
+            "
+            >Hobbies</a
+          >
+          <a href="https://github.com/gyanigk" target="_blank"
+            ><i class="ph ph-github-logo"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/gyanig-k-b36666146"
+            target="_blank"
+            ><i class="ph ph-linkedin-logo"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
 
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            
-           
-            <tr>
-              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
-						     <div class="colored-box" style="background-color: #fcb97d;">
-								 <h2>Projects</h2>
-								 </div>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="https://github.com/sakshamk6999/HackCU11">Ansh.AI: Conversational Diary Companion</a> - 2nd Position in AI Track at HackCU11
-                <br>
-                <a href="https://github.com/gyanigk/Advanced-Robotics/tree/Final-Project/FINAL_PROJECT">Autonomous Driving Challenge with AWS DeepRacer</a> - ROS 2 based autonomous vehicle
-                <br>
-                <a href="https://github.com/gyanigk/Lox">Lox: Interpreter for Python-like Language</a> - End-to-end interpreter implementation
-                <br>
-                <a href="https://drive.google.com/file/d/1JOfyKVWSockjHTPi5B7Y7iNZmLMB-D6l/view?usp=share_link">V-BIKES: Enhanced Safety Measures for Two-Wheeler Vehicles</a> - IoT collision detection system
-              </td>
-            </tr>
+    <!-- GSAP Animations & Scripts -->
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-            <tr>
-              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
-						     <div class="colored-box" style="background-color: #aaba9e;">
-								 <h2>Teaching</h2>
-								 </div>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:center">
-                <strong>Course Manager</strong> - CSCI 3302 Introduction to Robotics, University of Colorado Boulder (Spring 2025)
-                <br>
-                <strong>Teaching Assistant</strong> - CS3155 Principles of Programming Languages, University of Colorado Boulder (Summer 2025)
-                <br>
-                <strong>Part-Time CS Teacher</strong> - Polytechnic College Suriname (2022 - 2023)
-                <!-- <br> -->
-                <!-- <strong>Student Member</strong> - Google Developer Student Community, KIIT University (Oct 2021 - Oct 2022) -->
-              </td>
-            </tr>
+      // Nav Scroll Effect
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector(".nav-header");
+        if (window.scrollY > 20) {
+          nav.classList.add("scrolled");
+        } else {
+          nav.classList.remove("scrolled");
+        }
+      });
 
-            <tr>
-              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
-						     <div class="colored-box" style="background-color: #d4a5a5;">
-								 <h2>Awards</h2>
-								 </div>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:center">
-                Student Volunteer at ACC Denver Conference (2025)
-                <br>
-                2nd Position in AI Track at HackCU11, AWS Hackathon (2025)
-                <br>
-                Tata Millennium Scholarship - 800$ (2025)
-                <br>
-                Summer School Fellowship at CVIT, IIIT Hyderabad (2021)
-              </td>
-            </tr>
+      // View Toggle Logic
+      const toggleBtns = document.querySelectorAll(".toggle-btn");
+      const views = document.querySelectorAll(".pubs-view");
 
-            <tr>
-              <td align="center" style="padding:16px;width:20%;vertical-align:middle">
-						     <div class="colored-box" style="background-color: #b8a9c9;">
-								 <h2>Hobbies</h2>
-								 </div>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:center">
-                <strong>Music Composition</strong> - Original compositions including "Urban Nest" (2024), exploring contemporary soundscapes
-                <br>
-                <strong>Photography</strong> - Landscape and nature photography, capturing moments from hiking trails and mountain vistas
-                <br>
-                <strong>Hiking & Outdoor Adventures</strong> - Exploring Colorado's trails including Anemone Trail and Rocky Mountain National Park
-                <br>
-                <strong>Travel Photography</strong> - Documenting visits to iconic locations like Mount Rushmore and various national parks
-              </td>
-            </tr>
+      toggleBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Update Buttons
+          toggleBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
 
-          </tbody></table>
+          // Update Views
+          const targetView = btn.getAttribute("data-view");
+          views.forEach((v) => {
+            v.style.display = "none";
+            v.classList.remove("active");
+          });
 
-  <script type="text/javascript">
-    // Initialize paper card toggle functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const paperCards = document.querySelectorAll('.paper-card');
-      paperCards.forEach(card => {
-        card.addEventListener('click', function(e) {
-          // Prevent clicks on links from toggling
-          if (e.target.closest('a')) return;
-          
-          // Toggle expanded state
-          this.classList.toggle('expanded');
+          const activeView = document.getElementById("view-" + targetView);
+          // Set display block if simple, grid if detailed (or we can just toggle active class and handle display in CSS)
+          activeView.classList.add("active");
+          activeView.style.display =
+            targetView === "detailed" ? "grid" : "block";
+
+          // Trigger entrance animation for newly visible items
+          if (targetView === "detailed") {
+            gsap.fromTo(
+              "#view-detailed .item-card",
+              { y: 20, opacity: 0 },
+              {
+                y: 0,
+                opacity: 1,
+                duration: 0.6,
+                stagger: 0.1,
+                ease: "power2.out",
+              },
+            );
+          } else {
+            gsap.fromTo(
+              "#view-simple .simple-list-item",
+              { y: 15, opacity: 0 },
+              {
+                y: 0,
+                opacity: 1,
+                duration: 0.4,
+                stagger: 0.05,
+                ease: "power2.out",
+              },
+            );
+          }
         });
       });
-    });
-  </script>
+
+      // Entrance Animations
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.utils.toArray(".reveal").forEach(function (elem) {
+        gsap.fromTo(
+          elem,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: elem,
+              start: "top 90%",
+              toggleActions: "play none none none",
+            },
+          },
+        );
+      });
+
+      // ── Journey Film Strip ─────────────────────────
+      (function () {
+        // All web-safe .jpg / .jpeg journey images (updated)
+        const journeyImages = [
+          "1657109654180.jpg",
+          "1682002028299.jpg",
+          "1682332087848.jpg",
+          "1682687749492.jpg",
+          "1682930288448.jpg",
+          "1684490224199.jpg",
+          "1684930073242.jpg",
+          "1684930079143.jpg",
+          "1688112612700.jpg",
+          "1688112612709.jpg",
+          "1689150934396.jpg",
+          "1690270063134.jpg",
+          "1690270066778.jpg",
+          "1690270073006.jpg",
+          "1695374187821 (1).jpg",
+          "1695374188303.jpg",
+          "1695374189001.jpg",
+          "1696130072535.jpg",
+          "1696130073617.jpg",
+          "1703335042866.jpg",
+          "1703335048553.jpg",
+          "1703335051336.jpg",
+          "1705656902708.jpg",
+          "1706855063559.jpg",
+          "1709281457643.jpg",
+          "1709281459533.jpg",
+          "1709281460237.jpg",
+          "1709450129030.jpg",
+          "1717932989095.jpg",
+          "1717933002915.jpg",
+          "IMG_0504.JPG",
+          "IMG_1338.jpg",
+          "IMG_20230715_100307.jpg",
+          "IMG_2334.JPG",
+          "Middle-school-visit.jpeg",
+          "Playing guitar.jpeg",
+          "WhatsApp Image 2025-11-15 at 10.06.49 PM (4).jpeg",
+          "WhatsApp Image 2025-11-15 at 10.06.50 PM.jpeg",
+          "ba0a2e4d-fd2d-4a81-abd8-78c59b56c851.jpg",
+          "eyetracker-helmet.jpg",
+          "gdg-2016.jpg",
+          "hike.jpeg",
+          "processed-FC49FBAA-18BB-4428-9C67-AE1283888673-6BA5CE35-BB79-4847-BBD3-8299188E592F.jpeg",
+          "sawyer setup.jpeg",
+          "unnamed.jpg",
+          "v-bikes.jpg",
+          "working on the Go1.jpeg",
+        ];
+
+        // Fisher-Yates shuffle
+        function shuffle(arr) {
+          for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+          }
+          return arr;
+        }
+
+        const shuffled = shuffle([...journeyImages]);
+
+        function buildFrames(container, images) {
+          container.innerHTML = "";
+          images.forEach(function (img) {
+            const frame = document.createElement("div");
+            frame.className = "filmstrip-frame";
+            const el = document.createElement("img");
+            el.src = "assets/images/journey/" + img;
+            el.alt = "Journey photo";
+            el.loading = "lazy";
+            frame.appendChild(el);
+            container.appendChild(frame);
+          });
+        }
+
+        const trackA = document.getElementById("filmstrip-track-a");
+        const trackB = document.getElementById("filmstrip-track-b");
+        buildFrames(trackA, shuffled);
+        buildFrames(trackB, shuffled); // duplicate for seamless loop
+
+        // Scale animation duration to total pixel width so speed is consistent
+        const totalW = trackA.scrollWidth;
+        const speed = 90; // px per second
+        const dur = Math.round(totalW / speed);
+        document.querySelector(".filmstrip-wrapper").style.animationDuration =
+          dur + "s";
+      })();
+
+      // ── Global Image Lightbox ─────────────────────────
+      const initGlobalLightbox = () => {
+        const modal = document.getElementById('lightboxModal');
+        const modalImg = document.getElementById('lightboxImage');
+        const modalCaption = document.getElementById('lightboxCaption');
+        const closeBtn = document.getElementById('lightboxClose');
+        
+        if (!modal) return;
+
+        // Open modal
+        document.body.addEventListener('click', (e) => {
+          // Find closest img tag handling bubbling
+          const img = e.target.closest('img');
+          // Ignore clicks if: not an image, ambient blob, or within an anchor tag
+          if (!img || img.classList.contains('ambient-blob') || img.closest('a')) return;
+
+          e.preventDefault();
+          modalImg.src = img.src;
+          modalImg.alt = img.alt || 'Full size view';
+          
+          // Try to find a caption nearby
+          const figcaption = img.closest('figure')?.querySelector('figcaption');
+          const siblingSpan = img.nextElementSibling?.tagName === 'SPAN' ? img.nextElementSibling : null;
+          
+          if (figcaption) {
+            modalCaption.textContent = figcaption.textContent;
+          } else if (siblingSpan && siblingSpan.classList.contains('photo-overlay')) {
+            modalCaption.textContent = siblingSpan.textContent;
+          } else if (img.alt) {
+            modalCaption.textContent = img.alt;
+          } else {
+            modalCaption.textContent = '';
+          }
+          
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+
+        // Close modal logic
+        const closeModal = () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        };
+
+        closeBtn.addEventListener('click', closeModal);
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+      };
+      
+      initGlobalLightbox();
+    </script>
   </body>
 </html>
-      

@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Logs | Gyanig Kumar</title>
+    
+    <meta name="description" content="Weekly research logs, failure notes, and technical snippets.">
+    <meta name="author" content="Gyanig Kumar">
+    
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/stylesheet.css">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <nav class="nav-header">
+        <div class="container flex justify-between align-center">
+            <a href="index.html" class="no-underline text-sans" style="font-weight: 600; font-size: 1.1rem; letter-spacing: -0.02em;">Gyanig.</a>
+            <ul class="nav-links">
+            <li><a href="thinking.html">Thinking</a></li>
+            <li><a href="logs.html" class="active">Logs</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="hobbies.html">Hobbies</a></li>
+        </ul></div>
+    </nav>
+
+    <main>
+      <!-- Ambient Decorative Background -->
+      <div class="ambient-bg">
+        <img src="assets/images/a1.png" alt="" class="ambient-blob ambient-blob-1">
+        <img src="assets/images/a2.png" alt="" class="ambient-blob ambient-blob-2">
+        <img src="assets/images/a3.png" alt="" class="ambient-blob ambient-blob-3">
+      </div>
+
+        <section class="padded-section-xl container" style="max-width: 1000px;">
+            <div class="reveal" style="margin-bottom: 4rem;">
+                <h1 style="margin-bottom: 1rem;">Research Logs.</h1>
+                <p class="text-lead text-muted">
+                    An unpolished stream of weekly notes, dataset gripes, and unexpected observations from the lab.
+                </p>
+            </div>
+
+            <div class="blog-feed">
+
+                <!-- Post 003 -->
+                <article class="blog-card reveal" id="log-003">
+                    <div class="blog-card-meta">
+                        <span class="blog-date">Feb 28, 2026</span>
+                        <span class="blog-dot">·</span>
+                        <span class="blog-read">3 min read</span>
+                    </div>
+                    <h2 class="blog-title"><a href="logs/log-003.html" style="text-decoration: none; color: inherit;">Log 003: Gaze Desynchronization</a></h2>
+                    <div class="tags-list" style="margin: 0.75rem 0;">
+                        <span class="tag gaze">Gaze</span>
+                        <span class="tag vision">Failures</span>
+                    </div>
+                    <p class="blog-excerpt">
+                        Noticed a significant desynchronization issue when piping gaze vectors through the VLM framework during rapid head movements. The 7-DoF manipulator started lagging by ~400ms — root cause is frame dropping in the explicit cue alignment module.
+                    </p>
+                    <p class="blog-body">
+                        <strong>Next Step:</strong> Re-implementing the buffer using a ring structure rather than standard queueing. We lose a bit of fidelity but gain real-time responsiveness.
+                    </p>
+                    <a href="logs/log-003.html" class="blog-read-more">Read more <i class="ph ph-arrow-right"></i></a>
+                </article>
+
+                <!-- Post 002 -->
+                <article class="blog-card reveal" id="log-002">
+                    <div class="blog-card-meta">
+                        <span class="blog-date">Feb 15, 2026</span>
+                        <span class="blog-dot">·</span>
+                        <span class="blog-read">2 min read</span>
+                    </div>
+                    <h2 class="blog-title"><a href="logs/log-002.html" style="text-decoration: none; color: inherit;">Log 002: UnitreeGo1 Telemetry Drop</a></h2>
+                    <div class="tags-list" style="margin: 0.75rem 0;">
+                        <span class="tag proprio">Proprio</span>
+                        <span class="tag haptics">APreL</span>
+                    </div>
+                    <p class="blog-excerpt">
+                        During active preference learning tests on the quadruped, the telemetry loop broke after 20 minutes of sustained load. The ROS2 bridge gets saturated publishing proprioceptive joint states at &gt;100Hz alongside visual data.
+                    </p>
+                    <p class="blog-body">
+                        <em>Lesson learned:</em> Downsample joint state publishing during high-compute VLM tasks — the model doesn't need 100Hz to derive human intent anyway.
+                    </p>
+                    <a href="logs/log-002.html" class="blog-read-more">Read more <i class="ph ph-arrow-right"></i></a>
+                </article>
+
+                <!-- Post 001 -->
+                <article class="blog-card reveal" id="log-001">
+                    <div class="blog-card-meta">
+                        <span class="blog-date">Jan 10, 2026</span>
+                        <span class="blog-dot">·</span>
+                        <span class="blog-read">1 min read</span>
+                    </div>
+                    <h2 class="blog-title"><a href="logs/log-001.html" style="text-decoration: none; color: inherit;">Log 001: Initializing the New Architecture</a></h2>
+                    <div class="tags-list" style="margin: 0.75rem 0;">
+                        <span class="tag" style="color: #6366f1; background: rgba(99,102,241,0.05); border-color: rgba(99,102,241,0.2);">Architecture</span>
+                    </div>
+                    <p class="blog-excerpt">
+                        Moving away from standalone model scripts into a unified, modular framework. The goal is to swap the underlying foundational model without rewriting the entire intent-recognition pipeline.
+                    </p>
+                    <a href="logs/log-001.html" class="blog-read-more">Read more <i class="ph ph-arrow-right"></i></a>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="container">
+        <div class="footer-inner">
+            <p>&copy; <span id="year"></span> Gyanig Kumar.</p>
+            <div class="social-links flex align-center">
+                <a href="hobbies.html" style="font-size: 0.9rem; margin-right: 1rem; text-transform: uppercase;">Hobbies</a>
+                <a href="https://github.com/gyanigk" target="_blank"><i class="ph ph-github-logo"></i></a>
+                <a href="https://www.linkedin.com/in/gyanig-k-b36666146" target="_blank"><i class="ph ph-linkedin-logo"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP Animations -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Nav Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav-header');
+            if (window.scrollY > 20) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Entrance Animations
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray('.reveal').forEach(function(elem) {
+            gsap.fromTo(elem, 
+                { y: 30, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: "top 90%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        });
+    </script>
+</body>
+</html>

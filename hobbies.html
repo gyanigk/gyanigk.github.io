@@ -1,163 +1,344 @@
 <!DOCTYPE HTML>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <title>Hobbies - Gyanig Kumar</title>
-
-    <meta name="author" content="Gyanig Kumar">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies | Gyanig Kumar</title>
     
-  </head>
+    <meta name="description" content="Photography, music composition, and hiking.">
+    <meta name="author" content="Gyanig Kumar">
+    
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/stylesheet.css">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-  <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr>
-        <td style="padding:16px;text-align:center">
-          <a href="index.html">Home</a> &nbsp;/&nbsp;
-          <a href="projects.html">Projects</a> &nbsp;/&nbsp;
-          <a href="hobbies.html">Hobbies</a>
-        </td>
-      </tr>
-    </tbody></table>
+    <style>
+        .hobby-section { margin-bottom: var(--spacing-xl); }
 
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:16px;width:100%;vertical-align:middle">
-          <h2>Hobbies</h2>
-        </td>
-      </tr>
-    </tbody></table>
+        /* ── Masonry Photo Grid ───────────────────── */
+        .photo-masonry {
+            columns: 2;
+            column-gap: 0.75rem;
+        }
 
-  <table class="hobbies-list compact-list" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        @media (min-width: 640px)  { .photo-masonry { columns: 3; } }
+        @media (min-width: 1024px) { .photo-masonry { columns: 4; } }
 
-      <tr class="item-row">
-        <td style="padding:16px;width:20%;vertical-align:middle">
-          <a href="https://youtu.be/WH5Owrevtzg"><img src="images/urban nest.jpeg" width="160" alt="Music composition thumbnail"></a>
-        </td>
-        <td style="padding:8px;width:80%;vertical-align:middle">
-          <strong>Music Composition</strong> - Original compositions including "Urban Nest" (2024), exploring contemporary soundscapes. *Courtesey of Google Gemini Nano Bana for thumbnail image.
-          <br>
-          <a href="music/compositions/urban nest.mp4">Download/Play MP4</a>
-          <br>
-          <video width="480" controls poster="images/urban-nest.png" style="max-width:100%;margin-top:8px">
-            <source src="music/compositions/urban nest.mp4" type="video/mp4">
-          </video>
-        </td>
-      </tr>
+        .photo-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 6px;
+            margin-bottom: 0.75rem;
+            break-inside: avoid;
+            cursor: pointer;
+        }
 
-      <tr>
-        <td align="center" style="padding:16px;width:20%;vertical-align:middle">
-          <div class="colored-box" style="background-color: #a9c9b8;">
-            <h2>Band Performances</h2>
-          </div>
-        </td>
-        <td style="padding:8px;width:80%;vertical-align:middle">
-          Live and recorded body performance videos. I will add new videos below as they are produced.
-          <a href="https://youtu.be/WH5Owrevtzg">Performance video (YouTube)</a> ·
-        </td>
-      </tr>
+        .photo-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            filter: brightness(0.95) saturate(0.92);
+        }
 
-      <tr class="item-row">
-        <td style="padding:16px;width:20%;vertical-align:middle">
-          <img src="images/photos/landscape0.jpg" width="160" alt="Landscape photo thumbnail">
-        </td>
-        <td style="padding:8px;width:80%;vertical-align:middle">
-          <strong>Photography</strong> - Landscape and nature photography, capturing moments from hiking trails and mountain vistas
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2" style="padding:8px;width:100%;vertical-align:middle">
-          <div class="photo-carousel" aria-label="Photography carousel">
-            <button class="photo-nav photo-prev" aria-label="Previous slide">&#10094;</button>
-            <button class="photo-nav photo-next" aria-label="Next slide">&#10095;</button>
-            <div class="photo-slides">
-              <div class="photo-slide active"><img src="images/photos/landscape0.jpg" alt="Mountain landscape by the lake"></div>
-              <div class="photo-slide"><img src="images/photos/mountain0.jpg" alt="Snowy mountain peak"></div>
-              <div class="photo-slide"><img src="images/photos/mountain2.jpg" alt="Mountain range at dusk"></div>
-              <div class="photo-slide"><img src="images/photos/twinlake.jpg" alt="Twin lakes at sunrise"></div>
-              <div class="photo-slide"><img src="images/photos/rushmore-2.jpg" alt="Mount Rushmore view"></div>
+        /* Tall variant: portrait ratio */
+        .photo-item.tall img { aspect-ratio: 2/3; object-fit: cover; }
+
+        .photo-item:hover img {
+            transform: scale(1.05);
+            filter: brightness(1.02) saturate(1.08);
+        }
+
+        /* Caption overlay */
+        .photo-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 55%);
+            display: flex;
+            align-items: flex-end;
+            padding: 1rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .photo-item:hover .photo-overlay { opacity: 1; }
+
+        .photo-overlay span {
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-header">
+        <div class="container flex justify-between align-center">
+            <a href="index.html" class="no-underline text-sans" style="font-weight: 600; font-size: 1.1rem; letter-spacing: -0.02em;">Gyanig.</a>
+            <ul class="nav-links">
+            <li><a href="thinking.html">Thinking</a></li>
+            <li><a href="logs.html">Logs</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="hobbies.html" class="active">Hobbies</a></li>
+        </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="padded-section-xl container">
+            <div class="reveal" style="margin-bottom: 4rem;">
+                <h1 style="margin-bottom: 1rem;">Beyond the Lab.</h1>
+                <p class="text-lead text-muted" style="max-width: 700px;">
+                    When I'm not writing papers or debugging ROS nodes, I spend my time exploring soundscapes, live music, and the Rocky Mountains.
+                </p>
             </div>
-            <div class="photo-dots" role="tablist" aria-label="Slide dots">
-              <button class="photo-dot active" aria-label="Go to slide 1" role="tab"></button>
-              <button class="photo-dot" aria-label="Go to slide 2" role="tab"></button>
-              <button class="photo-dot" aria-label="Go to slide 3" role="tab"></button>
-              <button class="photo-dot" aria-label="Go to slide 4" role="tab"></button>
-              <button class="photo-dot" aria-label="Go to slide 5" role="tab"></button>
+
+            <div class="divider reveal" style="margin-bottom: 4rem;"></div>
+
+            <!-- Music & Performance -->
+            <div class="hobby-section reveal">
+                <div style="
+                    display: flex;
+                    align-items: center;
+                    gap: 2rem;
+                    background: var(--bg-color-alt);
+                    border: 1px solid var(--border-color);
+                    border-radius: 12px;
+                    overflow: hidden;
+                    padding: 1.75rem;
+                ">
+                    <!-- Video thumbnail on the left -->
+                    <div style="flex-shrink: 0; width: 220px; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
+                        <video width="100%" controls poster="assets/images/urban nest.jpeg" style="display: block;">
+                            <source src="assets/media/compositions/urban nest.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <!-- Text right -->
+                    <div style="flex: 1; min-width: 0;">
+                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.6rem;">
+                            <h2 style="margin: 0; font-size: 1.3rem;">Sonic Landscapes</h2>
+                            <span style="font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); background: var(--border-color); padding: 0.2rem 0.6rem; border-radius: 20px;">Music</span>
+                        </div>
+                        <p class="text-secondary" style="font-size: 0.9rem; margin-bottom: 1.25rem; line-height: 1.6; max-width: 580px;">
+                            I compose original electronic &amp; acoustic music exploring contemporary textures. <em>"Urban Nest"</em> captures the chaotic harmony of city living. I also perform live with bands.
+                        </p>
+                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                            <a href="https://youtu.be/WH5Owrevtzg" target="_blank" class="btn btn-primary" style="font-size: 0.82rem; padding: 0.45rem 1rem;">
+                                <i class="ph ph-youtube-logo"></i> Watch Performance
+                            </a>
+                            <a href="assets/media/compositions/urban nest.mp4" class="btn" style="font-size: 0.82rem; padding: 0.45rem 1rem;">
+                                <i class="ph ph-download-simple"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </td>
-      </tr>
 
-      <tr class="item-row">
-        <td style="padding:16px;width:20%;vertical-align:middle">
-          <img src="images/photos/animone_hike-30.jpg" width="160" alt="Hiking thumbnail">
-        </td>
-        <td style="padding:8px;width:80%;vertical-align:middle">
-          <strong>Hiking & Outdoor Adventures</strong> - Exploring Colorado's trails including Anemone Trail and Rocky Mountain National Park
-        </td>
-      </tr>
+            <div class="divider reveal" style="margin-bottom: 4rem;"></div>
 
-      <tr class="item-row">
-        <td style="padding:16px;width:20%;vertical-align:middle">
-          <img src="images/photos/rushmore-6.jpg" width="160" alt="Mount Rushmore thumbnail">
-        </td>
-        <td style="padding:8px;width:80%;vertical-align:middle">
-          <strong>Travel Photography</strong> - Documenting visits to iconic locations like Mount Rushmore and various national parks
-        </td>
-      </tr>
-    </tbody></table>
+            <!-- Photography / Visual Memory -->
+            <div class="hobby-section reveal">
+                <div style="margin-bottom: 2.5rem;">
+                    <h2>Visual Memory</h2>
+                    <p class="text-secondary" style="max-width: 700px;">
+                        Capturing moments from hiking trails, mountain vistas in Rocky Mountain National Park, architectural travels across the US, and everyday scenes from the lab and beyond.
+                    </p>
+                </div>
 
-  </body>
+                <!-- Masonry gallery grid -->
+                <div class="photo-masonry">
+                    <div class="photo-item tall reveal">
+                        <img src="assets/images/photos/rushmore-2.jpg" alt="Mount Rushmore">
+                        <div class="photo-overlay"><span>Mount Rushmore</span></div>
+                    </div>
+                    <div class="photo-item reveal">
+                        <img src="assets/images/photos/landscape0.jpg" alt="Landscape">
+                        <div class="photo-overlay"><span>Landscape</span></div>
+                    </div>
+                    <div class="photo-item reveal">
+                        <img src="assets/images/photos/mountain0.jpg" alt="Mountain">
+                        <div class="photo-overlay"><span>Mountain Vista</span></div>
+                    </div>
+                    <div class="photo-item reveal">
+                        <img src="assets/images/photos/twinlake.jpg" alt="Twin Lakes">
+                        <div class="photo-overlay"><span>Twin Lakes</span></div>
+                    </div>
+                    <div class="photo-item tall reveal">
+                        <img src="assets/images/photos/animone_hike-131.jpg" alt="Anemone Hike">
+                        <div class="photo-overlay"><span>Anemone Trail</span></div>
+                    </div>
+                    <div class="photo-item reveal">
+                        <img src="assets/images/photos/mountain2.jpg" alt="Mountain dusk">
+                        <div class="photo-overlay"><span>Dusk</span></div>
+                    </div>
+                    <div class="photo-item reveal">
+                        <img src="assets/images/photos/rushmore-3.jpg" alt="Rushmore 3">
+                        <div class="photo-overlay"><span>Rushmore</span></div>
+                    </div>
+                    <div class="photo-item reveal">
+                        <img src="assets/images/photos/rushmore-5.jpg" alt="Rushmore 5">
+                        <div class="photo-overlay"><span>Rushmore</span></div>
+                    </div>
+                    <div class="photo-item reveal">
+                        <img src="assets/images/photos/rushmore-6.jpg" alt="Rushmore 6">
+                        <div class="photo-overlay"><span>Rushmore</span></div>
+                    </div>
+                    <div class="photo-item reveal">
+                        <img src="assets/images/photos/rushmore-12.jpg" alt="Rushmore 12">
+                        <div class="photo-overlay"><span>Rushmore</span></div>
+                    </div>
+                    <div class="photo-item reveal">
+                        <img src="assets/images/photos/animone_hike-20.jpg" alt="Anemone Hike 20">
+                        <div class="photo-overlay"><span>Trail</span></div>
+                    </div>
+                    <div class="photo-item reveal">
+                        <img src="assets/images/photos/animone_hike-30.jpg" alt="Anemone Hike 30">
+                        <div class="photo-overlay"><span>Anemone Trail</span></div>
+                    </div>
+                    <div class="photo-item tall reveal">
+                        <img src="assets/images/photos/genesis.jpg" alt="Genesis">
+                        <div class="photo-overlay"><span>Genesis</span></div>
+                    </div>
+                </div>
+
+                <!-- Field Notes: Journey shots -->
+                <div style="margin-top: 4rem; margin-bottom: 2rem;">
+                    <h3 style="margin-bottom: 0.5rem;">Field Notes</h3>
+                    <p class="text-muted" style="font-size: 0.9rem;">Snapshots from grad school, robotics labs, and life in Colorado.</p>
+                </div>
+                <div class="photo-masonry">
+                    <div class="photo-item tall reveal">
+                        <img src="assets/images/journey/working on the Go1.jpeg" alt="Go1 Robot">
+                        <div class="photo-overlay"><span>Working on Go1</span></div>
+                    </div>
+                    <div class="photo-item reveal">
+                        <img src="assets/images/journey/eyetracker-helmet.jpg" alt="Eye tracker helmet">
+                        <div class="photo-overlay"><span>Eye Tracker Helmet</span></div>
+                    </div>
+                    <div class="photo-item reveal">
+                        <img src="assets/images/journey/Playing guitar.jpeg" alt="Playing Guitar">
+                        <div class="photo-overlay"><span>Playing Guitar</span></div>
+                    </div>
+                    <div class="photo-item reveal">
+                        <img src="assets/images/journey/hike.jpeg" alt="Hiking">
+                        <div class="photo-overlay"><span>Hiking</span></div>
+                    </div>
+                    <div class="photo-item reveal">
+                        <img src="assets/images/journey/Middle-school-visit.jpeg" alt="Middle School Visit">
+                        <div class="photo-overlay"><span>Middle School Visit</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close modal"><i class="ph ph-x"></i></button>
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="Full size view">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <footer class="container">
+        <div class="footer-inner">
+            <p>&copy; <span id="year"></span> Gyanig Kumar.</p>
+            <div class="social-links flex align-center">
+                <a href="hobbies.html" class="active" style="font-size: 0.9rem; margin-right: 1rem; text-transform: uppercase;">Hobbies</a>
+                <a href="https://github.com/gyanigk" target="_blank"><i class="ph ph-github-logo"></i></a>
+                <a href="https://www.linkedin.com/in/gyanig-k-b36666146" target="_blank"><i class="ph ph-linkedin-logo"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP Animations -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav-header');
+            if (window.scrollY > 20) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        gsap.fromTo(".reveal", 
+            { y: 30, opacity: 0 },
+            { 
+                y: 0, 
+                opacity: 1, 
+                duration: 1, 
+                stagger: 0.1,
+                ease: "power3.out",
+                delay: 0.1
+            }
+        );
+
+        // Lightbox Logic
+        const initLightbox = () => {
+            const modal = document.getElementById('lightboxModal');
+            const modalImg = document.getElementById('lightboxImage');
+            const modalCaption = document.getElementById('lightboxCaption');
+            const closeBtn = document.getElementById('lightboxClose');
+            const photoItems = document.querySelectorAll('.photo-item');
+            
+            if (!modal || !photoItems.length) return;
+
+            // Open modal
+            photoItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const img = item.querySelector('img');
+                    const caption = item.querySelector('.photo-overlay span');
+                    
+                    if (img) {
+                        modalImg.src = img.src;
+                        modalImg.alt = img.alt || 'Full size view';
+                    }
+                    if (caption) {
+                        modalCaption.textContent = caption.textContent;
+                    } else {
+                        modalCaption.textContent = '';
+                    }
+                    
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                });
+            });
+
+            // Close modal styles
+            const closeModal = () => {
+                modal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            };
+
+            closeBtn.addEventListener('click', closeModal);
+            
+            modal.addEventListener('click', (e) => {
+                // Close if clicking the backdrop, not the image content
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Close on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+        };
+
+        document.addEventListener('DOMContentLoaded', initLightbox);
+    </script>
+</body>
 </html>
-
-<script>
-// Minimal, dependency-free carousel
-(function() {
-  var container = document.querySelector('.photo-carousel');
-  if (!container) return;
-  var slides = Array.prototype.slice.call(container.querySelectorAll('.photo-slide'));
-  var dots = Array.prototype.slice.call(container.querySelectorAll('.photo-dot'));
-  var prevBtn = container.querySelector('.photo-prev');
-  var nextBtn = container.querySelector('.photo-next');
-  var current = 0;
-  var timer = null;
-  var INTERVAL_MS = 4000;
-
-  function show(index) {
-    if (index < 0) index = slides.length - 1;
-    if (index >= slides.length) index = 0;
-    slides[current].classList.remove('active');
-    dots[current].classList.remove('active');
-    current = index;
-    slides[current].classList.add('active');
-    dots[current].classList.add('active');
-  }
-
-  function next() { show(current + 1); }
-  function prev() { show(current - 1); }
-
-  function start() {
-    stop();
-    timer = setInterval(next, INTERVAL_MS);
-  }
-  function stop() {
-    if (timer) { clearInterval(timer); timer = null; }
-  }
-
-  nextBtn.addEventListener('click', function() { next(); start(); });
-  prevBtn.addEventListener('click', function() { prev(); start(); });
-  dots.forEach(function(dot, i) {
-    dot.addEventListener('click', function() { show(i); start(); });
-  });
-
-  container.addEventListener('mouseenter', stop);
-  container.addEventListener('mouseleave', start);
-
-  start();
-})();
-</script>
-
-

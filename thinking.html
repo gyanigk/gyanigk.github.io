@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manifesto | Mind + Senses for Robotics</title>
+    
+    <meta name="description" content="The core thesis of my work: merging human intuition with robotic sensing.">
+    <meta name="author" content="Gyanig Kumar">
+    
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/stylesheet.css">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="manifesto-theme">
+
+    <nav class="nav-header">
+        <div class="container flex justify-between align-center">
+            <a href="index.html" class="no-underline text-sans" style="font-weight: 600; font-size: 1.1rem; letter-spacing: -0.02em;">Gyanig.</a>
+            <ul class="nav-links">
+            <li><a href="thinking.html" class="active">Thinking</a></li>
+            <li><a href="logs.html">Logs</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="hobbies.html">Hobbies</a></li>
+        </ul></div>
+    </nav>
+
+    <main>
+        <section class="padded-section-xl container">
+            <div class="reveal">
+                <p class="text-sans text-muted" style="text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; margin-bottom: 2rem;">Theoretical Framework</p>
+                <h1 style="font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 3rem; line-height: 1.1;">
+                    The Mind + <br>Senses Thesis.
+                </h1>
+            </div>
+
+            <div class="manifesto-block text-serif reveal text-light">
+                Robots have traditionally operated as islands. They perceive the world through discrete sensors, run isolated algorithms to process the data, and act. 
+                <br><br>
+                <strong>But the human mind does not work this way.</strong> We integrate our senses—vision, hearing, touch, and proprioception—into a continuous, fluid understanding of our environment and the intentions of those around us.
+            </div>
+
+            <div class="grid grid-cols-2 gap-lg" style="margin-top: 4rem;">
+                <div class="reveal">
+                    <h3 style="margin-bottom: 1rem;"><i class="ph ph-eye" style="color: var(--color-vision); margin-right: 0.5rem;"></i> Explicit Vision & Gaze</h3>
+                    <p class="text-light">
+                        Where we look is the purest indicator of what we intend to do next. By aligning human gaze with robotic planning, we bridge the gap between intention and action.
+                    </p>
+                </div>
+                <div class="reveal">
+                    <h3 style="margin-bottom: 1rem;"><i class="ph ph-hand-tap" style="color: var(--color-haptics); margin-right: 0.5rem;"></i> Shared Autonomy</h3>
+                    <p class="text-light">
+                        When the system can predict the human's underlying goal through behavioral cues, it isn't just taking orders—it's collaborating.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="divider reveal"></div>
+
+            <div class="flex justify-between align-center reveal" style="margin-top: 2rem;">
+                <p class="text-sans text-muted" style="margin: 0;">This philosophy drives every paper, every algorithm, and every interaction I design.</p>
+                <a href="index.html#news" class="btn">View Applied Research <i class="ph ph-arrow-right"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container">
+        <div class="footer-inner">
+            <p>&copy; <span id="year"></span> Gyanig Kumar.</p>
+            <div class="social-links flex align-center">
+                <a href="hobbies.html" style="font-size: 0.9rem; margin-right: 1rem; text-transform: uppercase;">Hobbies</a>
+                <a href="https://github.com/gyanigk" target="_blank"><i class="ph ph-github-logo"></i></a>
+                <a href="https://www.linkedin.com/in/gyanig-k-b36666146" target="_blank"><i class="ph ph-linkedin-logo"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP Animations -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav-header');
+            if (window.scrollY > 20) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        gsap.fromTo(".reveal", 
+            { y: 30, opacity: 0 },
+            { 
+                y: 0, 
+                opacity: 1, 
+                duration: 1, 
+                stagger: 0.15,
+                ease: "power3.out",
+                delay: 0.2
+            }
+        );
+    </script>
+</body>
+</html>

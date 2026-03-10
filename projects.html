@@ -1,98 +1,374 @@
 <!DOCTYPE HTML>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <title>Projects - Gyanig Kumar</title>
-
-    <meta name="author" content="Gyanig Kumar">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Gyanig Kumar</title>
     
-  </head>
+    <meta name="description" content="Development projects, hackathons, and software tools.">
+    <meta name="author" content="Gyanig Kumar">
+    
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/stylesheet.css">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
 
-  <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr>
-        <td style="padding:16px;text-align:center">
-          <a href="index.html">Home</a> &nbsp;/&nbsp;
-          <a href="projects.html">Projects</a> &nbsp;/&nbsp;
-          <a href="hobbies.html">Hobbies</a>
-        </td>
-      </tr>
-    </tbody></table>
+    <nav class="nav-header">
+        <div class="container flex justify-between align-center">
+            <a href="index.html" class="no-underline text-sans" style="font-weight: 600; font-size: 1.1rem; letter-spacing: -0.02em;">Gyanig.</a>
+            <ul class="nav-links">
+            <li><a href="thinking.html">Thinking</a></li>
+            <li><a href="logs.html">Logs</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="hobbies.html">Hobbies</a></li>
+        </ul></div>
+    </nav>
 
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:16px;width:100%;vertical-align:middle">
-          <h2>Projects</h2>
-        </td>
-      </tr>
-    </tbody></table>
+    <main>
+        <section class="padded-section-xl container">
+            <div class="reveal" style="margin-bottom: 4rem;">
+                <h1 style="margin-bottom: 1rem;">Applied Projects.</h1>
+                <p class="text-lead text-muted" style="max-width: 700px;">
+                    Beyond academic research, I build software systems—from interpreters to autonomous driving pipelines—that bridge the gap between theory and execution.
+                </p>
+            </div>
 
-  <table class="projects-list compact-list" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <div class="projects-grid">
+            <!-- Project 1: Ansh.AI (Wide) -->
+            <div class="bento-card wide reveal" data-tag="LLM Hackathon">
+                <div class="card-index">01</div>
+                <div class="item-image-wrapper">
+                    <img src="assets/images/ansh-ai.jpg" alt="Ansh.AI">
+                </div>
+                <div class="item-content">
+                    <div class="category-badge category-deep-dive">Deep Dive</div>
+                    <div class="item-meta">HackCU11 (2nd Place AI Track)</div>
+                    <h3 class="item-title">Ansh.AI: Conversational Diary</h3>
+                    <div class="tags-list">
+                        <span class="tag" style="color: #6366f1; background: rgba(99,102,241,0.05);">LLM</span>
+                        <span class="tag" style="color: #ec4899; background: rgba(236,72,153,0.05);">Hackathon</span>
+                    </div>
+                </div>
+                <div class="bento-details">
+                    <p class="item-description">
+                        An emotional sounding board and personal logging system. Awarded 2nd place in the AI Track at HackCU11.
+                    </p>
+                    <div class="item-links">
+                        <a href="projects/ansh-ai.html" class="btn btn-primary">View Details</a>
+                        <a href="https://github.com/sakshamk6999/HackCU11" target="_blank" class="btn"><i class="ph ph-github-logo"></i> Repo</a>
+                    </div>
+                </div>
+            </div>
 
-      <tr class="item-row">
-        <td style="padding:16px;width:20%;vertical-align:middle">
-          <img src="images/ansh-ai.jpg" width="160" alt="Ansh.AI thumbnail">
-        </td>
-        <td style="padding:8px;width:80%;vertical-align:middle">
-          <a href="https://github.com/sakshamk6999/HackCU11">Ansh.AI: Conversational Diary Companion</a>
-          <br>
-          2nd Position in AI Track at HackCU11. A conversational diary assistant with AI features. /
-          <a href="https://youtu.be/1wwqeeN3aRM">video</a>
-        </td>
-      </tr>
+            <!-- Project 2: AWS DeepRacer -->
+            <div class="bento-card reveal" data-tag="ROS 2 Control">
+                <div class="card-index">02</div>
+                <div class="item-image-wrapper">
+                    <img src="assets/images/deepracer.jpg" alt="AWS DeepRacer">
+                </div>
+                <div class="item-content">
+                    <div class="category-badge category-deep-dive">Deep Dive</div>
+                    <div class="item-meta">Advanced Robotics</div>
+                    <h3 class="item-title">AWS DeepRacer Autonomous Driving</h3>
+                    <div class="tags-list">
+                        <span class="tag vision">ROS 2</span>
+                        <span class="tag proprio">Control</span>
+                    </div>
+                </div>
+                <div class="bento-details">
+                    <p class="item-description">
+                        Full ROS 2 autonomous pipeline covering perception (lane detection) and PID control loops.
+                    </p>
+                    <div class="item-links">
+                        <a href="projects/deepracer.html" class="btn btn-primary">View Details</a>
+                        <a href="https://github.com/gyanigk/Advanced-Robotics" target="_blank" class="btn"><i class="ph ph-github-logo"></i> Repo</a>
+                    </div>
+                </div>
+            </div>
 
-      <tr class="item-row">
-        <td style="padding:16px;width:20%;vertical-align:middle">
-          <img src="images/deepracer.jpg" width="160" alt="AWS DeepRacer thumbnail">
-        </td>
-        <td style="padding:8px;width:80%;vertical-align:middle">
-          <a href="https://github.com/gyanigk/Advanced-Robotics/tree/Final-Project/FINAL_PROJECT">Autonomous Driving Challenge with AWS DeepRacer</a>
-          <br>
-          ROS 2 based autonomous vehicle pipeline for perception and control.
-        </td>
-      </tr>
+            <!-- Project 3: AHRI (Wide) -->
+            <div class="bento-card wide reveal" data-tag="HRI Vision">
+                <div class="card-index">03</div>
+                <div class="item-image-wrapper">
+                    <img src="assets/images/ahri project.png" alt="AHRI Project">
+                </div>
+                <div class="item-content">
+                    <div class="category-badge category-research">Research</div>
+                    <div class="item-meta">Research Project</div>
+                    <h3 class="item-title">AHRI: Dual Task Modalities</h3>
+                    <div class="tags-list">
+                        <span class="tag" style="color: #3b82f6; background: rgba(59,130,246,0.05);">HRI</span>
+                        <span class="tag" style="color: #f59e0b; background: rgba(245,158,11,0.05);">Dual Task</span>
+                    </div>
+                </div>
+                <div class="bento-details">
+                    <p class="item-description">
+                        A comparative study on human performance and cognitive load during concurrent dual-task robotic scenarios.
+                    </p>
+                    <div class="item-links">
+                        <a href="projects/ahri.html" class="btn btn-primary">Study Details</a>
+                        <a href="assets/data/AHRI_Compare modalities in dual task_final.pdf" target="_blank" class="btn"><i class="ph ph-file-pdf"></i> Paper</a>
+                    </div>
+                </div>
+            </div>
 
-      <tr class="item-row">
-        <td style="padding:16px;width:20%;vertical-align:middle">
-          <img src="images/lox.jpg" width="160" alt="Lox interpreter thumbnail">
-        </td>
-        <td style="padding:8px;width:80%;vertical-align:middle">
-          <a href="https://github.com/gyanigk/Lox">Lox: Interpreter for Python-like Language</a>
-          <br>
-          End-to-end interpreter implementation with scanner, parser, resolver, and VM.
-        </td>
-      </tr>
+            <!-- Project 4: Lox Interpreter (Tall) -->
+            <div class="bento-card tall reveal" data-tag="Compilers">
+                <div class="card-index">04</div>
+                <div class="item-image-wrapper">
+                    <img src="assets/images/lox.jpg" alt="Lox Interpreter">
+                </div>
+                <div class="item-content">
+                    <div class="category-badge category-deep-dive">Deep Dive</div>
+                    <div class="item-meta">Systems Programming</div>
+                    <h3 class="item-title">Lox Language Interpreter</h3>
+                    <div class="tags-list">
+                        <span class="tag" style="color: #10b981; background: rgba(16,185,129,0.05);">Compilers</span>
+                    </div>
+                </div>
+                <div class="bento-details">
+                    <p class="item-description">
+                        Full end-to-end interpreter implementation including scanner, parser, and tree-walk evaluator.
+                    </p>
+                    <div class="item-links">
+                        <a href="projects/lox.html" class="btn btn-primary">System View</a>
+                        <a href="https://github.com/gyanigk/Lox" target="_blank" class="btn"><i class="ph ph-github-logo"></i> Repo</a>
+                    </div>
+                </div>
+            </div>
 
-      <tr class="item-row">
-        <td style="padding:16px;width:20%;vertical-align:middle">
-          <img src="images/v-bikes.jpg" width="160" alt="V-BIKES thumbnail">
-        </td>
-        <td style="padding:8px;width:80%;vertical-align:middle">
-          <a href="https://drive.google.com/file/d/1JOfyKVWSockjHTPi5B7Y7iNZmLMB-D6l/view?usp=share_link">V-BIKES: Enhanced Safety Measures for Two-Wheeler Vehicles</a>
-          <br>
-          IoT-based collision detection and alert system for rider safety. /
-          <a href="https://youtu.be/n_o4x1v03Sc">video</a>
-        </td>
-      </tr>
+            <!-- Project 5: V-BIKES -->
+            <div class="bento-card reveal" data-tag="Hardware Sensors">
+                <div class="card-index">05</div>
+                <div class="item-image-wrapper">
+                    <img src="assets/images/journey/v-bikes.jpg" alt="V-BIKES">
+                </div>
+                <div class="item-content">
+                    <div class="category-badge category-deep-dive">Deep Dive</div>
+                    <div class="item-meta">IoT Safety</div>
+                    <h3 class="item-title">V-BIKES Collision Detection</h3>
+                    <div class="tags-list">
+                        <span class="tag" style="color: #ef4444; background: rgba(239,68,68,0.05);">Hardware</span>
+                        <span class="tag proprio">Sensors</span>
+                    </div>
+                </div>
+                <div class="bento-details">
+                    <p class="item-description">
+                        Hardware-based safety system explicitly designed for two-wheeler urban environments.
+                    </p>
+                    <div class="item-links">
+                        <a href="projects/v-bikes.html" class="btn btn-primary">Hardware Details</a>
+                        <a href="https://youtu.be/n_o4x1v03Sc" target="_blank" class="btn"><i class="ph ph-video"></i> Video</a>
+                    </div>
+                </div>
+            </div>
 
-      <tr class="item-row">
-        <td style="padding:16px;width:20%;vertical-align:middle">
-          <img src="images/breakthrough.jpg" width="160" alt="Google Breakthrough Challenge thumbnail">
-        </td>
-        <td style="padding:8px;width:80%;vertical-align:middle">
-          <a href="https://youtu.be/JJac8ucd9nw">Google Breakthrough Challenge Submission</a>
-          <br>
-          Challenge submission overview and demo. /
-          <a href="https://youtu.be/JJac8ucd9nw">video</a>
-        </td>
-      </tr>
-    </tbody></table>
+            <!-- Project 6: Gaze Estimation Presentation -->
+            <div class="bento-card reveal" data-tag="Vision">
+                <div class="card-index">06</div>
+                <div class="item-image-wrapper">
+                    <img src="assets/images/cv7000_demo.jpg" alt="Gaze Estimation">
+                </div>
+                <div class="item-content">
+                    <div class="category-badge category-slides">Slides</div>
+                    <div class="item-meta">CVPR Presentation</div>
+                    <h3 class="item-title">End-to-end Frame to Gaze Estimation</h3>
+                    <div class="tags-list">
+                        <span class="tag vision">Vision</span>
+                    </div>
+                </div>
+                <div class="bento-details">
+                    <p class="item-description">
+                        Literature review and "End-to-end Frame-to-gaze" CVPR paper presentation for graduate robotics seminar.
+                    </p>
+                    <div class="item-links">
+                        <a href="assets/data/gaze estimation_cv7000.pdf" target="_blank" class="btn btn-primary"><i class="ph ph-presentation-chart"></i> View Slides</a>
+                    </div>
+                </div>
+            </div>
 
-  </body>
+            <!-- Project 7: POMDP -->
+            <div class="bento-card reveal" data-tag="Math/Theory">
+                <div class="card-index">07</div>
+                <div class="item-image-wrapper">
+                    <img src="assets/images/pomdp.jpg" alt="POMDP Presentation">
+                </div>
+                <div class="item-content">
+                    <div class="category-badge category-slides">Slides</div>
+                    <div class="item-meta">Probabilistic Robotics</div>
+                    <h3 class="item-title">POMDP Frameworks for Autonomy</h3>
+                    <div class="tags-list">
+                        <span class="tag" style="color: #f59e0b; background: rgba(245,158,11,0.05);">Theory</span>
+                    </div>
+                </div>
+                <div class="bento-details">
+                    <p class="item-description">
+                        Presentation on Partially Observed Markov Decision Processes and their application in decision-making.
+                    </p>
+                    <div class="item-links">
+                        <a href="assets/data/POMDP.pdf" target="_blank" class="btn btn-primary"><i class="ph ph-presentation-chart"></i> View Slides</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 8: DMU (Wide) -->
+            <div class="bento-card wide reveal" data-tag="Autonomy">
+                <div class="card-index">08</div>
+                <div class="item-image-wrapper">
+                    <img src="assets/images/dmu.jpg" alt="DMU Final Paper">
+                </div>
+                <div class="item-content">
+                    <div class="category-badge category-research">Research</div>
+                    <div class="item-meta">Aerospace Engineering</div>
+                    <h3 class="item-title">Decision Making under Uncertainty</h3>
+                    <div class="tags-list">
+                        <span class="tag" style="color: #10b981; background: rgba(16,185,129,0.05);">Autonomy</span>
+                    </div>
+                </div>
+                <div class="bento-details">
+                    <p class="item-description">
+                        Research paper on decision-making strategies and algorithms for safety-critical autonomous systems.
+                    </p>
+                    <div class="item-links">
+                        <a href="projects/dmu.html" class="btn btn-primary">Technical Approach</a>
+                        <a href="assets/data/DMU_Final_Paper.pdf" target="_blank" class="btn"><i class="ph ph-file-pdf"></i> Paper</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 9: UNESCO -->
+            <div class="bento-card reveal" data-tag="Policy">
+                <div class="card-index">09</div>
+                <div class="item-image-wrapper">
+                    <img src="assets/images/unesco.jpg" alt="UNESCO Report">
+                </div>
+                <div class="item-content">
+                    <div class="category-badge category-research">Research</div>
+                    <div class="item-meta">Publication</div>
+                    <h3 class="item-title">UNESCO Report on AI & Education</h3>
+                    <div class="tags-list">
+                        <span class="tag" style="color: #3b82f6; background: rgba(59,130,246,0.05);">Policy</span>
+                    </div>
+                </div>
+                <div class="bento-details">
+                    <p class="item-description">
+                        UNESCO-commissioned report examining the global impact of artificial intelligence on future learning.
+                    </p>
+                    <div class="item-links">
+                        <a href="projects/unesco.html" class="btn btn-primary">Strategic View</a>
+                        <a href="assets/data/382661eng.pdf" target="_blank" class="btn"><i class="ph ph-file-pdf"></i> Report</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 10: BEL Workshop (Tall) -->
+            <div class="bento-card tall reveal" data-tag="Industry">
+                <div class="card-index">10</div>
+                <div class="item-image-wrapper">
+                    <img src="assets/images/bel-workshop.jpg" alt="BEL Industry Presentation">
+                </div>
+                <div class="item-content">
+                    <div class="category-badge category-slides">Slides</div>
+                    <div class="item-meta">Applied AI Talk</div>
+                    <h3 class="item-title">BEL Industry Workshop: Perception</h3>
+                    <div class="tags-list">
+                        <span class="tag" style="color: #ec4899; background: rgba(236,72,153,0.05);">Industry</span>
+                    </div>
+                </div>
+                <div class="bento-details">
+                    <p class="item-description">
+                        Industrial session covering the practical adoption of AI-driven planning pipelines in manufacturing.
+                    </p>
+                    <div class="item-links">
+                        <a href="assets/data/GAN_BEL_workshop.pdf" target="_blank" class="btn btn-primary"><i class="ph ph-presentation-chart"></i> View Slides</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 11: MRCV Cross-modal -->
+            <div class="bento-card reveal" data-tag="Vision VLM">
+                <div class="card-index">11</div>
+                <div class="item-image-wrapper">
+                    <img src="assets/images/MRCV.jpg" alt="MRCV Presentation">
+                </div>
+                <div class="item-content">
+                    <div class="category-badge category-slides">Slides</div>
+                    <div class="item-meta">Graduate Seminar</div>
+                    <h3 class="item-title">Advances in Visual-Language Models</h3>
+                    <div class="tags-list">
+                        <span class="tag vision">Vision</span>
+                        <span class="tag" style="color: #10b981; background: rgba(16,185,129,0.05);">VLM</span>
+                    </div>
+                </div>
+                <div class="bento-details">
+                    <p class="item-description">
+                        Explored multimodal fusion, promptable VLM architectures, and evaluation for embodied perception.
+                    </p>
+                    <div class="item-links">
+                        <a href="assets/data/MRCV.pdf" target="_blank" class="btn btn-primary"><i class="ph ph-presentation-chart"></i> View Slides</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            
+        </section>
+    </main>
+
+    <footer class="container">
+        <div class="footer-inner">
+            <p>&copy; <span id="year"></span> Gyanig Kumar.</p>
+            <div class="social-links flex align-center">
+                <a href="hobbies.html" style="font-size: 0.9rem; margin-right: 1rem; text-transform: uppercase;">Hobbies</a>
+                <a href="https://github.com/gyanigk" target="_blank"><i class="ph ph-github-logo"></i></a>
+                <a href="https://www.linkedin.com/in/gyanig-k-b36666146" target="_blank"><i class="ph ph-linkedin-logo"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP Animations -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Shuffle Projects (Preserving the "Wide/Tall" specific distribution style)
+        (function shuffleProjects() {
+            const grid = document.querySelector('.projects-grid');
+            if (!grid) return;
+            const cards = Array.from(grid.children);
+            
+            // Reordering the cards but keeping their variant classes attached to their content
+            for (let i = cards.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [cards[i], cards[j]] = [cards[j], cards[i]];
+            }
+            
+            cards.forEach(card => grid.appendChild(card));
+        })();
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav-header');
+            if (window.scrollY > 20) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        gsap.fromTo(".reveal", 
+            { y: 30, opacity: 0 },
+            { 
+                y: 0, 
+                opacity: 1, 
+                duration: 1, 
+                stagger: 0.1,
+                ease: "power3.out",
+                delay: 0.2
+            }
+        );
+    </script>
+</body>
 </html>
-
-

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMU | Study Details</title>
+    <link rel="stylesheet" href="../assets/css/stylesheet.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <header class="nav-header">
+        <nav class="container flex justify-between align-center">
+            <a href="../index.html" class="nav-logo">Gyanig<span>.</span></a>
+            <div class="nav-links">
+                <a href="../index.html">Bio</a>
+                <a href="../projects.html" class="active">Projects</a>
+                <a href="../hobbies.html">Hobbies</a>
+                <a href="../thinking.html">Thinking</a>
+                <a href="../logs.html">Logs</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="project-hero reveal">
+            <div class="category-badge category-research">Research</div>
+            <h1 class="heading-xl">Decision Making under Uncertainty</h1>
+            <p class="text-secondary">Handling environmental and sensor noise in safety-critical autonomous systems.</p>
+            
+            <div class="project-meta-grid">
+                <div class="project-meta-item">
+                    <span>Department</span>
+                    <p>Aerospace Engineering</p>
+                </div>
+                <div class="project-meta-item">
+                    <span>Focus</span>
+                    <p>POMDP, MCTS</p>
+                </div>
+                <div class="project-meta-item">
+                    <span>Advisor</span>
+                    <p>Prof. Osita Onyejekwe</p>
+                </div>
+                <div class="project-meta-item">
+                    <span>Context</span>
+                    <p>Recent Advancements in Autonomy</p>
+                </div>
+            </div>
+        </section>
+
+        <article class="project-content-section reveal">
+            <h2>The Challenge</h2>
+            <p>Robots operating in the real world never have perfect information. This research focuses on the mathematical frameworks required to make optimal decisions when sensor data is noisy and the environment is dynamic. The project was rooted in Aerospace standards to ensure rigorous safety and predictability.</p>
+
+            <figure class="project-figure">
+                <img src="../assets/images/dmu.jpg" alt="Belief State Propagation">
+                <figcaption>Calculated propagation of probability distributions in safety-critical trajectories.</figcaption>
+            </figure>
+
+            <h2>Foundational Frameworks</h2>
+            <div class="technical-details-box" style="background: var(--bg-color-alt); padding: 2rem; border-radius: 12px; margin: 2rem 0;">
+                <h4 style="margin-top: 0;"><i class="ph ph-atom" style="margin-right: 0.5rem;"></i> The Theoretical Stack</h4>
+                <ul style="margin-bottom: 0;">
+                    <li><strong>MDP to POMDP:</strong> Moving beyond simple Markov decision processes into Partially Observed states, where the agent must maintain a probability distribution over its current location.</li>
+                    <li><strong>Monte Carlo Tree Search (MCTS):</strong> Applied to handle the exponential growth of the planning horizon in high-dimensional state spaces.</li>
+                    <li><strong>Risk-Sensitive Heuristics:</strong> Integrating variance-aware cost functions to ensure the robot prioritizes low-risk paths even if they are slightly less efficient.</li>
+                </ul>
+            </div>
+
+            <h2>Application & Impact</h2>
+            <p>By implementing these frameworks, we demonstrated a 30% improvement in navigating "hidden-obstacle" scenarios compared to traditional greedy algorithms. The final report serves as a technical blueprint for integrating robust probabilistic planning into modern robotic fleets.</p>
+
+            <div class="flex gap-md" style="margin-top: 4rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+                <a href="../assets/data/DMU_Final_Paper.pdf" target="_blank" class="btn btn-primary"><i class="ph ph-file-pdf"></i> Read Paper</a>
+                <a href="../projects.html" class="btn"><i class="ph ph-arrow-left"></i> All Projects</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="container">
+        <div class="footer-inner">
+            <p>&copy; <span id="year"></span> Gyanig Kumar.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        gsap.fromTo(".reveal", 
+            { y: 30, opacity: 0 },
+            { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power3.out" }
+        );
+    </script>
+</body>
+</html>

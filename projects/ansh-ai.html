@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansh.AI | Study Details</title>
+    <link rel="stylesheet" href="../assets/css/stylesheet.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <header class="nav-header">
+        <nav class="container flex justify-between align-center">
+            <a href="../index.html" class="nav-logo">Gyanig<span>.</span></a>
+            <div class="nav-links">
+                <a href="../index.html">Bio</a>
+                <a href="../projects.html" class="active">Projects</a>
+                <a href="../hobbies.html">Hobbies</a>
+                <a href="../thinking.html">Thinking</a>
+                <a href="../logs.html">Logs</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="project-hero reveal">
+            <div class="category-badge category-deep-dive">Deep Dive</div>
+            <h1 class="heading-xl">Ansh.AI: Agentic Diary</h1>
+            <p class="text-secondary">"Artificial Narrator for Self-reflection and Harmony" — A part of you in the machine.</p>
+            
+            <div class="project-meta-grid">
+                <div class="project-meta-item">
+                    <span>Role</span>
+                    <p>Core AI Strategy</p>
+                </div>
+                <div class="project-meta-item">
+                    <span>Stack</span>
+                    <p>React, Langchain, AMD Minisforum NPU</p>
+                </div>
+                <div class="project-meta-item">
+                    <span>Key Tech</span>
+                    <p>ChromaDB, Vector-Memory</p>
+                </div>
+                <div class="project-meta-item">
+                    <span>Team</span>
+                    <p>HackCU11 (5 Members)</p>
+                </div>
+            </div>
+        </section>
+
+        <article class="project-content-section reveal">
+            <h2>The Vision</h2>
+            <p>Journaling is a powerful tool for clarity, but the hurdle of "blank page syndrome" often stops it. Ansh.ai transforms passive writing into active dialogue. Named after the Sanskrit word for "a part of you," Ansh acts as an empathetic digital twin that reflects your thoughts back to you with structured insights.</p>
+
+            <figure class="project-figure">
+                <img src="../assets/images/ansh-ai.jpg" alt="Ansh.AI Architecture">
+                <figcaption>Simplified diagram of the Memory Node and Sentiment Router integration.</figcaption>
+            </figure>
+
+            <h2>Technical Architecture</h2>
+            <p>We built a low-latency pipeline to support real-time conversational emotional support:</p>
+            <div class="technical-details-box" style="background: var(--bg-color-alt); padding: 2rem; border-radius: 12px; margin: 2rem 0;">
+                <h4 style="margin-top: 0;"><i class="ph ph-cpu" style="margin-right: 0.5rem;"></i> The AI Stack</h4>
+                <ul style="margin-bottom: 0;">
+                    <li><strong>Agentic Reasoning:</strong> Langchain handles multi-step chains to determine when to ask clarifying questions vs. when to provide supportive reflection.</li>
+                    <li><strong>Long-term Memory:</strong> ChromaDB stores vector embeddings of past entries, allowing "Ansh" to reference patterns from weeks ago (e.g., "You mentioned feeling similarly last Tuesday...").</li>
+                    <li><strong>Local Compute:</strong> Optimized for AMD Minisforum AI 370 using NPU integration to ensure privacy-first, local processing of sensitive personal data.</li>
+                </ul>
+            </div>
+
+            <h2>Hackathon Success</h2>
+            <p>Ansh.ai was awarded <strong>2nd Place in the AI Track at HackCU11</strong>. Our implementation was praised for its balance of high-end consumer hardware utilization (AMD NPUs) and a deeply human-centric UX that addressed the often-sterile nature of personal health technology.</p>
+
+            <div class="flex gap-md" style="margin-top: 4rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+                <a href="https://github.com/sakshamk6999/HackCU11" target="_blank" class="btn btn-primary"><i class="ph ph-github-logo"></i> GitHub View</a>
+                <a href="https://youtu.be/1wwqeeN3aRM" target="_blank" class="btn"><i class="ph ph-video"></i> Watch Demo</a>
+                <a href="../projects.html" class="btn"><i class="ph ph-arrow-left"></i> All Projects</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="container">
+        <div class="footer-inner">
+            <p>&copy; <span id="year"></span> Gyanig Kumar.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        gsap.fromTo(".reveal", 
+            { y: 30, opacity: 0 },
+            { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power3.out" }
+        );
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AHRI | Study Details</title>
+    <link rel="stylesheet" href="../assets/css/stylesheet.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <header class="nav-header">
+        <nav class="container flex justify-between align-center">
+            <a href="../index.html" class="nav-logo">Gyanig<span>.</span></a>
+            <div class="nav-links">
+                <a href="../index.html">Bio</a>
+                <a href="../projects.html" class="active">Projects</a>
+                <a href="../hobbies.html">Hobbies</a>
+                <a href="../thinking.html">Thinking</a>
+                <a href="../logs.html">Logs</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="project-hero reveal">
+            <div class="category-badge category-research">Research</div>
+            <h1 class="heading-xl">Accessible Human-Robot Interaction</h1>
+            <p class="text-secondary">Comparing Interaction Modalities in Dual-Task Performance Scenarios.</p>
+            
+            <div class="project-meta-grid">
+                <div class="project-meta-item">
+                    <span>Publication</span>
+                    <p>Research Paper (AHRI)</p>
+                </div>
+                <div class="project-meta-item">
+                    <span>Advisors</span>
+                    <p>Hayes & Roncone</p>
+                </div>
+                <div class="project-meta-item">
+                    <span>Metrics</span>
+                    <p>NASA-TLX, Success Rate</p>
+                </div>
+                <div class="project-meta-item">
+                    <span>Focus</span>
+                    <p>Accessible UI, Dual Task</p>
+                </div>
+            </div>
+        </section>
+
+        <article class="project-content-section reveal">
+            <h2>Research Objective</h2>
+            <p>In high-stakes environments, users often need to interact with robotic systems while managing secondary cognitive loads. This study explores how different interaction modalities — specifically <strong>speech</strong>, <strong>eye gaze</strong>, and <strong>hand gestures</strong> — impact a user's mental workload (quantified via NASA-TLX) and their primary task performance.</p>
+
+            <figure class="project-figure">
+                <img src="../assets/images/ahri project.png" alt="Dual Task Efficiency Graph">
+                <figcaption>Comparison of completion times and mental demand across gaze and speech modalities.</figcaption>
+            </figure>
+
+            <h2>Study Methodology</h2>
+            <div class="technical-details-box" style="background: var(--bg-color-alt); padding: 2rem; border-radius: 12px; margin: 2rem 0;">
+                <h4 style="margin-top: 0;"><i class="ph ph-users-three" style="margin-right: 0.5rem;"></i> Experimental Design</h4>
+                <ul style="margin-bottom: 0;">
+                    <li><strong>Single vs. Dual Task:</strong> Participants performed robotic manipulation both with and without secondary cognitive distractors.</li>
+                    <li><strong>NASA Task Load Index (TLX):</strong> Used to measure subjective workload across six dimensions: mental demand, physical demand, temporal demand, performance, effort, and frustration level.</li>
+                    <li><strong>Modalities Tested:</strong> Evaluated the trade-offs between high-precision gaze tracking and high-flexibility speech commands.</li>
+                </ul>
+            </div>
+
+            <h2>Key Findings</h2>
+            <p>Our results indicated that <strong>speech-based interaction</strong> consistently lowered the perceived temporal demand and frustration during dual-task scenarios compared to visual-intensive gaze modalities. However, gaze-based selection remained superior for high-precision, low-latency target acquisition in single-task environments. This suggests that "Accessible HRI" must be <strong>context-adaptive</strong>, shifting modalities based on the user's current cognitive state.</p>
+
+            <div class="flex gap-md" style="margin-top: 4rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+                <a href="../assets/data/AHRI_Compare modalities in dual task_final.pdf" target="_blank" class="btn btn-primary"><i class="ph ph-file-pdf"></i> Read Full Paper</a>
+                <a href="../projects.html" class="btn"><i class="ph ph-arrow-left"></i> All Projects</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="container">
+        <div class="footer-inner">
+            <p>&copy; <span id="year"></span> Gyanig Kumar.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        gsap.fromTo(".reveal", 
+            { y: 30, opacity: 0 },
+            { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power3.out" }
+        );
+    </script>
+</body>
+</html>

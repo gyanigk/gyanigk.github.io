@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log 001: Initializing the New Architecture | Gyanig Kumar</title>
+    <meta name="description" content="Moving away from standalone model scripts into a unified, modular framework for the intent-recognition pipeline.">
+    <meta name="author" content="Gyanig Kumar">
+    <link rel="shortcut icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/css/stylesheet.css">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <nav class="nav-header">
+        <div class="container flex justify-between align-center">
+            <a href="../index.html" class="no-underline text-sans" style="font-weight: 600; font-size: 1.1rem; letter-spacing: -0.02em;">Gyanig.</a>
+            <ul class="nav-links">
+            <li><a href="../thinking.html">Thinking</a></li>
+            <li><a href="../logs.html" class="active">Logs</a></li>
+            <li><a href="../projects.html">Projects</a></li>
+            <li><a href="../hobbies.html">Hobbies</a></li>
+        </ul></div>
+    </nav>
+
+    <main>
+      <!-- Ambient Decorative Background -->
+      <div class="ambient-bg">
+        <img src="../assets/images/a1.png" alt="" class="ambient-blob ambient-blob-1">
+        <img src="../assets/images/a2.png" alt="" class="ambient-blob ambient-blob-2">
+        <img src="../assets/images/a3.png" alt="" class="ambient-blob ambient-blob-3">
+      </div>
+
+        <article class="padded-section-xl container" style="max-width: 860px;">
+
+            <!-- Back link -->
+            <a href="../logs.html" class="blog-read-more reveal" style="margin-bottom: 3rem; display: inline-flex;">
+                <i class="ph ph-arrow-left"></i> All Logs
+            </a>
+
+            <!-- Header -->
+            <header class="reveal" style="margin-bottom: 3rem; margin-top: 2rem;">
+                <div class="blog-card-meta" style="margin-bottom: 1rem;">
+                    <span class="blog-date">Jan 10, 2026</span>
+                    <span class="blog-dot">·</span>
+                    <span class="blog-read">1 min read</span>
+                </div>
+                <h1 style="margin-bottom: 1rem; line-height: 1.15;">Log 001: Initializing the New Architecture</h1>
+                <div class="tags-list">
+                    <span class="tag" style="color: #6366f1; background: rgba(99,102,241,0.05); border-color: rgba(99,102,241,0.2);">Architecture</span>
+                </div>
+            </header>
+
+            <!-- Body -->
+            <div class="log-body reveal">
+                <p>
+                    Moving away from standalone model scripts into a unified, modular framework. The goal is to be able to swap the underlying foundational model (currently using LLaVA) without rewriting the entire intent-recognition pipeline each time a better model drops.
+                </p>
+                <p>
+                    The new structure isolates three concerns cleanly:
+                </p>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.9; color: var(--text-secondary);">
+                    <li><strong>Perception</strong> — gaze estimation + object detection as a shared preprocessing layer</li>
+                    <li><strong>Reasoning</strong> — pluggable VLM inference head (swap LLaVA for GPT-4V or Gemini without touching perception)</li>
+                    <li><strong>Control</strong> — intent → robot action mapping via the shared autonomy planner</li>
+                </ul>
+                <p>
+                    It's messy right now — lots of hardcoded paths and placeholder interfaces. But the abstractions are correct, and the payoff will be enormous by mid-March when we start benchmarking multiple VLM backends side by side.
+                </p>
+                <p>
+                    Targeting: first full pipeline run end-to-end by Jan 20.
+                </p>
+            </div>
+
+            <!-- Navigation between posts -->
+            <nav class="log-nav reveal" style="margin-top: 4rem; display: flex; justify-content: flex-end; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                <a href="log-002.html" class="blog-read-more">Next Log <i class="ph ph-arrow-right"></i></a>
+            </nav>
+
+        </article>
+    </main>
+
+    <footer class="container">
+        <div class="footer-inner">
+            <p>&copy; <span id="year"></span> Gyanig Kumar.</p>
+            <div class="social-links flex align-center">
+                <a href="https://github.com/gyanigk" target="_blank"><i class="ph ph-github-logo"></i></a>
+                <a href="https://www.linkedin.com/in/gyanig-k-b36666146" target="_blank"><i class="ph ph-linkedin-logo"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Nav Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav-header');
+            if (window.scrollY > 20) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Entrance Animations
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray('.reveal').forEach(function(elem) {
+            gsap.fromTo(elem, 
+                { y: 30, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: "top 90%",
+                        toggleActions: "play none none none"
+                    }
+                }
+            );
+        });
+    </script>
+</body>
+</html>
