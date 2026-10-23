@@ -879,8 +879,8 @@ footer {
   border-bottom: none;
 }
 
-.latest-log-item:hover {
-  opacity: 0.7;
+.latest-log-item:hover .latest-log-title {
+  color: var(--work-accent);
 }
 
 .latest-log-title {
@@ -934,7 +934,7 @@ footer {
 .filmstrip-wrapper {
   display: flex;
   width: max-content;
-  animation: filmstrip-scroll 80s linear infinite; /* Slower for larger frames */
+  animation: filmstrip-scroll 105s linear infinite;
 }
 
 .filmstrip-wrapper:hover {
@@ -959,8 +959,9 @@ footer {
 .filmstrip-frame {
   position: relative;
   flex-shrink: 0;
-  width: 220px;
-  height: 148px; /* 3:2 cinematic ratio, bumped up */
+  width: auto;
+  height: clamp(170px, 15vw, 210px);
+  aspect-ratio: 3 / 2;
   overflow: hidden;
   border-right: 2px solid #080808; /* hairline separator */
   cursor: pointer;
@@ -1557,31 +1558,77 @@ img:not(.ambient-blob) {
   border-radius: var(--border-radius-md);
 }
 
+.logs-heading {
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logs-eyebrow {
+  margin: 0 0 0.65rem;
+  color: var(--work-accent);
+  font-size: 0.67rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .logs-heading h2 {
-  margin-bottom: 0.5rem;
+  margin: 0;
   font-size: 1.35rem;
+  letter-spacing: -0.025em;
 }
 
 .logs-all-link {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 0;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--work-accent);
 }
 
 .logs-sidebar .latest-log-item {
   flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5rem;
+  align-items: stretch;
+  gap: 0.45rem;
+  padding: 1.2rem 0;
+}
+
+.latest-log-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.67rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.latest-log-meta > span {
+  color: var(--work-accent);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .logs-sidebar .latest-log-title {
-  font-size: 0.88rem;
-  line-height: 1.55;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.5;
   border-bottom: none;
 }
 
-.logs-sidebar .latest-log-date {
-  margin-left: 0;
-  font-size: 0.72rem;
+.latest-log-summary {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
 }
 
 .hobbies-preview {
@@ -1762,26 +1809,7 @@ img:not(.ambient-blob) {
     grid-column: 2;
   }
 
-  .blog-feed .blog-card {
-    display: grid;
-    grid-template-columns: 190px minmax(0, 1fr);
-    column-gap: 2.5rem;
-  }
 
-  .blog-feed .blog-card > * {
-    grid-column: 2;
-  }
-
-  .blog-feed .blog-card > .blog-card-meta {
-    grid-column: 1;
-    grid-row: 1 / span 5;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .blog-feed .blog-dot {
-    display: none;
-  }
 }
 
 @media (max-width: 640px) {
@@ -2137,4 +2165,113 @@ img:not(.ambient-blob) {
 
 [data-theme="dark"] .theme-toggle .theme-sun {
   display: block;
+}
+
+
+/* Research log archive */
+.logs-intro {
+  margin-bottom: 2.5rem;
+}
+
+.logs-page .blog-feed {
+  gap: 1.25rem;
+}
+
+.logs-page .blog-card {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 2rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-color-alt);
+}
+
+.logs-page .blog-card-meta {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.45rem;
+  margin: 0;
+  padding-top: 0.15rem;
+  font-size: 0.72rem;
+  text-transform: none;
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.log-entry-number {
+  margin-bottom: 0.35rem;
+  color: var(--work-accent);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.log-entry-content {
+  min-width: 0;
+  max-width: 78ch;
+}
+
+.logs-page .blog-title {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+.logs-page .blog-title a {
+  border: 0;
+}
+
+.logs-page .blog-excerpt {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin: 1rem 0;
+}
+
+.logs-page .blog-body {
+  padding: 0.85rem 1rem;
+  border-left: 2px solid var(--work-accent-soft);
+  border-radius: 0 4px 4px 0;
+  background: var(--bg-color);
+  font-size: 0.85rem;
+  line-height: 1.75;
+}
+
+.logs-page .blog-read-more {
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--work-accent);
+}
+
+.logs-page .blog-title a:hover,
+.logs-sidebar .latest-log-title:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 640px) {
+  .logs-page .blog-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .logs-page .blog-card-meta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 0.85rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .log-entry-number {
+    margin: 0;
+  }
+
+  .filmstrip-section::before,
+  .filmstrip-section::after {
+    width: 50px;
+  }
 }

@@ -5,19 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research Logs | Gyanig Kumar</title>
-    
+
     <meta name="description" content="Weekly research logs, failure notes, and technical snippets.">
     <meta name="author" content="Gyanig Kumar">
-    
+
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="assets/css/stylesheet.css?v=theme-2">
-    
+
     <!-- External Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
-<body>
+<body class="logs-page">
 
     <nav class="nav-header">
         <div class="container flex justify-between align-center">
@@ -42,9 +42,10 @@
       </div>
 
         <section class="padded-section-xl container">
-            <div class="reveal" style="margin-bottom: 4rem;">
+            <div class="logs-intro reveal">
+                <p class="logs-eyebrow">Lab notebook</p>
                 <h1 style="margin-bottom: 1rem;">Research Logs.</h1>
-                <p class="text-lead text-muted">
+                <p class="text-lead text-muted" style="max-width: 650px;">
                     An unpolished stream of weekly notes, dataset gripes, and unexpected observations from the lab.
                 </p>
             </div>
@@ -54,11 +55,13 @@
                 <!-- Post 003 -->
                 <article class="blog-card reveal" id="log-003">
                     <div class="blog-card-meta">
-                        <span class="blog-date">Feb 28, 2026</span>
-                        <span class="blog-dot">·</span>
+                        <span class="log-entry-number">Entry 003</span>
+                        <time class="blog-date" datetime="2026-02-28">Feb 28, 2026</time>
                         <span class="blog-read">3 min read</span>
+
                     </div>
-                    <h2 class="blog-title"><a href="logs/log-003.html" style="text-decoration: none; color: inherit;">Log 003: Gaze Desynchronization</a></h2>
+                    <div class="log-entry-content">
+                        <h2 class="blog-title"><a href="logs/log-003.html" style="text-decoration: none; color: inherit;">Gaze Desynchronization</a></h2>
                     <div class="tags-list" style="margin: 0.75rem 0;">
                         <span class="tag gaze">Gaze</span>
                         <span class="tag vision">Failures</span>
@@ -70,16 +73,19 @@
                         <strong>Next Step:</strong> Re-implementing the buffer using a ring structure rather than standard queueing. We lose a bit of fidelity but gain real-time responsiveness.
                     </p>
                     <a href="logs/log-003.html" class="blog-read-more">Read more <i class="ph ph-arrow-right"></i></a>
+                    </div>
                 </article>
 
                 <!-- Post 002 -->
                 <article class="blog-card reveal" id="log-002">
                     <div class="blog-card-meta">
-                        <span class="blog-date">Feb 15, 2026</span>
-                        <span class="blog-dot">·</span>
+                        <span class="log-entry-number">Entry 002</span>
+                        <time class="blog-date" datetime="2026-02-15">Feb 15, 2026</time>
                         <span class="blog-read">2 min read</span>
+
                     </div>
-                    <h2 class="blog-title"><a href="logs/log-002.html" style="text-decoration: none; color: inherit;">Log 002: UnitreeGo1 Telemetry Drop</a></h2>
+                    <div class="log-entry-content">
+                        <h2 class="blog-title"><a href="logs/log-002.html" style="text-decoration: none; color: inherit;">UnitreeGo1 Telemetry Drop</a></h2>
                     <div class="tags-list" style="margin: 0.75rem 0;">
                         <span class="tag proprio">Proprio</span>
                         <span class="tag haptics">APreL</span>
@@ -91,16 +97,19 @@
                         <em>Lesson learned:</em> Downsample joint state publishing during high-compute VLM tasks — the model doesn't need 100Hz to derive human intent anyway.
                     </p>
                     <a href="logs/log-002.html" class="blog-read-more">Read more <i class="ph ph-arrow-right"></i></a>
+                    </div>
                 </article>
 
                 <!-- Post 001 -->
                 <article class="blog-card reveal" id="log-001">
                     <div class="blog-card-meta">
-                        <span class="blog-date">Jan 10, 2026</span>
-                        <span class="blog-dot">·</span>
+                        <span class="log-entry-number">Entry 001</span>
+                        <time class="blog-date" datetime="2026-01-10">Jan 10, 2026</time>
                         <span class="blog-read">1 min read</span>
+
                     </div>
-                    <h2 class="blog-title"><a href="logs/log-001.html" style="text-decoration: none; color: inherit;">Log 001: Initializing the New Architecture</a></h2>
+                    <div class="log-entry-content">
+                        <h2 class="blog-title"><a href="logs/log-001.html" style="text-decoration: none; color: inherit;">Initializing the New Architecture</a></h2>
                     <div class="tags-list" style="margin: 0.75rem 0;">
                         <span class="tag" style="color: var(--color-gaze); background: rgba(99,102,241,0.05); border-color: rgba(99,102,241,0.2);">Architecture</span>
                     </div>
@@ -108,6 +117,7 @@
                         Moving away from standalone model scripts into a unified, modular framework. The goal is to swap the underlying foundational model without rewriting the entire intent-recognition pipeline.
                     </p>
                     <a href="logs/log-001.html" class="blog-read-more">Read more <i class="ph ph-arrow-right"></i></a>
+                    </div>
                 </article>
 
             </div>
@@ -142,7 +152,7 @@
         // Entrance Animations
         gsap.registerPlugin(ScrollTrigger);
         gsap.utils.toArray('.reveal').forEach(function(elem) {
-            gsap.fromTo(elem, 
+            gsap.fromTo(elem,
                 { y: 30, opacity: 0 },
                 {
                     y: 0,

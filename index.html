@@ -720,35 +720,28 @@
 
       <aside class="logs-sidebar" aria-labelledby="latest-logs-heading">
         <div class="reveal">
-        <div
-          class="logs-heading"
-          style="margin-bottom: 1.5rem"
-        >
-          <h2 id="latest-logs-heading">From the Lab.</h2>
-          <a href="logs.html" class="logs-all-link"
-            >All Logs <i class="ph ph-arrow-right"></i
-          ></a>
-        </div>
-        <ul class="latest-logs-list">
-          <li class="latest-log-item">
-            <a href="logs/log-003.html" class="latest-log-title"
-              >Log 003: Gaze Desynchronization</a
-            >
-            <span class="latest-log-date">Feb 28, 2026</span>
-          </li>
-          <li class="latest-log-item">
-            <a href="logs/log-002.html" class="latest-log-title"
-              >Log 002: UnitreeGo1 Telemetry Drop</a
-            >
-            <span class="latest-log-date">Feb 15, 2026</span>
-          </li>
-          <li class="latest-log-item">
-            <a href="logs/log-001.html" class="latest-log-title"
-              >Log 001: Initializing the New Architecture</a
-            >
-            <span class="latest-log-date">Jan 10, 2026</span>
-          </li>
-        </ul>
+          <div class="logs-heading">
+            <p class="logs-eyebrow">Research notes</p>
+            <h2 id="latest-logs-heading">From the Lab.</h2>
+          </div>
+          <ol class="latest-logs-list">
+            <li class="latest-log-item">
+              <div class="latest-log-meta"><span>Log 003</span><time datetime="2026-02-28">Feb 28, 2026</time></div>
+              <a href="logs/log-003.html" class="latest-log-title">Gaze Desynchronization</a>
+              <p class="latest-log-summary">Tracing a 400 ms lag in the gaze pipeline.</p>
+            </li>
+            <li class="latest-log-item">
+              <div class="latest-log-meta"><span>Log 002</span><time datetime="2026-02-15">Feb 15, 2026</time></div>
+              <a href="logs/log-002.html" class="latest-log-title">UnitreeGo1 Telemetry Drop</a>
+              <p class="latest-log-summary">What happens when the ROS 2 bridge saturates.</p>
+            </li>
+            <li class="latest-log-item">
+              <div class="latest-log-meta"><span>Log 001</span><time datetime="2026-01-10">Jan 10, 2026</time></div>
+              <a href="logs/log-001.html" class="latest-log-title">Initializing the New Architecture</a>
+              <p class="latest-log-summary">Building a modular intent-recognition framework.</p>
+            </li>
+          </ol>
+          <a href="logs.html" class="logs-all-link">View all research logs <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
         </div>
       </aside>
 
