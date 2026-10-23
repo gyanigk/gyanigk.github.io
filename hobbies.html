@@ -19,34 +19,35 @@
         .hobby-section { margin-bottom: var(--spacing-xl); }
 
         /* ── Masonry Photo Grid ───────────────────── */
-        .photo-masonry {
-            columns: 2;
-            column-gap: 0.75rem;
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
         }
 
-        @media (min-width: 640px)  { .photo-masonry { columns: 3; } }
-        @media (min-width: 1024px) { .photo-masonry { columns: 4; } }
+        @media (max-width: 1023px) {
+            .photo-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (max-width: 640px) {
+            .photo-gallery { grid-template-columns: minmax(0, 1fr); }
+        }
 
         .photo-item {
             position: relative;
             overflow: hidden;
             border-radius: 6px;
-            margin-bottom: 0.75rem;
-            break-inside: avoid;
+            aspect-ratio: 16 / 9;
             cursor: pointer;
         }
 
         .photo-item img {
             width: 100%;
-            height: auto;
+            height: 100%;
             display: block;
             object-fit: cover;
             transition: transform 0.5s ease, filter 0.5s ease;
             filter: brightness(0.95) saturate(0.92);
         }
-
-        /* Tall variant: portrait ratio */
-        .photo-item.tall img { aspect-ratio: 2/3; object-fit: cover; }
 
         .photo-item:hover img {
             transform: scale(1.05);
@@ -82,7 +83,6 @@
         <div class="container flex justify-between align-center">
             <a href="index.html" class="no-underline text-sans" style="font-weight: 600; font-size: 1.1rem; letter-spacing: -0.02em;">Gyanig.</a>
             <ul class="nav-links">
-            <li><a href="thinking.html">Thinking</a></li>
             <li><a href="logs.html">Logs</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="hobbies.html" class="active">Hobbies</a></li>
@@ -103,19 +103,10 @@
 
             <!-- Music & Performance -->
             <div class="hobby-section reveal">
-                <div style="
-                    display: flex;
-                    align-items: center;
-                    gap: 2rem;
-                    background: var(--bg-color-alt);
-                    border: 1px solid var(--border-color);
-                    border-radius: 12px;
-                    overflow: hidden;
-                    padding: 1.75rem;
-                ">
-                    <!-- Video thumbnail on the left -->
-                    <div style="flex-shrink: 0; width: 220px; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
-                        <video width="100%" controls poster="assets/images/urban nest.jpeg" style="display: block;">
+                <div class="music-feature">
+                    <!-- Landscape video player -->
+                    <div class="music-player">
+                        <video width="100%" preload="metadata" controls poster="assets/images/urban nest.jpeg" style="display: block;">
                             <source src="assets/media/compositions/urban nest.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -151,9 +142,9 @@
                     </p>
                 </div>
 
-                <!-- Masonry gallery grid -->
-                <div class="photo-masonry">
-                    <div class="photo-item tall reveal">
+                <!-- Landscape photo gallery -->
+                <div class="photo-gallery">
+                    <div class="photo-item reveal">
                         <img src="assets/images/photos/rushmore-2.jpg" alt="Mount Rushmore">
                         <div class="photo-overlay"><span>Mount Rushmore</span></div>
                     </div>
@@ -169,7 +160,7 @@
                         <img src="assets/images/photos/twinlake.jpg" alt="Twin Lakes">
                         <div class="photo-overlay"><span>Twin Lakes</span></div>
                     </div>
-                    <div class="photo-item tall reveal">
+                    <div class="photo-item reveal">
                         <img src="assets/images/photos/animone_hike-131.jpg" alt="Anemone Hike">
                         <div class="photo-overlay"><span>Anemone Trail</span></div>
                     </div>
@@ -201,7 +192,7 @@
                         <img src="assets/images/photos/animone_hike-30.jpg" alt="Anemone Hike 30">
                         <div class="photo-overlay"><span>Anemone Trail</span></div>
                     </div>
-                    <div class="photo-item tall reveal">
+                    <div class="photo-item reveal">
                         <img src="assets/images/photos/genesis.jpg" alt="Genesis">
                         <div class="photo-overlay"><span>Genesis</span></div>
                     </div>
@@ -212,8 +203,8 @@
                     <h3 style="margin-bottom: 0.5rem;">Field Notes</h3>
                     <p class="text-muted" style="font-size: 0.9rem;">Snapshots from grad school, robotics labs, and life in Colorado.</p>
                 </div>
-                <div class="photo-masonry">
-                    <div class="photo-item tall reveal">
+                <div class="photo-gallery">
+                    <div class="photo-item reveal">
                         <img src="assets/images/journey/working on the Go1.jpeg" alt="Go1 Robot">
                         <div class="photo-overlay"><span>Working on Go1</span></div>
                     </div>

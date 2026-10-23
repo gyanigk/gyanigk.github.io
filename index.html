@@ -23,7 +23,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
   </head>
-  <body>
+  <body class="home-page">
     <nav class="nav-header">
       <div class="container flex justify-between align-center">
         <a
@@ -33,7 +33,6 @@
           >Gyanig.</a
         >
         <ul class="nav-links">
-          <li><a href="thinking.html">Thinking</a></li>
           <li><a href="logs.html">Logs</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="hobbies.html">Hobbies</a></li>
@@ -63,8 +62,7 @@
       </div>
 
       <section
-        class="padded-section-xl container flex align-center justify-between gap-lg hero-section"
-        style="min-height: 80vh"
+        class="container hero-section"
       >
         <div style="flex: 1; z-index: 10">
           <div>
@@ -82,11 +80,12 @@
               class="text-lead reveal"
               style="max-width: 600px; line-height: 1.7"
             >
-              I'm a <strong>Master's student in CS at CU Boulder</strong>,
-              advised by <strong>Prof. Bradley Hayes</strong> and
-              <strong>Prof. Alessandro Roncone</strong>. I build Vision-Language
-              frameworks that align human gaze to enable adaptive robotic task
-              planning in shared autonomy settings.
+              I'm a <strong>PhD student in Computer Science at UW–Madison</strong>,
+              advised by <strong>Prof. Mike Hagenow</strong>. I study how
+              vision-language-action models can help robots understand human
+              intent and provide adaptive assistance. By understanding what
+              people are trying to achieve, robots can better support them
+              across new tasks and situations.
             </p>
             <p
               class="text-secondary reveal"
@@ -97,17 +96,18 @@
                 line-height: 1.7;
               "
             >
-              Previously a Research Assistant at
-              <strong>IISc Bangalore</strong> (Prof. Pradipta Biswas), where I
-              developed gaze-tracking systems for automotive HUDs and applied
-              Inverse RL for human intent prediction. Published at
+              Previously, I pursued my master's in CS at
+              <strong>CU Boulder</strong> with <strong>Prof. Bradley Hayes</strong>
+              and <strong>Prof. Alessandro Roncone</strong>, working on
+              gaze-informed robotic task planning for shared autonomy. Before
+              that, I was a Research Assistant at <strong>IISc Bangalore</strong>
+              with <strong>Prof. Pradipta Biswas</strong>, developing gaze-tracking
+              systems for automotive HUDs and applying inverse reinforcement
+              learning to human intent prediction. My work has appeared in
               <strong>ACM THRI · ACM IUI · IEEE ICRA</strong>.
             </p>
 
             <div class="flex gap-sm reveal" style="margin-top: 2rem">
-              <a href="thinking.html" class="btn btn-primary"
-                ><i class="ph ph-brain"></i> My Thinking</a
-              >
               <a
                 href="assets/cv/kumar_gyanig_CV.pdf"
                 target="_blank"
@@ -165,47 +165,14 @@
         </div>
       </section>
 
-      <!-- Latest Logs Section -->
-
-      <section class="padded-section container reveal">
-        <div
-          class="flex justify-between align-center"
-          style="margin-bottom: 1.5rem"
-        >
-          <h2 style="margin: 0">From the Lab.</h2>
-          <a href="logs.html" class="btn" style="font-size: 0.85rem"
-            >All Logs <i class="ph ph-arrow-right"></i
-          ></a>
-        </div>
-        <ul class="latest-logs-list">
-          <li class="latest-log-item">
-            <a href="logs/log-003.html" class="latest-log-title"
-              >Log 003: Gaze Desynchronization</a
-            >
-            <span class="latest-log-date">Feb 28, 2026</span>
-          </li>
-          <li class="latest-log-item">
-            <a href="logs/log-002.html" class="latest-log-title"
-              >Log 002: UnitreeGo1 Telemetry Drop</a
-            >
-            <span class="latest-log-date">Feb 15, 2026</span>
-          </li>
-          <li class="latest-log-item">
-            <a href="logs/log-001.html" class="latest-log-title"
-              >Log 001: Initializing the New Architecture</a
-            >
-            <span class="latest-log-date">Jan 10, 2026</span>
-          </li>
-        </ul>
-      </section>
-
+      <div class="container research-layout">
       <!-- News & Publications Section -->
-      <section id="news" class="padded-section container">
+      <section id="news" class="publications-section" aria-labelledby="publications-heading">
         <div
-          class="flex justify-between align-center reveal"
+          class="publications-heading reveal"
           style="margin-bottom: 2rem"
         >
-          <h2>News & Publications</h2>
+          <h2 id="publications-heading">News & Publications</h2>
 
           <!-- View Toggle -->
           <div class="view-toggle">
@@ -746,8 +713,44 @@
         </div>
       </section>
 
+      <aside class="logs-sidebar" aria-labelledby="latest-logs-heading">
+        <div class="reveal">
+        <div
+          class="logs-heading"
+          style="margin-bottom: 1.5rem"
+        >
+          <h2 id="latest-logs-heading">From the Lab.</h2>
+          <a href="logs.html" class="logs-all-link"
+            >All Logs <i class="ph ph-arrow-right"></i
+          ></a>
+        </div>
+        <ul class="latest-logs-list">
+          <li class="latest-log-item">
+            <a href="logs/log-003.html" class="latest-log-title"
+              >Log 003: Gaze Desynchronization</a
+            >
+            <span class="latest-log-date">Feb 28, 2026</span>
+          </li>
+          <li class="latest-log-item">
+            <a href="logs/log-002.html" class="latest-log-title"
+              >Log 002: UnitreeGo1 Telemetry Drop</a
+            >
+            <span class="latest-log-date">Feb 15, 2026</span>
+          </li>
+          <li class="latest-log-item">
+            <a href="logs/log-001.html" class="latest-log-title"
+              >Log 001: Initializing the New Architecture</a
+            >
+            <span class="latest-log-date">Jan 10, 2026</span>
+          </li>
+        </ul>
+        </div>
+      </aside>
+
+      </div>
+
       <!-- Hobbies Preview Section -->
-      <section class="padded-section container" style="margin-bottom: 2rem">
+      <section class="padded-section container hobbies-preview">
         <div
           class="flex justify-between align-center"
           style="margin-bottom: 3rem"
@@ -760,7 +763,7 @@
             >View all hobbies <i class="ph ph-arrow-right"></i
           ></a>
         </div>
-        <div class="grid grid-cols-2 align-center gap-lg reveal">
+        <div class="hobbies-layout reveal">
           <div>
             <h3 style="margin-bottom: 1rem">Music & Photography</h3>
             <p class="text-secondary" style="margin-bottom: 1.5rem">
@@ -771,57 +774,23 @@
               ><i class="ph ph-camera"></i> Explore Hobbies</a
             >
           </div>
-          <div
-            style="
-              border-radius: var(--border-radius-md);
-              overflow: hidden;
-              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            "
-          >
-            <div
-              style="
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 0.5rem;
-                padding: 0.5rem;
-                background: var(--bg-color-alt);
-              "
-            >
-              <img
-                src="assets/images/photos/landscape0.jpg"
-                alt="Landscape"
-                style="
-                  width: 100%;
-                  height: 100%;
-                  aspect-ratio: 4/3;
-                  object-fit: cover;
-                  border-radius: 4px;
-                "
-              />
-              <img
-                src="assets/images/photos/mountain0.jpg"
-                alt="Mountain"
-                style="
-                  width: 100%;
-                  height: 100%;
-                  aspect-ratio: 4/3;
-                  object-fit: cover;
-                  border-radius: 4px;
-                "
-              />
-              <img
-                src="assets/images/photos/animone_hike-30.jpg"
-                alt="Hiking"
-                style="
-                  width: 100%;
-                  height: 100%;
-                  aspect-ratio: 4/3;
-                  object-fit: cover;
-                  border-radius: 4px;
-                  grid-column: span 2;
-                "
-              />
-            </div>
+          <div class="hobbies-collage">
+            <img
+              src="assets/images/photos/landscape0.jpg"
+              alt="Landscape"
+              class="hobbies-featured-photo"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/photos/mountain0.jpg"
+              alt="Mountain"
+              loading="lazy"
+            />
+            <img
+              src="assets/images/photos/animone_hike-30.jpg"
+              alt="Hiking"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>

@@ -21,7 +21,6 @@ Personal portfolio website showcasing research in Human-Robot Interaction (HRI),
 - `index.html`: Main landing page and bio
 - `projects.html`: Interactive projects bento grid
 - `hobbies.html`: Photography and music portfolio
-- `thinking.html`: Research philosophy and "Thinking mode"
 - `logs.html`: Weekly research and failure logs
 
 ## Local Development

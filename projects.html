@@ -12,16 +12,14 @@
     <link rel="stylesheet" href="assets/css/stylesheet.css">
     
     <!-- External Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
-<body>
+<body class="projects-page">
 
     <nav class="nav-header">
         <div class="container flex justify-between align-center">
             <a href="index.html" class="no-underline text-sans" style="font-weight: 600; font-size: 1.1rem; letter-spacing: -0.02em;">Gyanig.</a>
             <ul class="nav-links">
-            <li><a href="thinking.html">Thinking</a></li>
             <li><a href="logs.html">Logs</a></li>
             <li><a href="projects.html" class="active">Projects</a></li>
             <li><a href="hobbies.html">Hobbies</a></li>
@@ -29,293 +27,167 @@
     </nav>
 
     <main>
-        <section class="padded-section-xl container">
-            <div class="reveal" style="margin-bottom: 4rem;">
-                <h1 style="margin-bottom: 1rem;">Applied Projects.</h1>
-                <p class="text-lead text-muted" style="max-width: 700px;">
-                    Beyond academic research, I build software systems—from interpreters to autonomous driving pipelines—that bridge the gap between theory and execution.
-                </p>
+        <section class="container projects-section" aria-labelledby="projects-heading">
+            <header class="projects-intro">
+                <p class="projects-eyebrow">Build. Investigate. Share.</p>
+                <h1 id="projects-heading">Applied Projects<span>.</span></h1>
+                <p class="projects-intro-copy">Robotics, human-centered AI, and the systems behind them. A collection of things I've built, questions I've explored, and ideas I've shared.</p>
+            </header>
+
+            <div class="projects-toolbar">
+                <div class="project-filters" role="group" aria-label="Filter work by type" hidden>
+                    <button type="button" data-filter="all" aria-pressed="true" aria-controls="project-grid">All work <span>11</span></button>
+                    <button type="button" data-filter="projects" aria-pressed="false" aria-controls="project-grid">Projects <span>4</span></button>
+                    <button type="button" data-filter="research" aria-pressed="false" aria-controls="project-grid">Research <span>3</span></button>
+                    <button type="button" data-filter="talks" aria-pressed="false" aria-controls="project-grid">Talks &amp; slides <span>4</span></button>
+                </div>
+                <p class="projects-count" role="status" aria-live="polite">Showing 11 works</p>
             </div>
 
-        <div class="projects-grid">
-            <!-- Project 1: Ansh.AI (Wide) -->
-            <div class="bento-card wide reveal" data-tag="LLM Hackathon">
-                <div class="card-index">01</div>
-                <div class="item-image-wrapper">
-                    <img src="assets/images/ansh-ai.jpg" alt="Ansh.AI">
-                </div>
-                <div class="item-content">
-                    <div class="category-badge category-deep-dive">Deep Dive</div>
-                    <div class="item-meta">HackCU11 (2nd Place AI Track)</div>
-                    <h3 class="item-title">Ansh.AI: Conversational Diary</h3>
-                    <div class="tags-list">
-                        <span class="tag" style="color: #6366f1; background: rgba(99,102,241,0.05);">LLM</span>
-                        <span class="tag" style="color: #ec4899; background: rgba(236,72,153,0.05);">Hackathon</span>
+            <div class="work-grid" id="project-grid">
+                <article class="work-card" data-category="projects">
+                    <a class="work-image" href="projects/deepracer.html" tabindex="-1" aria-hidden="true">
+                        <img src="assets/images/deepracer.jpg" alt="AWS DeepRacer" loading="lazy" decoding="async">
+                    </a>
+                    <div class="work-content">
+                        <div class="work-meta"><span class="work-type">Project</span><span>Advanced Robotics</span></div>
+                        <h2 class="work-title"><a href="projects/deepracer.html">AWS DeepRacer Autonomous Driving</a></h2>
+                        <p class="work-description">Full ROS 2 autonomous pipeline covering perception (lane detection) and PID control loops.</p>
+                        <ul class="work-topics" aria-label="Topics"><li>ROS 2</li><li>Control</li></ul>
+                        <div class="work-links"><a href="projects/deepracer.html">Explore project <i class="ph ph-arrow-right" aria-hidden="true"></i></a> <a href="https://github.com/gyanigk/Advanced-Robotics" target="_blank" rel="noopener noreferrer">GitHub <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></div>
                     </div>
-                </div>
-                <div class="bento-details">
-                    <p class="item-description">
-                        An emotional sounding board and personal logging system. Awarded 2nd place in the AI Track at HackCU11.
-                    </p>
-                    <div class="item-links">
-                        <a href="projects/ansh-ai.html" class="btn btn-primary">View Details</a>
-                        <a href="https://github.com/sakshamk6999/HackCU11" target="_blank" class="btn"><i class="ph ph-github-logo"></i> Repo</a>
-                    </div>
-                </div>
-            </div>
+                </article>
 
-            <!-- Project 2: AWS DeepRacer -->
-            <div class="bento-card reveal" data-tag="ROS 2 Control">
-                <div class="card-index">02</div>
-                <div class="item-image-wrapper">
-                    <img src="assets/images/deepracer.jpg" alt="AWS DeepRacer">
-                </div>
-                <div class="item-content">
-                    <div class="category-badge category-deep-dive">Deep Dive</div>
-                    <div class="item-meta">Advanced Robotics</div>
-                    <h3 class="item-title">AWS DeepRacer Autonomous Driving</h3>
-                    <div class="tags-list">
-                        <span class="tag vision">ROS 2</span>
-                        <span class="tag proprio">Control</span>
+                <article class="work-card" data-category="research">
+                    <a class="work-image" href="projects/ahri.html" tabindex="-1" aria-hidden="true">
+                        <img src="assets/images/ahri project.png" alt="AHRI Project" loading="lazy" decoding="async">
+                    </a>
+                    <div class="work-content">
+                        <div class="work-meta"><span class="work-type">Research</span><span>Research Project</span></div>
+                        <h2 class="work-title"><a href="projects/ahri.html">AHRI: Dual Task Modalities</a></h2>
+                        <p class="work-description">A comparative study on human performance and cognitive load during concurrent dual-task robotic scenarios.</p>
+                        <ul class="work-topics" aria-label="Topics"><li>HRI</li><li>Dual Task</li></ul>
+                        <div class="work-links"><a href="projects/ahri.html">Read study <i class="ph ph-arrow-right" aria-hidden="true"></i></a> <a href="assets/data/AHRI_Compare modalities in dual task_final.pdf" target="_blank" rel="noopener noreferrer">Paper <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></div>
                     </div>
-                </div>
-                <div class="bento-details">
-                    <p class="item-description">
-                        Full ROS 2 autonomous pipeline covering perception (lane detection) and PID control loops.
-                    </p>
-                    <div class="item-links">
-                        <a href="projects/deepracer.html" class="btn btn-primary">View Details</a>
-                        <a href="https://github.com/gyanigk/Advanced-Robotics" target="_blank" class="btn"><i class="ph ph-github-logo"></i> Repo</a>
-                    </div>
-                </div>
-            </div>
+                </article>
 
-            <!-- Project 3: AHRI (Wide) -->
-            <div class="bento-card wide reveal" data-tag="HRI Vision">
-                <div class="card-index">03</div>
-                <div class="item-image-wrapper">
-                    <img src="assets/images/ahri project.png" alt="AHRI Project">
-                </div>
-                <div class="item-content">
-                    <div class="category-badge category-research">Research</div>
-                    <div class="item-meta">Research Project</div>
-                    <h3 class="item-title">AHRI: Dual Task Modalities</h3>
-                    <div class="tags-list">
-                        <span class="tag" style="color: #3b82f6; background: rgba(59,130,246,0.05);">HRI</span>
-                        <span class="tag" style="color: #f59e0b; background: rgba(245,158,11,0.05);">Dual Task</span>
+                <article class="work-card" data-category="projects">
+                    <a class="work-image" href="projects/ansh-ai.html" tabindex="-1" aria-hidden="true">
+                        <img src="assets/images/ansh-ai.jpg" alt="Ansh.AI" loading="lazy" decoding="async">
+                    </a>
+                    <div class="work-content">
+                        <div class="work-meta"><span class="work-type">Project</span><span>HackCU11 (2nd Place AI Track)</span></div>
+                        <h2 class="work-title"><a href="projects/ansh-ai.html">Ansh.AI: Conversational Diary</a></h2>
+                        <p class="work-description">An emotional sounding board and personal logging system. Awarded 2nd place in the AI Track at HackCU11.</p>
+                        <ul class="work-topics" aria-label="Topics"><li>LLM</li><li>Hackathon</li></ul>
+                        <div class="work-links"><a href="projects/ansh-ai.html">Explore project <i class="ph ph-arrow-right" aria-hidden="true"></i></a> <a href="https://github.com/sakshamk6999/HackCU11" target="_blank" rel="noopener noreferrer">GitHub <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></div>
                     </div>
-                </div>
-                <div class="bento-details">
-                    <p class="item-description">
-                        A comparative study on human performance and cognitive load during concurrent dual-task robotic scenarios.
-                    </p>
-                    <div class="item-links">
-                        <a href="projects/ahri.html" class="btn btn-primary">Study Details</a>
-                        <a href="assets/data/AHRI_Compare modalities in dual task_final.pdf" target="_blank" class="btn"><i class="ph ph-file-pdf"></i> Paper</a>
-                    </div>
-                </div>
-            </div>
+                </article>
 
-            <!-- Project 4: Lox Interpreter (Tall) -->
-            <div class="bento-card tall reveal" data-tag="Compilers">
-                <div class="card-index">04</div>
-                <div class="item-image-wrapper">
-                    <img src="assets/images/lox.jpg" alt="Lox Interpreter">
-                </div>
-                <div class="item-content">
-                    <div class="category-badge category-deep-dive">Deep Dive</div>
-                    <div class="item-meta">Systems Programming</div>
-                    <h3 class="item-title">Lox Language Interpreter</h3>
-                    <div class="tags-list">
-                        <span class="tag" style="color: #10b981; background: rgba(16,185,129,0.05);">Compilers</span>
+                <article class="work-card" data-category="projects">
+                    <a class="work-image" href="projects/v-bikes.html" tabindex="-1" aria-hidden="true">
+                        <img src="assets/images/journey/v-bikes.jpg" alt="V-BIKES" loading="lazy" decoding="async">
+                    </a>
+                    <div class="work-content">
+                        <div class="work-meta"><span class="work-type">Project</span><span>IoT Safety</span></div>
+                        <h2 class="work-title"><a href="projects/v-bikes.html">V-BIKES Collision Detection</a></h2>
+                        <p class="work-description">Hardware-based safety system explicitly designed for two-wheeler urban environments.</p>
+                        <ul class="work-topics" aria-label="Topics"><li>Hardware</li><li>Sensors</li></ul>
+                        <div class="work-links"><a href="projects/v-bikes.html">Explore project <i class="ph ph-arrow-right" aria-hidden="true"></i></a> <a href="https://youtu.be/n_o4x1v03Sc" target="_blank" rel="noopener noreferrer">Video <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></div>
                     </div>
-                </div>
-                <div class="bento-details">
-                    <p class="item-description">
-                        Full end-to-end interpreter implementation including scanner, parser, and tree-walk evaluator.
-                    </p>
-                    <div class="item-links">
-                        <a href="projects/lox.html" class="btn btn-primary">System View</a>
-                        <a href="https://github.com/gyanigk/Lox" target="_blank" class="btn"><i class="ph ph-github-logo"></i> Repo</a>
-                    </div>
-                </div>
-            </div>
+                </article>
 
-            <!-- Project 5: V-BIKES -->
-            <div class="bento-card reveal" data-tag="Hardware Sensors">
-                <div class="card-index">05</div>
-                <div class="item-image-wrapper">
-                    <img src="assets/images/journey/v-bikes.jpg" alt="V-BIKES">
-                </div>
-                <div class="item-content">
-                    <div class="category-badge category-deep-dive">Deep Dive</div>
-                    <div class="item-meta">IoT Safety</div>
-                    <h3 class="item-title">V-BIKES Collision Detection</h3>
-                    <div class="tags-list">
-                        <span class="tag" style="color: #ef4444; background: rgba(239,68,68,0.05);">Hardware</span>
-                        <span class="tag proprio">Sensors</span>
+                <article class="work-card" data-category="projects">
+                    <a class="work-image" href="projects/lox.html" tabindex="-1" aria-hidden="true">
+                        <img src="assets/images/lox.jpg" alt="Lox Interpreter" loading="lazy" decoding="async">
+                    </a>
+                    <div class="work-content">
+                        <div class="work-meta"><span class="work-type">Project</span><span>Systems Programming</span></div>
+                        <h2 class="work-title"><a href="projects/lox.html">Lox Language Interpreter</a></h2>
+                        <p class="work-description">Full end-to-end interpreter implementation including scanner, parser, and tree-walk evaluator.</p>
+                        <ul class="work-topics" aria-label="Topics"><li>Compilers</li></ul>
+                        <div class="work-links"><a href="projects/lox.html">Explore project <i class="ph ph-arrow-right" aria-hidden="true"></i></a> <a href="https://github.com/gyanigk/Lox" target="_blank" rel="noopener noreferrer">GitHub <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></div>
                     </div>
-                </div>
-                <div class="bento-details">
-                    <p class="item-description">
-                        Hardware-based safety system explicitly designed for two-wheeler urban environments.
-                    </p>
-                    <div class="item-links">
-                        <a href="projects/v-bikes.html" class="btn btn-primary">Hardware Details</a>
-                        <a href="https://youtu.be/n_o4x1v03Sc" target="_blank" class="btn"><i class="ph ph-video"></i> Video</a>
-                    </div>
-                </div>
-            </div>
+                </article>
 
-            <!-- Project 6: Gaze Estimation Presentation -->
-            <div class="bento-card reveal" data-tag="Vision">
-                <div class="card-index">06</div>
-                <div class="item-image-wrapper">
-                    <img src="assets/images/cv7000_demo.jpg" alt="Gaze Estimation">
-                </div>
-                <div class="item-content">
-                    <div class="category-badge category-slides">Slides</div>
-                    <div class="item-meta">CVPR Presentation</div>
-                    <h3 class="item-title">End-to-end Frame to Gaze Estimation</h3>
-                    <div class="tags-list">
-                        <span class="tag vision">Vision</span>
+                <article class="work-card" data-category="research">
+                    <a class="work-image" href="projects/dmu.html" tabindex="-1" aria-hidden="true">
+                        <img src="assets/images/dmu.jpg" alt="DMU Final Paper" loading="lazy" decoding="async">
+                    </a>
+                    <div class="work-content">
+                        <div class="work-meta"><span class="work-type">Research</span><span>Aerospace Engineering</span></div>
+                        <h2 class="work-title"><a href="projects/dmu.html">Decision Making under Uncertainty</a></h2>
+                        <p class="work-description">Research paper on decision-making strategies and algorithms for safety-critical autonomous systems.</p>
+                        <ul class="work-topics" aria-label="Topics"><li>Autonomy</li></ul>
+                        <div class="work-links"><a href="projects/dmu.html">Read study <i class="ph ph-arrow-right" aria-hidden="true"></i></a> <a href="assets/data/DMU_Final_Paper.pdf" target="_blank" rel="noopener noreferrer">Paper <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></div>
                     </div>
-                </div>
-                <div class="bento-details">
-                    <p class="item-description">
-                        Literature review and "End-to-end Frame-to-gaze" CVPR paper presentation for graduate robotics seminar.
-                    </p>
-                    <div class="item-links">
-                        <a href="assets/data/gaze estimation_cv7000.pdf" target="_blank" class="btn btn-primary"><i class="ph ph-presentation-chart"></i> View Slides</a>
-                    </div>
-                </div>
-            </div>
+                </article>
 
-            <!-- Project 7: POMDP -->
-            <div class="bento-card reveal" data-tag="Math/Theory">
-                <div class="card-index">07</div>
-                <div class="item-image-wrapper">
-                    <img src="assets/images/pomdp.jpg" alt="POMDP Presentation">
-                </div>
-                <div class="item-content">
-                    <div class="category-badge category-slides">Slides</div>
-                    <div class="item-meta">Probabilistic Robotics</div>
-                    <h3 class="item-title">POMDP Frameworks for Autonomy</h3>
-                    <div class="tags-list">
-                        <span class="tag" style="color: #f59e0b; background: rgba(245,158,11,0.05);">Theory</span>
+                <article class="work-card" data-category="research">
+                    <a class="work-image" href="projects/unesco.html" tabindex="-1" aria-hidden="true">
+                        <img src="assets/images/unesco.jpg" alt="UNESCO Report" loading="lazy" decoding="async">
+                    </a>
+                    <div class="work-content">
+                        <div class="work-meta"><span class="work-type">Research</span><span>Publication</span></div>
+                        <h2 class="work-title"><a href="projects/unesco.html">UNESCO Report on AI &amp; Education</a></h2>
+                        <p class="work-description">UNESCO-commissioned report examining the global impact of artificial intelligence on future learning.</p>
+                        <ul class="work-topics" aria-label="Topics"><li>Policy</li></ul>
+                        <div class="work-links"><a href="projects/unesco.html">Read study <i class="ph ph-arrow-right" aria-hidden="true"></i></a> <a href="assets/data/382661eng.pdf" target="_blank" rel="noopener noreferrer">Report <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></div>
                     </div>
-                </div>
-                <div class="bento-details">
-                    <p class="item-description">
-                        Presentation on Partially Observed Markov Decision Processes and their application in decision-making.
-                    </p>
-                    <div class="item-links">
-                        <a href="assets/data/POMDP.pdf" target="_blank" class="btn btn-primary"><i class="ph ph-presentation-chart"></i> View Slides</a>
-                    </div>
-                </div>
-            </div>
+                </article>
 
-            <!-- Project 8: DMU (Wide) -->
-            <div class="bento-card wide reveal" data-tag="Autonomy">
-                <div class="card-index">08</div>
-                <div class="item-image-wrapper">
-                    <img src="assets/images/dmu.jpg" alt="DMU Final Paper">
-                </div>
-                <div class="item-content">
-                    <div class="category-badge category-research">Research</div>
-                    <div class="item-meta">Aerospace Engineering</div>
-                    <h3 class="item-title">Decision Making under Uncertainty</h3>
-                    <div class="tags-list">
-                        <span class="tag" style="color: #10b981; background: rgba(16,185,129,0.05);">Autonomy</span>
+                <article class="work-card" data-category="talks">
+                    <a class="work-image" href="assets/data/MRCV.pdf" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                        <img src="assets/images/MRCV.jpg" alt="MRCV Presentation" loading="lazy" decoding="async">
+                    </a>
+                    <div class="work-content">
+                        <div class="work-meta"><span class="work-type">Talk & slides</span><span>Graduate Seminar</span></div>
+                        <h2 class="work-title"><a href="assets/data/MRCV.pdf" target="_blank" rel="noopener noreferrer">Advances in Visual-Language Models</a></h2>
+                        <p class="work-description">Explored multimodal fusion, promptable VLM architectures, and evaluation for embodied perception.</p>
+                        <ul class="work-topics" aria-label="Topics"><li>Vision</li><li>VLM</li></ul>
+                        <div class="work-links"><a href="assets/data/MRCV.pdf" target="_blank" rel="noopener noreferrer">View slides <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></div>
                     </div>
-                </div>
-                <div class="bento-details">
-                    <p class="item-description">
-                        Research paper on decision-making strategies and algorithms for safety-critical autonomous systems.
-                    </p>
-                    <div class="item-links">
-                        <a href="projects/dmu.html" class="btn btn-primary">Technical Approach</a>
-                        <a href="assets/data/DMU_Final_Paper.pdf" target="_blank" class="btn"><i class="ph ph-file-pdf"></i> Paper</a>
-                    </div>
-                </div>
-            </div>
+                </article>
 
-            <!-- Project 9: UNESCO -->
-            <div class="bento-card reveal" data-tag="Policy">
-                <div class="card-index">09</div>
-                <div class="item-image-wrapper">
-                    <img src="assets/images/unesco.jpg" alt="UNESCO Report">
-                </div>
-                <div class="item-content">
-                    <div class="category-badge category-research">Research</div>
-                    <div class="item-meta">Publication</div>
-                    <h3 class="item-title">UNESCO Report on AI & Education</h3>
-                    <div class="tags-list">
-                        <span class="tag" style="color: #3b82f6; background: rgba(59,130,246,0.05);">Policy</span>
+                <article class="work-card" data-category="talks">
+                    <a class="work-image" href="assets/data/gaze estimation_cv7000.pdf" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                        <img src="assets/images/cv7000_demo.jpg" alt="Gaze Estimation" loading="lazy" decoding="async">
+                    </a>
+                    <div class="work-content">
+                        <div class="work-meta"><span class="work-type">Talk & slides</span><span>CVPR Presentation</span></div>
+                        <h2 class="work-title"><a href="assets/data/gaze estimation_cv7000.pdf" target="_blank" rel="noopener noreferrer">End-to-end Frame to Gaze Estimation</a></h2>
+                        <p class="work-description">Literature review and &quot;End-to-end Frame-to-gaze&quot; CVPR paper presentation for graduate robotics seminar.</p>
+                        <ul class="work-topics" aria-label="Topics"><li>Vision</li></ul>
+                        <div class="work-links"><a href="assets/data/gaze estimation_cv7000.pdf" target="_blank" rel="noopener noreferrer">View slides <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></div>
                     </div>
-                </div>
-                <div class="bento-details">
-                    <p class="item-description">
-                        UNESCO-commissioned report examining the global impact of artificial intelligence on future learning.
-                    </p>
-                    <div class="item-links">
-                        <a href="projects/unesco.html" class="btn btn-primary">Strategic View</a>
-                        <a href="assets/data/382661eng.pdf" target="_blank" class="btn"><i class="ph ph-file-pdf"></i> Report</a>
-                    </div>
-                </div>
-            </div>
+                </article>
 
-            <!-- Project 10: BEL Workshop (Tall) -->
-            <div class="bento-card tall reveal" data-tag="Industry">
-                <div class="card-index">10</div>
-                <div class="item-image-wrapper">
-                    <img src="assets/images/bel-workshop.jpg" alt="BEL Industry Presentation">
-                </div>
-                <div class="item-content">
-                    <div class="category-badge category-slides">Slides</div>
-                    <div class="item-meta">Applied AI Talk</div>
-                    <h3 class="item-title">BEL Industry Workshop: Perception</h3>
-                    <div class="tags-list">
-                        <span class="tag" style="color: #ec4899; background: rgba(236,72,153,0.05);">Industry</span>
+                <article class="work-card" data-category="talks">
+                    <a class="work-image" href="assets/data/POMDP.pdf" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                        <img src="assets/images/pomdp.jpg" alt="POMDP Presentation" loading="lazy" decoding="async">
+                    </a>
+                    <div class="work-content">
+                        <div class="work-meta"><span class="work-type">Talk & slides</span><span>Probabilistic Robotics</span></div>
+                        <h2 class="work-title"><a href="assets/data/POMDP.pdf" target="_blank" rel="noopener noreferrer">POMDP Frameworks for Autonomy</a></h2>
+                        <p class="work-description">Presentation on Partially Observed Markov Decision Processes and their application in decision-making.</p>
+                        <ul class="work-topics" aria-label="Topics"><li>Theory</li></ul>
+                        <div class="work-links"><a href="assets/data/POMDP.pdf" target="_blank" rel="noopener noreferrer">View slides <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></div>
                     </div>
-                </div>
-                <div class="bento-details">
-                    <p class="item-description">
-                        Industrial session covering the practical adoption of AI-driven planning pipelines in manufacturing.
-                    </p>
-                    <div class="item-links">
-                        <a href="assets/data/GAN_BEL_workshop.pdf" target="_blank" class="btn btn-primary"><i class="ph ph-presentation-chart"></i> View Slides</a>
-                    </div>
-                </div>
-            </div>
+                </article>
 
-            <!-- Project 11: MRCV Cross-modal -->
-            <div class="bento-card reveal" data-tag="Vision VLM">
-                <div class="card-index">11</div>
-                <div class="item-image-wrapper">
-                    <img src="assets/images/MRCV.jpg" alt="MRCV Presentation">
-                </div>
-                <div class="item-content">
-                    <div class="category-badge category-slides">Slides</div>
-                    <div class="item-meta">Graduate Seminar</div>
-                    <h3 class="item-title">Advances in Visual-Language Models</h3>
-                    <div class="tags-list">
-                        <span class="tag vision">Vision</span>
-                        <span class="tag" style="color: #10b981; background: rgba(16,185,129,0.05);">VLM</span>
+                <article class="work-card" data-category="talks">
+                    <a class="work-image" href="assets/data/GAN_BEL_workshop.pdf" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                        <img src="assets/images/bel-workshop.jpg" alt="BEL Industry Presentation" loading="lazy" decoding="async">
+                    </a>
+                    <div class="work-content">
+                        <div class="work-meta"><span class="work-type">Talk & slides</span><span>Applied AI Talk</span></div>
+                        <h2 class="work-title"><a href="assets/data/GAN_BEL_workshop.pdf" target="_blank" rel="noopener noreferrer">BEL Industry Workshop: Perception</a></h2>
+                        <p class="work-description">Industrial session covering the practical adoption of AI-driven planning pipelines in manufacturing.</p>
+                        <ul class="work-topics" aria-label="Topics"><li>Industry</li></ul>
+                        <div class="work-links"><a href="assets/data/GAN_BEL_workshop.pdf" target="_blank" rel="noopener noreferrer">View slides <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></div>
                     </div>
-                </div>
-                <div class="bento-details">
-                    <p class="item-description">
-                        Explored multimodal fusion, promptable VLM architectures, and evaluation for embodied perception.
-                    </p>
-                    <div class="item-links">
-                        <a href="assets/data/MRCV.pdf" target="_blank" class="btn btn-primary"><i class="ph ph-presentation-chart"></i> View Slides</a>
-                    </div>
-                </div>
+                </article>
             </div>
-        </div>
-
-            
         </section>
     </main>
 
@@ -330,45 +202,6 @@
         </div>
     </footer>
 
-    <!-- GSAP Animations -->
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Shuffle Projects (Preserving the "Wide/Tall" specific distribution style)
-        (function shuffleProjects() {
-            const grid = document.querySelector('.projects-grid');
-            if (!grid) return;
-            const cards = Array.from(grid.children);
-            
-            // Reordering the cards but keeping their variant classes attached to their content
-            for (let i = cards.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [cards[i], cards[j]] = [cards[j], cards[i]];
-            }
-            
-            cards.forEach(card => grid.appendChild(card));
-        })();
-
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('.nav-header');
-            if (window.scrollY > 20) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        gsap.fromTo(".reveal", 
-            { y: 30, opacity: 0 },
-            { 
-                y: 0, 
-                opacity: 1, 
-                duration: 1, 
-                stagger: 0.1,
-                ease: "power3.out",
-                delay: 0.2
-            }
-        );
-    </script>
+    <script src="assets/js/projects.js"></script>
 </body>
 </html>
