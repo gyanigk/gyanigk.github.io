@@ -25,7 +25,10 @@ Personal portfolio website showcasing research in Human-Robot Interaction (HRI),
 
 ## Local Development
 
-Simply open `index.html` in any modern browser. No build step required.
+Run `python scripts/serve.py` and open http://localhost:8766. No build step is required.
+The preview serves the repository directly and disables browser caching so edits
+appear consistently across pages. Use the same hostname and port when navigating
+to keep your saved light/dark preference. Stop the server with Ctrl+C.
 
 ## License
 
